@@ -23,8 +23,8 @@ cniConfig:
 nodes:
   - hostname: "k8s-0"
     ipAddress: "192.168.2.184"
-    installDisk: "/dev/nvme0"
-    talosImageURL: factory.talos.dev/installer/d9f1e11c9834c80ce5023276888ae5b6ff26e527c6d000106d0fd393c948a04c
+    installDisk: "/dev/nvme0n1"
+    talosImageURL: factory.talos.dev/installer/5ee86d0c83c5c05c58beb9eb707fd4ca47a4d832bfad575e2b681ca05dd2b784
     controlPlane: true
     networkInterfaces:
       - deviceSelector:
@@ -41,7 +41,7 @@ nodes:
   - hostname: "k8s-1"
     ipAddress: "192.168.2.187"
     installDisk: "/dev/sda"
-    talosImageURL: factory.talos.dev/installer/d9f1e11c9834c80ce5023276888ae5b6ff26e527c6d000106d0fd393c948a04c
+    talosImageURL: factory.talos.dev/installer/5ee86d0c83c5c05c58beb9eb707fd4ca47a4d832bfad575e2b681ca05dd2b784
     controlPlane: false
     networkInterfaces:
       - deviceSelector:
