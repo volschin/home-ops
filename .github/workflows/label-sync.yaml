@@ -8,6 +8,9 @@ on:
     branches: ["main"]
     paths: [".github/labels.yaml"]
 
+permissions:
+  issues: write
+
 jobs:
   label-sync:
     name: Label Sync
