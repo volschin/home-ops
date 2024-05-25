@@ -23,7 +23,7 @@ cniConfig:
 nodes:
   - hostname: "k8s-0"
     ipAddress: "192.168.2.184"
-    installDisk: "/dev/sdb"
+    installDisk: "/dev/nvme0"
     talosImageURL: factory.talos.dev/installer/d9f1e11c9834c80ce5023276888ae5b6ff26e527c6d000106d0fd393c948a04c
     controlPlane: true
     networkInterfaces:
