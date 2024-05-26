@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - ./bitnami.yaml
   - ./external-secrets.yaml
+  - ./grafana.yaml
