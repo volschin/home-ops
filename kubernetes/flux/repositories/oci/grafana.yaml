@@ -8,6 +8,6 @@ spec:
   layerSelector:
     mediaType: "application/vnd.cncf.helm.chart.content.v1.tar+gzip"
     operation: copy
-  url: oci://ghcr.io/grafana/helm-charts/grafana-operator
+  url: oci://ghcr.io/grafana/helm-charts
   ref:
     semver: ">=5.9.0"
