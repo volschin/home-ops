@@ -4,5 +4,6 @@ kind: Kustomization
 resources:
   # - ./bitnami.yaml
   - ./capacitor.yaml
+  - ./cloudnative-pg.yaml
   - ./external-secrets.yaml
   - ./grafana.yaml
