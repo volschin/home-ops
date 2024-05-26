@@ -2,9 +2,9 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: HelmRepository
 metadata:
-  name: kyverno
+  name: stevehipwell
   namespace: flux-system
 spec:
   type: oci
   interval: 5m
-  url: oci://ghcr.io/kyverno/charts
+  url: oci://ghcr.io/stevehipwell/helm-charts
