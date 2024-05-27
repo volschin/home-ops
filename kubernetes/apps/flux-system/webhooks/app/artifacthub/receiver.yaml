@@ -1,0 +1,17 @@
+---
+apiVersion: notification.toolkit.fluxcd.io/v1
+kind: Receiver
+metadata:
+  name: artifacthub-receiver
+  namespace: flux-system
+spec:
+  type: cdevents
+  events:
+    - "dev.cdevents.change.merged"
+  secretRef:
+    name: receiver-token
+  resources:
+    - kind: GitRespository 
+      apiVersion: source.toolkit.fluxcd.io/v1
+      name: webapp
+      namespace: flux-system
