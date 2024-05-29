@@ -4,48 +4,76 @@ kind: ConfigMap
 metadata:
   name: homepage
 data:
-  bookmarks.yaml: ""
+  bookmarks.yaml: |
+    - Developer:
+    - Github:
+        - icon: github-light.png
+          href: https://github.com/
+    - Terraform:
+        - icon: terraform.svg
+          href: https://volschin.app.spacelift.io/
+    - Homepage Documentation:
+        - icon: homepage.png
+          href: https://gethomepage.dev/
+    - ArtifactHUB:
+        - icon: https://avatars.githubusercontent.com/u/62354979?s=200&v=4
+          href: https://artifacthub.io/
+    - Flux documentation:
+        - icon: flux-cd.svg
+          href: https://fluxcd.io/flux/guides/
+    - Docker Hub:
+        - icon: docker-moby.svg
+          href: https://hub.docker.com/
+    - StepSecurity:
+        - icon: stepsecurity
+          href: https://app.stepsecurity.io/github/volschin/actions/dashboard
+    - FireHOL IP Blacklists:
+        - icon: /icons/firehol.png
+          href: https://iplists.firehol.org/
+    - PTB Uhr:
+        - icon: /icons/ptbuhr.png
+          href: https://uhr.ptb.de/
   docker.yaml: ""
   kubernetes.yaml: |
     mode: cluster
   services.yaml: |
     - Infrastructure:
         - AdGuard Home:
-            href: https://adguard.18b.haus
+            href: https://adguard
             icon: adguard-home.png
         - Fritz!Box:
-            href: https://fritzbox.18b.haus
+            href: https://fritz.box
             icon: avmfritzbox.png
         - OPNsense:
-            href: https://opnsense.18b.haus
+            href: https://opnsense
             icon: opnsense.png
         - Proxmox VE:
-            href: https://pve.18b.haus
+            href: https://pve
             icon: proxmox.png
         - UniFi:
-            href: https://unifi.18b.haus
+            href: https://unifi
             icon: unifi-controller.png
     - Observability:
         - Prometheus (storage):
-            href: https://prometheus.storage.18b.haus
+            href: https://prometheus
             icon: prometheus.png
     - Storage:
         - Filebrowser:
-            href: https://filebrowser.18b.haus
+            href: https://filebrowser
             icon: filebrowser.png
         - Kopia:
-            href: https://kopia.18b.haus
+            href: https://kopia
             icon: kopia.png
         - Minio:
-            href: https://minio.18b.haus
+            href: https://minio
             icon: minio.png
     - Tools:
         - Zot Registry:
-            href: https://registry.18b.haus
-            icon: https://zotregistry.dev/v2.0.4/assets/images/logo.svg
+            href: https://registry
+            icon: logo.svg
   settings.yaml: |
     background:
-      image: https://static.18b.haus/img/wooden-floor.jpg
+      image: https://static/img/wood.jpg
       opacity: 10
     fiveColumns: true
     headerStyle: clean
@@ -68,12 +96,23 @@ data:
     target: _self
     title: Home
   widgets.yaml: |
-    - search:
-        provider: [duckduckgo, google]
-        target: _blank
-    - openmeteo:
-        latitude: 52.07489456903994
-        longitude: 13.146461411664886
-        timezone: Europe/Berlin
-        units: metric
-        cache: 15
+    - resources:
+    cpu: true
+    cputemp: true
+    memory: true
+    disk: [/,/app/config]
+    uptime: true
+- openweathermap:
+    label: Berlin
+    latitude: 52.51
+    longitude: 13.44
+    units: metric
+    provider: openweathermap
+    cache: 30
+    format:
+      maximumFractionDigits: 1
+- datetime:
+    text_size: md
+    format:
+      timeStyle: short
+      hourCycle: h23
