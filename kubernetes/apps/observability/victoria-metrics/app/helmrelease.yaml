@@ -1,5 +1,4 @@
 ---
-# yaml-language-server: $schema=https://kubernetes-schemas.pages.dev/helm.toolkit.fluxcd.io/helmrelease_v2.json
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
@@ -128,14 +127,14 @@ spec:
               matchLabels:
                 app.kubernetes.io/name: vmalert
         extraArgs:
-          external.url: https://vmalert.bjw-s.dev
+          external.url: https://vmalert.{secret-domain}
         notifiers:
           - url: http://alertmanager.monitoring.svc.cluster.local:9093
       ingress:
         enabled: true
         ingressClassName: internal-nginx
         hosts:
-          - vmalert.bjw-s.dev
+          - vmalert.{secret-domain}
 
     # VM Data scraping
     vmagent:
