@@ -127,14 +127,14 @@ spec:
               matchLabels:
                 app.kubernetes.io/name: vmalert
         extraArgs:
-          external.url: https://vmalert.{secret-domain}
+          external.url: https://vmalert.${SECRET_DOMAIN}
         notifiers:
           - url: http://alertmanager.monitoring.svc.cluster.local:9093
       ingress:
         enabled: true
         ingressClassName: internal-nginx
         hosts:
-          - vmalert.{secret-domain}
+          - vmalert.${SECRET_DOMAIN}
 
     # VM Data scraping
     vmagent:
@@ -166,7 +166,7 @@ spec:
         enabled: true
         ingressClassName: internal-nginx
         hosts:
-          - vmagent.bjw-s.dev
+          - vmagent.${SECRET_DOMAIN}
 
     # Single-binary vm cluster alternative (liteweight, non-HA)
     vmsingle:
