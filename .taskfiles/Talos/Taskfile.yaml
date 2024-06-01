@@ -7,9 +7,10 @@ vars:
   TALHELPER_SECRET_FILE: "{{.KUBERNETES_DIR}}/bootstrap/talos/talsecret.sops.yaml"
   TALHELPER_CONFIG_FILE: "{{.KUBERNETES_DIR}}/bootstrap/talos/talconfig.yaml"
   HELMFILE_FILE: "{{.KUBERNETES_DIR}}/bootstrap/helmfile.yaml"
+  TALOSCONFIG_FILE: "{{.TALHELPER_CLUSTER_DIR}}/talosconfig"
 
 env:
-  TALOSCONFIG: "{{.TALHELPER_CLUSTER_DIR}}/talosconfig"
+  TALOSCONFIG: "{{.TALOSCONFIG_FILE}}"
 
 tasks:
 
@@ -54,23 +55,35 @@ tasks:
       - msg: Missing helmfile
         sh: test -f {{.HELMFILE_FILE}}
 
-  upgrade-talos:
-    desc: Upgrade talos on a node
-    cmd: talosctl --nodes {{.node}} upgrade --image {{.image}} --preserve=true --reboot-mode=default
+  upgrade:
+    desc: Upgrade Talos on a node
+    cmds:
+      - talosctl --nodes {{.node}} upgrade --image {{.image}} --wait=true --timeout=10m --preserve=true --reboot-mode={{.mode}}
+      - talosctl --nodes {{.node}} health --wait-timeout=10m --server=false
+    vars:
+      mode: '{{.mode | default "default"}}'
     requires:
       vars: ["node", "image"]
     preconditions:
+      - msg: Missing talosconfig
+        sh: test -f {{.TALOSCONFIG_FILE}}
+      - msg: Unable to retrieve Talos config
+        sh: talosctl config info >/dev/null 2>&1
       - msg: Node not found
-        sh: talosctl --nodes {{.node}} get machineconfig
+        sh: talosctl --nodes {{.node}} get machineconfig >/dev/null 2>&1
 
   upgrade-k8s:
-    desc: Upgrade k8s on a node
-    cmd: talosctl --nodes {{.node}} upgrade-k8s --to {{.to}}
+    desc: Upgrade Kubernetes across the cluster
+    cmd: talosctl --nodes {{.controller}} upgrade-k8s --to {{.to}}
     requires:
-      vars: ["node", "to"]
+      vars: ["controller", "to"]
     preconditions:
+      - msg: Missing talosconfig
+        sh: test -f {{.TALOSCONFIG_FILE}}
+      - msg: Unable to retrieve Talos config
+        sh: talosctl config info >/dev/null 2>&1
       - msg: Node not found
-        sh: talosctl --nodes {{.node}} get machineconfig
+        sh: talosctl --nodes {{.controller}} get machineconfig >/dev/null 2>&1
 
   nuke:
     desc: Resets nodes back to maintenance mode
