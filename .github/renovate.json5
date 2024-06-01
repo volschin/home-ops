@@ -207,7 +207,7 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["\\.yml$"],
+      "fileMatch": ["\\.ya?ml$"],
       "matchStrings": [
         "#\\s+renovate:\\s+depName=\"(?<depName>.*)\"\\n\\s+gnetId:\\s+(?<packageName>.*?)\\n\\s+revision:\\s+(?<currentValue>.*)"
       ],
