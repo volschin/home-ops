@@ -1,7 +1,7 @@
 ---
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-resources:
+#apiVersion: kustomize.config.k8s.io/v1beta1
+#kind: Kustomization
+#resources:
   # - ./nut-exporter/ks.yaml
   # - ./archivist-metrics/ks.yaml
   # - ./lidarr-exporter/ks.yaml
