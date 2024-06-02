@@ -2,25 +2,22 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - ./nut-exporter/ks.yaml
-  - ./archivist-metrics/ks.yaml
-  - ./lidarr-exporter/ks.yaml
-  - ./prowlarr-exporter/ks.yaml
-  - ./qbittorrent-exporter/ks.yaml
-  - ./readarr-exporter/ks.yaml
-  - ./radarr-exporter/ks.yaml
-  - ./sonarr-exporter/ks.yaml
-  - ./tautulli-exporter/ks.yaml
-  - ./blackbox-exporter/ks.yaml
-  - ./mqtt-exporter/ks.yaml
+  # - ./nut-exporter/ks.yaml
+  # - ./archivist-metrics/ks.yaml
+  # - ./lidarr-exporter/ks.yaml
+  # - ./prowlarr-exporter/ks.yaml
+  # - ./qbittorrent-exporter/ks.yaml
+  # - ./readarr-exporter/
+  # - ./blackbox-exporter/ks.yaml
+  # - ./mqtt-exporter/ks.yaml
   # - ./node-exporter/ks.yaml
-  - ./dnssec-exporter/ks.yaml
-  - ./smartctl-exporter/ks.yaml
-  - ./smokeping/ks.yaml
-  - ./snmp-exporter/ks.yaml
-  - ./speedtest-exporter/ks.yaml
-  - ./tplink-plug-exporter/ks.yaml
-  - ./x509-certificate-exporter/ks.yaml
+  # - ./dnssec-exporter/ks.yaml
+  # - ./smartctl-exporter/ks.yaml
+  # - ./smokeping/ks.yaml
+  # - ./snmp-exporter/ks.yaml
+  # - ./speedtest-exporter/ks.yaml
+  # - ./tplink-plug-exporter/ks.yaml
+  # - ./x509-certificate-exporter/ks.yaml
 
 # https://github.com/mchestr/home-cluster/tree/main/kubernetes/apps/monitoring/exporters
 # https://github.com/haraldkoch/kochhaus-home/blob/main/kubernetes/main/apps/monitoring/kustomization.yaml
