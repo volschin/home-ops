@@ -11,3 +11,5 @@ resources:
   - smartctl-exporter/ks.yaml
   - sonarr-exporter/ks.yaml
   - tautulli-exporter/ks.yaml
+
+# https://github.com/mchestr/home-cluster/tree/main/kubernetes/apps/monitoring/exporters
