@@ -3,7 +3,7 @@
   "extends": [
     "config:recommended",
     "helpers:pinGitHubActionDigests",
-    "docker:pinDigests",
+    //"docker:pinDigests",
     "docker:enableMajor",
     ":disableRateLimiting",
     ":dependencyDashboard",
@@ -15,7 +15,7 @@
   "suppressNotifications": ["prEditedNotification", "prIgnoreNotification"],
   "rebaseWhen": "conflicted",
   "timezone": "Europe/Berlin",
-  "schedule": ["every weekday"],
+  // "schedule": ["every weekday"],
   "ignorePaths": ["**/*.sops.*"],
   "flux": {
     "fileMatch": ["(^|/)kubernetes/.+\\.ya?ml(?:\\.j2)?$"]
