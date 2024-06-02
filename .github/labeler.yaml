@@ -2,6 +2,9 @@
 area/bootstrap:
   - changed-files:
       - any-glob-to-any-file: kubernetes/bootstrap/**/*
+distro/talos:
+  - changed-files:
+      - any-glob-to-any-file: kubernetes/bootstrap/talos/**/*
 area/github:
   - changed-files:
       - any-glob-to-any-file: .github/**/*
