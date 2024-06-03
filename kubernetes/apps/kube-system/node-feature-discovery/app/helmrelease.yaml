@@ -29,5 +29,12 @@ spec:
       config:
         core:
           sources: ["pci", "system", "usb"]
+      resources:
+        requests:
+          cpu: 5m
+          memory: 36Mi
+        limits:
+          cpu: 300m
+          memory: 48Mi
     prometheus:
       enable: true
