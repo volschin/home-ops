@@ -53,13 +53,6 @@ spec:
         ingress:
           enabled: true
           className: internal
-          annotations:
-            gethomepage.dev/enabled: true
-            gethomepage.dev/description: Network, Service & Security Observability
-            gethomepage.dev/group: Monitoring
-            gethomepage.dev/icon: cilium.png
-            gethomepage.dev/name: Cilium Hubble
-            gethomepage.dev/weight: 8
           hosts: ["hubble.${SECRET_DOMAIN}"]
     operator:
       prometheus:
