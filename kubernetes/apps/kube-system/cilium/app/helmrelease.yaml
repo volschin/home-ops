@@ -53,16 +53,16 @@ spec:
         ingress:
           enabled: true
           className: internal
-          annotations:
-            gethomepage.dev/enabled: "true"
-            gethomepage.dev/description: Network, Service & Security Observability
-            gethomepage.dev/group: Monitoring
-            gethomepage.dev/icon: cilium.png
-            gethomepage.dev/name: Cilium Hubble
+          # annotations:
+            # gethomepage.dev/enabled: "true"
+            # gethomepage.dev/description: Network, Service & Security Observability
+            # gethomepage.dev/group: Monitoring
+            # gethomepage.dev/icon: cilium.png
+            # gethomepage.dev/name: Cilium Hubble
             # gethomepage.dev/widget.type: "emby"
             # gethomepage.dev/widget.url: "https://hubble.${SECRET_DOMAIN}"
             # gethomepage.dev/pod-selector: ""
-            gethomepage.dev/weight: 10 # optional
+            # gethomepage.dev/weight: 10 # optional
             # gethomepage.dev/instance: "intern" # optional
           hosts: ["hubble.${SECRET_DOMAIN}"]
     operator:
