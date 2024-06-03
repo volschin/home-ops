@@ -59,7 +59,7 @@ spec:
             gethomepage.dev/group: Monitoring
             gethomepage.dev/icon: cilium.png
             gethomepage.dev/name: Cilium Hubble
-            gethomepage.dev/weight: 8 # optional
+            gethomepage.dev/weight: 8
           hosts: ["hubble.${SECRET_DOMAIN}"]
     operator:
       prometheus:
