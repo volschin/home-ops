@@ -1,0 +1,6 @@
+          - name: "tplink-bluetooth"
+            matchOn:
+            - usbId:
+              class: ["224"]
+              vendor: ["2357"]
+              device: ["0604"]
