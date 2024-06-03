@@ -1,0 +1,19 @@
+# https://kubernetes-sigs.github.io/node-feature-discovery/master/usage/customization-guide.html#custom-feature-source
+            - name: "cpu-6700t"
+              labels:
+                "cpu-6700t": "true"
+              matchFeatures:
+                - feature: cpu.model
+                  matchExpressions:
+                    family: {op: In, value: ["6"]}
+                    id: {op: In, value: ["94"]}
+                    vendor_id: {op: In, value: ["Intel"]}
+            - name: "cpu-7500t"
+              labels:
+                "cpu-7500t": "true"
+              matchFeatures:
+                - feature: cpu.model
+                  matchExpressions:
+                    family: {op: In, value: ["6"]}
+                    id: {op: In, value: ["158"]}
+                    vendor_id: {op: In, value: ["Intel"]}
