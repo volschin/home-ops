@@ -1,0 +1,6 @@
+            - name: "intel-10g"
+              matchOn:
+                - pciId:
+                    class: ["0200"]
+                    vendor: ["8086"]
+                    device: ["10fb"]
