@@ -63,7 +63,7 @@ spec:
             # gethomepage.dev/widget.url: "https://hubble.${SECRET_DOMAIN}"
             # gethomepage.dev/pod-selector: ""
             gethomepage.dev/weight: 10 # optional
-            gethomepage.dev/instance: "intern" # optional
+            # gethomepage.dev/instance: "intern" # optional
           hosts: ["hubble.${SECRET_DOMAIN}"]
     operator:
       prometheus:
