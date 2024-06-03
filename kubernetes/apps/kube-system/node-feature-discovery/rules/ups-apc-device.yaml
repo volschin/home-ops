@@ -1,0 +1,6 @@
+    - name: ups-apc
+              matchOn:
+                - usbId:
+                    class: ["03"]
+                    vendor: ["051d"]
+                    device: ["0002"]
