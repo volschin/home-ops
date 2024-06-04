@@ -21,5 +21,9 @@
 - { name: "type/minor",              color: "ff9800" }
 - { name: "type/major",              color: "f6412d" }
 - { name: "type/break",              color: "f6412d" }
+# Priority for issues
+- { name: "prio: critical" }
+- { name: "prio: high" }
+- { name: "prio: medium" }
 # Uncategorized
 - { name: "hold/upstream",           color: "ee0701" }
