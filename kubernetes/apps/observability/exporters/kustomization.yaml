@@ -1,7 +1,7 @@
 ---
-#apiVersion: kustomize.config.k8s.io/v1beta1
-#kind: Kustomization
-#resources:
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
   # - ./nut-exporter/ks.yaml
   # - ./archivist-metrics/ks.yaml
   # - ./lidarr-exporter/ks.yaml
@@ -15,7 +15,7 @@
   # - ./smartctl-exporter/ks.yaml
   # - ./smokeping/ks.yaml
   # - ./snmp-exporter/ks.yaml
-  # - ./speedtest-exporter/ks.yaml
+  - ./speedtest-exporter/ks.yaml
   # - ./tplink-plug-exporter/ks.yaml
   # - ./x509-certificate-exporter/ks.yaml
 
