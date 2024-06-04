@@ -15,6 +15,7 @@ resources:
   # - ./smartctl-exporter/ks.yaml
   # - ./smokeping/ks.yaml
   # - ./snmp-exporter/ks.yaml
+  - ./fritzbox-exporter/ks.yaml
   - ./speedtest-exporter/ks.yaml
   # - ./tplink-plug-exporter/ks.yaml
   # - ./x509-certificate-exporter/ks.yaml
