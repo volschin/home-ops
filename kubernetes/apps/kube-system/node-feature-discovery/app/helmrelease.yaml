@@ -1,5 +1,4 @@
 ---
-# yaml-language-server: $schema=https://kubernetes-schemas.pages.dev/helm.toolkit.fluxcd.io/helmrelease_v2.json
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
@@ -32,9 +31,9 @@ spec:
       resources:
         requests:
           cpu: 5m
-          memory: 36Mi
+          memory: 40Mi
         limits:
-          cpu: 300m
-          memory: 48Mi
+          cpu: 100m
+          memory: 60Mi
     prometheus:
       enable: true
