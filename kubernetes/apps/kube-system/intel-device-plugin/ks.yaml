@@ -54,7 +54,7 @@ spec:
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
-  path: ./kubernetes/main/apps/tools/intel-device-plugin/exporter
+  path: ./kubernetes/apps/kube-system/intel-device-plugin/exporter
   prune: true
   sourceRef:
     kind: GitRepository
