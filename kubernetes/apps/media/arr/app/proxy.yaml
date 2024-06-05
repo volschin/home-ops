@@ -8,7 +8,7 @@ metadata:
 spec:
   ingressClassName: internal
   rules:
-  - hosts: ["hubble.${SECRET_DOMAIN}"]
+  - host: "arr.${SECRET_DOMAIN}"
     http:
       paths:
       - path: /
