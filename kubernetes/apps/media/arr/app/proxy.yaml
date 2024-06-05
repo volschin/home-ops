@@ -6,9 +6,10 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
-  ingressClassName: nginx-internal
+  ingressClassName: internal
   rules:
-  - http:
+  - hosts: ["hubble.${SECRET_DOMAIN}"]
+    http:
       paths:
       - path: /
         pathType: Prefix
