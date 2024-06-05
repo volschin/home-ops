@@ -73,7 +73,7 @@ data:
             icon: logo.svg
   settings.yaml: |
     background:
-      image: https://static/img/wood.jpg
+      image: https://images.unsplash.com/photo-1633259584604-afdc243122ea
       opacity: 10
     fiveColumns: true
     headerStyle: clean
