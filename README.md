@@ -1,8 +1,8 @@
-# ⛵ Cluster Template Test
+# ⛵ Home Lab
 
-Welcome to my opinionated and extensible template for deploying a single Kubernetes cluster. The goal of this project is to make it easier for people interested in using Kubernetes to deploy a cluster at home on bare-metal or VMs.
+![Kubernetes Version](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2Fvolschin%2Fhome-ops%2Fmain%2Fkubernetes%2Fbootstrap%2Ftalos%2Ftalconfig.yaml&query=%24.kubernetesVersion&style=for-the-badge&logo=kubernetes&label=Kubernetes) ![Talos Version](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2Fvolschin%2Fhome-ops%2Fmain%2Fkubernetes%2Fbootstrap%2Ftalos%2Ftalconfig.yaml&query=%24.talosVersion&style=for-the-badge&logo=kubernetes&label=talos&color=%23FA640A&link=https%3A%2F%2Ftalos.dev%2F)
 
-At a high level this project makes use of [makejinja](https://github.com/mirkolenz/makejinja) to read in a [configuration file](./config.sample.yaml) which renders out templates that will allow you to install and manage your Kubernetes cluster with.
+This repo contains the configuration and documentation for my home infrastructure. I try to adhere to GitOps principles and automate as much as possible.
 
 ## ✨ Features
 
