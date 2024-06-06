@@ -54,6 +54,11 @@ spec:
         className: internal
         annotations:
           external-dns.alpha.kubernetes.io/target: it-tools.${SECRET_DOMAIN}
+          gethomepage.dev/enabled: "true"
+          gethomepage.dev/description: Sammlung von IT-Tools
+          gethomepage.dev/group: Source Code
+          gethomepage.dev/icon: it-tools.svg
+          gethomepage.dev/name: IT-Tools
         hosts:
           - host: "{{ .Release.Name }}.${SECRET_DOMAIN}"
             paths:
