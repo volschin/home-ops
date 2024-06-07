@@ -7,6 +7,7 @@ resources:
   - ./capacitor.yaml
   - ./cloudnative-pg.yaml
   - ./external-secrets.yaml
+  - ./flux-manifests.yaml
   - ./grafana.yaml
   #- ./prometheus-community.yaml
   #- ./spegel.yaml
