@@ -34,8 +34,8 @@ spec:
               tag: v0.4.2@sha256:55e77511d674733708e001f594e7180826de9385e2ed0a34397dc2b9694f378c
             resources:
               requests:
-                cpu: 50m
-                memory: 100Mi
+                cpu: 190m
+                memory: 128Mi
                 ephemeral-storage: 1Gi
               limits:
                 memory: 200Mi
@@ -65,7 +65,7 @@ spec:
           gethomepage.dev/icon: flux-cd.svg
           gethomepage.dev/name: Capacitor
         hosts:
-          - host: &host "{{ .Release.Name }}.${SECRET_CLUSTER_DOMAIN}"
+          - host: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"
             paths:
               - path: /
                 service:
