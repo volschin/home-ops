@@ -2,11 +2,11 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended",
-    "helpers:pinGitHubActionDigests",
+    //"helpers:pinGitHubActionDigests",
     //"docker:pinDigests",
     "docker:enableMajor",
-    "mergeConfidence:all-badges",
-    "replacements:k8s-registry-move",
+    //"mergeConfidence:all-badges",
+    //"replacements:k8s-registry-move",
     ":disableRateLimiting",
     ":dependencyDashboard",
     ":semanticCommits",
@@ -17,7 +17,7 @@
   "suppressNotifications": ["prEditedNotification", "prIgnoreNotification"],
   "rebaseWhen": "conflicted",
   "timezone": "Europe/Berlin",
-  // "schedule": ["every weekday"],
+  "schedule": ["every weekday"],
   "ignorePaths": ["**/*.sops.*"],
   "flux": {
     "fileMatch": ["(^|/)kubernetes/.+\\.ya?ml(?:\\.j2)?$"]
