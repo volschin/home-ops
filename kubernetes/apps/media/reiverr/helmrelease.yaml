@@ -12,7 +12,7 @@ spec:
         kind: HelmRepository
         name: bjw-s
         namespace: flux-system
-      version: 2.3.0
+      version: 2.3.1
   install:
     createNamespace: true
     remediation:
@@ -34,7 +34,7 @@ spec:
               tag: v0.8.0@sha256:7bfa87063f24ea89db1227d87ffed94fc3f7dcd668236fa3a171414b867611bf
     ingress:
       main:
-        className: nginx
+        className: internal
         enabled: true
         hosts:
           - host: &host '{{ .Release.Name }}.${ROOT_DOMAIN}'
