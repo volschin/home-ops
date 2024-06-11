@@ -31,7 +31,7 @@ spec:
                   name: reiverr
             image:
               repository: ghcr.io/aleksilassila/reiverr
-              tag: v0.8.0@sha256:7bfa87063f24ea89db1227d87ffed94fc3f7dcd668236fa3a171414b867611bf
+              tag: v1.1.1@sha256:3cec203322a7cdf3a9438a557d3ea699547c781f101f0e170408531e230fda00
     ingress:
       main:
         className: internal
