@@ -2,11 +2,9 @@
 
 <div align="center">
 
-[![Discord](https://img.shields.io/discord/673534664354430999?style=for-the-badge&label&logo=discord&logoColor=white&color=%235865F2&cacheSeconds=3600)](https://discord.gg/home-operations)&nbsp;&nbsp;
 [![Talos](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2Fvolschin%2Fhome-ops%2Fmain%2Fkubernetes%2Fbootstrap%2Ftalos%2Ftalconfig.yaml&query=%24.talosVersion&style=for-the-badge&logo=talos&logoColor=%23FF7300&color=grey&label=%20)](https://talos.dev)&nbsp;&nbsp;
 [![Kubernetes](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2Fvolschin%2Fhome-ops%2Fmain%2Fkubernetes%2Fbootstrap%2Ftalos%2Ftalconfig.yaml&query=%24.kubernetesVersion&style=for-the-badge&logo=kubernetes&label=%20&logoColor=white&color=%23326CE5)](https://kubernetes.io)&nbsp;&nbsp;
 [![Flux CD](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2Fvolschin%2Fhome-ops%2Fmain%2Fkubernetes%2Fflux%2Frepositories%2Foci%2Fflux-manifests.yaml&query=%24.spec.ref.tag&style=for-the-badge&logo=flux&label=%20&logoColor=%235468FF&color=black)](https://fluxcd.io)&nbsp;&nbsp;
-[![Renovate](https://img.shields.io/github/actions/workflow/status/volschin/home-ops/kubeconform.yaml?branch=main&label=&logo=renovatebot&style=for-the-badge&color=%231A1F6C)](https://github.com/volschin/home-ops/actions/workflows/kubeconform.yaml)&nbsp;&nbsp;
 [![Cilium](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2Fvolschin%2Fhome-ops%2Fmain%2Fkubernetes%2Fapps%2Fkube-system%2Fcilium%2Fapp%2Fhelmrelease.yaml&query=%24.spec.chart.spec.version&style=for-the-badge&logo=cilium&label=%20&logoColor=black&color=%23F8C517)](https://cilium.io)
 
 </div>
