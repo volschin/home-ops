@@ -1,0 +1,54 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: reiverr
+  namespace: media
+spec:
+  chart:
+    spec:
+      chart: app-template
+      interval: 15m
+      sourceRef:
+        kind: HelmRepository
+        name: bjw-s
+        namespace: flux-system
+      version: 2.3.0
+  install:
+    createNamespace: true
+    remediation:
+      retries: 5
+  interval: 15m
+  upgrade:
+    remediation:
+      retries: 5
+  values:
+    controllers:
+      main:
+        containers:
+          main:
+            envFrom:
+              - secretRef:
+                  name: reiverr
+            image:
+              repository: ghcr.io/aleksilassila/reiverr
+              tag: v0.8.0@sha256:7bfa87063f24ea89db1227d87ffed94fc3f7dcd668236fa3a171414b867611bf
+    ingress:
+      main:
+        className: nginx
+        enabled: true
+        hosts:
+          - host: &host '{{ .Release.Name }}.${ROOT_DOMAIN}'
+            paths:
+              - path: /
+                pathType: Prefix
+                service:
+                  name: main
+                  port: http
+        tls:
+          - hosts:
+              - *host
+    service:
+      main:
+        ports:
+          http:
+            port: 9494
