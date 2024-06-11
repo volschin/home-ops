@@ -2,11 +2,7 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended",
-    //"helpers:pinGitHubActionDigests",
-    //"docker:pinDigests",
     "docker:enableMajor",
-    //"mergeConfidence:all-badges",
-    //"replacements:k8s-registry-move",
     ":disableRateLimiting",
     ":dependencyDashboard",
     ":semanticCommits",
@@ -16,7 +12,6 @@
   "dependencyDashboardTitle": "Renovate Dashboard 🤖",
   "suppressNotifications": ["prEditedNotification", "prIgnoreNotification"],
   "rebaseWhen": "conflicted",
-  "timezone": "Europe/Berlin",
   "schedule": ["every weekday"],
   "ignorePaths": ["**/*.sops.*"],
   "flux": {
@@ -36,9 +31,6 @@
   },
   "pip_requirements": {
     "fileMatch": ["(^|/)[\\w-]*requirements(-\\w+)?\\.(txt|pip)(?:\\.j2)?$"]
-  },
-  "pre-commit": {
-    "enabled": true
   },
   // commit message topics
   "commitMessageTopic": "{{depName}}",
@@ -83,58 +75,46 @@
     // commit message topics
     {
       "matchDatasources": ["helm"],
-      "commitMessageTopic": "chart {{depName}}",
-      "commitMessageExtra": " ( {{currentVersion}} → {{newVersion}} )"
+      "commitMessageTopic": "chart {{depName}}"
     },
     {
       "matchDatasources": ["docker"],
       "commitMessageTopic": "image {{depName}}"
     },
-    {
-      "matchDatasources": ["github-releases", "github-tags"],
-      "commitMessageTopic": "{{depName}}",
-      "commitMessageExtra": "( {{currentVersion}} → {{newVersion}} )"
-    },
     // commit messages
     {
       "matchDatasources": ["docker"],
       "matchUpdateTypes": ["major"],
-      "commitMessagePrefix": "feat(container)!: ",
-      "commitMessageExtra": " ( {{currentVersion}} → {{newVersion}} )"
+      "commitMessagePrefix": "feat(container)!: "
     },
     {
       "matchDatasources": ["docker"],
       "matchUpdateTypes": ["minor"],
       "semanticCommitType": "feat",
-      "semanticCommitScope": "container",
-      "commitMessageExtra": " ( {{currentVersion}} → {{newVersion}} )"
+      "semanticCommitScope": "container"
     },
     {
       "matchDatasources": ["docker"],
       "matchUpdateTypes": ["patch"],
       "semanticCommitType": "fix",
       "semanticCommitScope": "container"
-      "commitMessageExtra": " ( {{currentVersion}} → {{newVersion}} )"
     },
     {
       "matchDatasources": ["docker"],
       "matchUpdateTypes": ["digest"],
       "semanticCommitType": "chore",
-      "semanticCommitScope": "container",
-      "commitMessageExtra": "( {{currentDigestShort}} → {{newDigestShort}} )"
+      "semanticCommitScope": "container"
     },
     {
       "matchDatasources": ["helm"],
       "matchUpdateTypes": ["major"],
-      "commitMessagePrefix": "feat(helm)!: ",
-      "commitMessageExtra": " ( {{currentVersion}} → {{newVersion}} )"
+      "commitMessagePrefix": "feat(helm)!: "
     },
     {
       "matchDatasources": ["helm"],
       "matchUpdateTypes": ["minor"],
       "semanticCommitType": "feat",
-      "semanticCommitScope": "helm",
-      "commitMessageExtra": " ( {{currentVersion}} → {{newVersion}} )"
+      "semanticCommitScope": "helm"
     },
     {
       "matchDatasources": ["helm"],
@@ -162,25 +142,19 @@
     {
       "matchManagers": ["github-actions"],
       "matchUpdateTypes": ["major"],
-      "commitMessagePrefix": "feat(github-action)!: ",
-      "commitMessageTopic": "{{depName}}",
-      "commitMessageExtra": "( {{currentVersion}} → {{newVersion}} )"
+      "commitMessagePrefix": "feat(github-action)!: "
     },
     {
       "matchManagers": ["github-actions"],
       "matchUpdateTypes": ["minor"],
       "semanticCommitType": "feat",
-      "semanticCommitScope": "github-action",
-      "commitMessageTopic": "{{depName}}",
-      "commitMessageExtra": "( {{currentVersion}} → {{newVersion}} )"
+      "semanticCommitScope": "github-action"
     },
     {
       "matchManagers": ["github-actions"],
       "matchUpdateTypes": ["patch"],
       "semanticCommitType": "fix",
-      "semanticCommitScope": "github-action",
-      "commitMessageTopic": "{{depName}}",
-      "commitMessageExtra": "( {{currentVersion}} → {{newVersion}} )"
+      "semanticCommitScope": "github-action"
     },
     // labels
     {
@@ -194,10 +168,6 @@
     {
       "matchUpdateTypes": ["patch"],
       "labels": ["type/patch"]
-    },
-    {
-      "matchUpdateTypes": ["digest"],
-      "labels": ["type/digest"]
     },
     {
       "matchDatasources": ["docker"],
@@ -228,24 +198,6 @@
         "datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)( repository=(?<registryUrl>\\S+))?\\n.+: (&\\S+\\s)?(?<currentValue>\\S+)"
       ],
       "datasourceTemplate": "{{#if datasource}}{{{datasource}}}{{else}}github-releases{{/if}}"
-    },
-    {
-      "customType": "regex",
-      "fileMatch": ["\\.ya?ml$"],
-      "matchStrings": [
-        "#\\s+renovate:\\s+depName=\"(?<depName>.*)\"\\n\\s+gnetId:\\s+(?<packageName>.*?)\\n\\s+revision:\\s+(?<currentValue>.*)"
-      ],
-      "versioningTemplate": "regex:^(?<major>\\d+)$",
-      "datasourceTemplate": "custom.grafana-dashboards"
     }
-  ],
-  "customDatasources": {
-    "grafana-dashboards": {
-      "defaultRegistryUrlTemplate": "https://grafana.com/api/dashboards/{{packageName}}",
-      "format": "json",
-      "transformTemplates": [
-        "{\"releases\":[{\"version\": $string(revision)}]}"
-      ]
-    }
-  }
+  ]
 }
