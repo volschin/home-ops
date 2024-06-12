@@ -3,6 +3,7 @@ on:
   push:
     branches: [ main ]
     paths: ["kubernetes/**.yaml"]
+permissions: {}
 jobs:
   kubescape:
     runs-on: ubuntu-latest
