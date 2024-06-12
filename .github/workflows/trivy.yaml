@@ -1,5 +1,6 @@
 name: trivy
 on: [pull_request]
+permissions: {}
 jobs:
   trivy:
     name: runner / trivy
