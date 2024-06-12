@@ -16,7 +16,7 @@ jobs:
         fetch-depth: 0
         ref: ${{github.event.pull_request.head.ref}}
         repository: ${{github.event.pull_request.head.repo.full_name}}
-    - uses: reviewdog/action-setup@v1.3.0
+    - uses: reviewdog/action-setup@3f401fe1d58fe77e10d665ab713057375e39b887 # v1.3.0
     - run: reviewdog -version
     - name: Get changed files
       id: changed-files
