@@ -13,10 +13,10 @@ jobs:
 
     steps:
       - name: Clone repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4
 
       - name: Run trivy with reviewdog output on the PR
-        uses: reviewdog/action-trivy@v1.7.0
+        uses: reviewdog/action-trivy@a0e0a539ac2a5991f3a89d2f0e0f300643b47c2b # v1.7.0
         with:
           github_token: ${{ secrets.github_token }}
           trivy_command: config # Change trivy command
