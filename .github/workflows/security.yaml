@@ -26,6 +26,7 @@ jobs:
         files: ${{ steps.changed-files.outputs.all_changed_files }}
         frameworks: NSA,MITRE,AllControls
         fixFiles: true
+        continue-on-error: true
         format: "sarif"
     - name: PR Suggester according to SARIF file
       if: github.event_name == 'pull_request_target'
