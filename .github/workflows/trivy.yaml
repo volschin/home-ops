@@ -1,0 +1,24 @@
+name: trivy
+on: [pull_request]
+jobs:
+  trivy:
+    name: runner / trivy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone repo
+        uses: actions/checkout@v4
+
+      - name: Run trivy with reviewdog output on the PR
+        uses: reviewdog/action-trivy@v1.7.0
+        with:
+          github_token: ${{ secrets.github_token }}
+          trivy_command: config # Change trivy command
+          trivy_target: . # Change trivy target directory
+          working_directory: my_directory # Change working directory
+          level: info # Get more output from reviewdog
+          reporter: github-pr-review # Change reviewdog reporter
+          filter_mode: nofilter # Check all files, not just the diff
+          fail_on_error: false # Fail action if errors are found
+          flags: -tee # Add debug flag to reviewdog
+          trivy_flags: "" # Optional
