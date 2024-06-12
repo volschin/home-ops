@@ -1,7 +1,7 @@
 name: Suggest autofixes with Kubescape for PR by reviews
 on:
   pull_request_target:
-
+permissions: {}
 jobs:
   kubescape-fix-pr-reviews:
     runs-on: ubuntu-latest
