@@ -12,8 +12,8 @@ jobs:
       contents: read
       security-events: write
     steps:
-    - uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4
-    - uses: kubescape/github-action@main
+    - uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
+    - uses: kubescape/github-action@v3.0.5
       continue-on-error: true
       with:
         format: sarif
@@ -22,6 +22,6 @@ jobs:
         # Optional: Scan a specific path. Default will scan the whole repository
         files: "kubernetes/**.yaml"
     - name: Upload Kubescape scan results to Github Code Scanning
-      uses: github/codeql-action/upload-sarif@530d4feaa9c62aaab2d250371e2061eb7a172363 # v3
+      uses: github/codeql-action/upload-sarif@530d4feaa9c62aaab2d250371e2061eb7a172363 # v3.25.9
       with:
         sarif_file: results.sarif
