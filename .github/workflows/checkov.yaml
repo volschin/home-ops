@@ -10,7 +10,7 @@ on:
     branches: [ "main" ]
     paths: ["kubernetes/**"]
   workflow_dispatch:
-
+permissions: {}
 jobs:
   scan:
     permissions:
