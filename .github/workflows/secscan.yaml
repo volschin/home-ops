@@ -13,7 +13,7 @@ jobs:
       security-events: write
     steps:
     - uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
-    - uses: kubescape/github-action@v3.0.5
+    - uses: kubescape/github-action@c91feb3b8dd145ff8a094f91d6836bba4abc4293 # v3.0.5
       continue-on-error: true
       with:
         format: sarif
