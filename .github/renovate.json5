@@ -84,7 +84,8 @@
     },
     {
       "matchDatasources": ["docker"],
-      "commitMessageTopic": "image {{depName}}"
+      "commitMessageTopic": "image {{depName}}",
+      "commitMessageExtra": " ( {{currentVersion}} → {{newVersion}} )"
     },
     // commit messages
     {
