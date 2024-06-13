@@ -4,9 +4,11 @@
     "config:recommended",
     "helpers:pinGitHubActionDigests",
     "docker:enableMajor",
+    "replacements:k8s-registry-move",
     ":disableRateLimiting",
     ":dependencyDashboard",
     ":semanticCommits",
+    ":timezone(Europe/Berlin)",
     ":automergeBranch"
   ],
   "dependencyDashboard": true,
