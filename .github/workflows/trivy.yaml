@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - name: Clone repo
-        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
 
       - name: Run trivy with reviewdog output on the PR
         uses: reviewdog/action-trivy@a0e0a539ac2a5991f3a89d2f0e0f300643b47c2b # v1.7.0
