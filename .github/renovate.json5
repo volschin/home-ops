@@ -39,7 +39,7 @@
   },
   // commit message topics
   "commitMessageTopic": "{{depName}}",
-  "commitMessageExtra": "to {{newVersion}}",
+  "commitMessageExtra": " ( {{currentVersion}} → {{newVersion}} )",
   "commitMessageSuffix": "",
   // package rules
   "packageRules": [
@@ -110,7 +110,8 @@
       "matchDatasources": ["docker"],
       "matchUpdateTypes": ["digest"],
       "semanticCommitType": "chore",
-      "semanticCommitScope": "container"
+      "semanticCommitScope": "container",
+      "commitMessageExtra": "( {{currentDigestShort}} → {{newDigestShort}} )"
     },
     {
       "matchDatasources": ["helm"],
