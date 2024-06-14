@@ -10,3 +10,5 @@ spec:
   ref:
     tag: v2.3.0
     # digest: sha256:5870003e3c4fe4b946759f3fbf5a4a684b1bcc44ee8872f6764745cdde838e69
+  verify:
+    provider: cosign
