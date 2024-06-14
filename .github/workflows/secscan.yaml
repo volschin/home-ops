@@ -12,6 +12,10 @@ jobs:
       contents: read
       security-events: write
     steps:
+    - name: Harden Runner
+      uses: step-security/harden-runner@17d0e2bd7d51742c71671bd19fa12bdc9d40a3d6 # v2.8.1
+      with:
+        egress-policy: audit
     - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
     - uses: kubescape/github-action@c91feb3b8dd145ff8a094f91d6836bba4abc4293 # v3.0.5
       continue-on-error: true
