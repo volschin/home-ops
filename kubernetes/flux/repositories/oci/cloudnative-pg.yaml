@@ -9,3 +9,5 @@ spec:
   url: oci://ghcr.io/cloudnative-pg/charts/cloudnative-pg
   ref:
     semver: ">=0.21.0"
+  verify:
+    provider: cosign
