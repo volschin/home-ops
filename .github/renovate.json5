@@ -4,6 +4,7 @@
     "config:recommended",
     "helpers:pinGitHubActionDigests",
     "docker:enableMajor",
+    "docker:pinDigests",
     "replacements:k8s-registry-move",
     ":disableRateLimiting",
     ":dependencyDashboard",
