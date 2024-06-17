@@ -28,6 +28,10 @@ spec:
           memory: 105M
         limits:
           memory: 105M
+    image:
+      repository: us-docker.pkg.dev/fairwinds-ops/oss/goldilocks
+      tag: v4.11.1
+      pullPolicy: Always
     dashboard:
       replicaCount: 1
       ingress:
@@ -39,7 +43,7 @@ spec:
           gethomepage.dev/name: "Goldilocks"
           gethomepage.dev/group: "Observability"
           gethomepage.dev/icon: "https://raw.githubusercontent.com/FairwindsOps/goldilocks/master/pkg/dashboard/assets/images/favicon.ico"
-          gethomepage.dev/description: "A utility to help identify a starting point for resource requests and limits."
+          gethomepage.dev/description: "Kubernetes Resource Recommendations"
         hosts:
           - host: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"
             paths:
