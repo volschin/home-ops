@@ -4,6 +4,7 @@
     "config:recommended",
     "helpers:pinGitHubActionDigests",
     "docker:enableMajor",
+    "docker:pinDigests",
     "replacements:k8s-registry-move",
     ":disableRateLimiting",
     ":dependencyDashboard",
@@ -205,7 +206,10 @@
       "matchStrings": [
         // # renovate: datasource=helm depName=cilium repository=https://helm.cilium.io
         // version: 1.15.1
-        "datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)( repository=(?<registryUrl>\\S+))?\\n.+: (&\\S+\\s)?(?<currentValue>\\S+)"
+        "datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)( repository=(?<registryUrl>\\S+))?\\n.+: (&\\S+\\s)?(?<currentValue>\\S+)",
+        // # renovate: depName=rancher/system-upgrade-controller datasource=github-releases
+        // https://github.com/rancher/system-upgrade-controller/releases/download/v0.13.2/crd.yaml
+        "depName=(?<depName>\\S+) datasource=(?<datasource>\\S+)\\n.+/(?<currentValue>(v|\\d)[^/]+)"
       ],
       "datasourceTemplate": "{{#if datasource}}{{{datasource}}}{{else}}github-releases{{/if}}"
     }

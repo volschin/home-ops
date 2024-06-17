@@ -3,11 +3,13 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - ./actions-runner-controller.yaml
+  - ./backube.yaml
   - ./bjw-s.yaml
   - ./cilium.yaml
   - ./coredns.yaml
   - ./external-dns.yaml
   - ./external-secrets.yaml
+  - ./fairwinds.yaml
   - ./grafana.yaml
   - ./ingress-nginx.yaml
   - ./intel.yaml
@@ -16,6 +18,7 @@ resources:
   - ./metrics-server.yaml
   - ./node-feature-discovery.yaml
   - ./openebs.yaml
+  - ./piraeus.yaml
   - ./postfinance.yaml
   - ./prometheus-community.yaml
   # - ./rook-ceph.yaml

@@ -6,3 +6,7 @@ metadata:
   namespace: flux-system
 data:
   SETTING_EXAMPLE: Global settings for your cluster go in this file, this file is NOT encrypted
+  TIMEZONE: Europe/Berlin
+  TEMPLATES_DIR: /kubernetes/templates
+
+  NFS_SERVER_ADDR: 192.168.2.115
