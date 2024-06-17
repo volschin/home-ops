@@ -1,42 +1,46 @@
 ---
+# yaml-language-server: $schema=https://lds-schemas.pages.dev/kustomize.toolkit.fluxcd.io/kustomization_v1.json
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: &app external-secrets
+  name: &app longhorn
   namespace: flux-system
 spec:
-  targetNamespace: external-secrets
+  targetNamespace: storage
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
-  path: ./kubernetes/apps/external-secrets/external-secrets/app
+  # dependsOn:
+  #   - name: external-secrets-stores
+  path: ./kubernetes/apps/storage/longhorn/app
   prune: true
   sourceRef:
     kind: GitRepository
     name: home-kubernetes
-  wait: true
+  wait: false # no flux ks dependents
   interval: 30m
   retryInterval: 1m
   timeout: 5m
 ---
+# yaml-language-server: $schema=https://lds-schemas.pages.dev/kustomize.toolkit.fluxcd.io/kustomization_v1.json
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: &app external-secrets-stores
+  name: &app storageclass
   namespace: flux-system
 spec:
-  targetNamespace: external-secrets
+  targetNamespace: storage
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
   dependsOn:
-    - name: external-secrets
-  path: ./kubernetes/apps/external-secrets/external-secrets/stores/bitwarden-secrets
+    - name: longhorn
+  path: ./kubernetes/apps/storage/longhorn/storageclass
   prune: true
   sourceRef:
     kind: GitRepository
     name: home-kubernetes
-  wait: true
+  wait: false # no flux ks dependents
   interval: 30m
   retryInterval: 1m
   timeout: 5m

@@ -10,7 +10,8 @@
     ":dependencyDashboard",
     ":semanticCommits",
     ":timezone(Europe/Berlin)",
-    ":automergeBranch"
+    ":automergeBranch",
+    "github>onedr0p/home-ops//.github/renovate/grafanaDashboards.json5"
   ],
   "dependencyDashboard": true,
   "dependencyDashboardTitle": "Renovate Dashboard 🤖",
