@@ -8,7 +8,7 @@ spec:
   chart:
     spec:
       chart: cilium
-      version: 1.15.5
+      version: 1.15.6
       sourceRef:
         kind: HelmRepository
         name: cilium
@@ -53,6 +53,12 @@ spec:
         ingress:
           enabled: true
           className: internal
+          annotations:
+            gethomepage.dev/enabled: "true"
+            gethomepage.dev/description: Security Observability
+            gethomepage.dev/group: Monitoring
+            gethomepage.dev/icon: cilium.svg
+            gethomepage.dev/name: Hubble
           hosts: ["hubble.${SECRET_DOMAIN}"]
     operator:
       prometheus:

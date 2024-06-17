@@ -1,0 +1,31 @@
+name: Kubescape scanning for misconfigurations
+on:
+  push:
+    branches: [ main ]
+    paths: ["kubernetes/**.yaml"]
+permissions: {}
+jobs:
+  kubescape:
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+    steps:
+    - name: Harden Runner
+      uses: step-security/harden-runner@17d0e2bd7d51742c71671bd19fa12bdc9d40a3d6 # v2.8.1
+      with:
+        egress-policy: audit
+    - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+    - uses: kubescape/github-action@c91feb3b8dd145ff8a094f91d6836bba4abc4293 # v3.0.5
+      continue-on-error: true
+      with:
+        format: sarif
+        outputFile: results
+        frameworks: NSA,MITRE,AllControls
+        # Optional: Scan a specific path. Default will scan the whole repository
+        files: "kubernetes/**.yaml"
+    - name: Upload Kubescape scan results to Github Code Scanning
+      uses: github/codeql-action/upload-sarif@23acc5c183826b7a8a97bce3cecc52db901f8251 # v3.25.10
+      with:
+        sarif_file: results.sarif

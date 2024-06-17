@@ -9,3 +9,5 @@ spec:
   url: oci://ghcr.io/gimlet-io/capacitor-manifests
   ref:
     semver: ">=v0.4.0"
+  verify:
+    provider: cosign

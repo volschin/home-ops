@@ -5,6 +5,8 @@ resources:
   - ./namespace.yaml
   - ./prometheus-operator-crds/ks.yaml
   - ./victoria-metrics/ks.yaml
+  - ./kromgo/ks.yaml
+  - ./goldilocks/ks.yaml
   # Exporters
   - ./exporters
 

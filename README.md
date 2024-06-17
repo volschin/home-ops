@@ -1,8 +1,15 @@
-# ⛵ Cluster Template Test
+# ⛵ Home Lab
 
-Welcome to my opinionated and extensible template for deploying a single Kubernetes cluster. The goal of this project is to make it easier for people interested in using Kubernetes to deploy a cluster at home on bare-metal or VMs.
+<div align="center">
 
-At a high level this project makes use of [makejinja](https://github.com/mirkolenz/makejinja) to read in a [configuration file](./config.sample.yaml) which renders out templates that will allow you to install and manage your Kubernetes cluster with.
+[![Talos](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2Fvolschin%2Fhome-ops%2Fmain%2Fkubernetes%2Fbootstrap%2Ftalos%2Ftalconfig.yaml&query=%24.talosVersion&style=for-the-badge&logo=talos&logoColor=%23FF7300&color=grey&label=%20)](https://talos.dev)&nbsp;&nbsp;
+[![Kubernetes](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2Fvolschin%2Fhome-ops%2Fmain%2Fkubernetes%2Fbootstrap%2Ftalos%2Ftalconfig.yaml&query=%24.kubernetesVersion&style=for-the-badge&logo=kubernetes&label=%20&logoColor=white&color=%23326CE5)](https://kubernetes.io)&nbsp;&nbsp;
+[![Flux CD](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2Fvolschin%2Fhome-ops%2Fmain%2Fkubernetes%2Fflux%2Frepositories%2Foci%2Fflux-manifests.yaml&query=%24.spec.ref.tag&style=for-the-badge&logo=flux&label=%20&logoColor=%235468FF&color=black)](https://fluxcd.io)&nbsp;&nbsp;
+[![Cilium](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2Fvolschin%2Fhome-ops%2Fmain%2Fkubernetes%2Fapps%2Fkube-system%2Fcilium%2Fapp%2Fhelmrelease.yaml&query=%24.spec.chart.spec.version&style=for-the-badge&logo=cilium&label=%20&logoColor=black&color=%23F8C517)](https://cilium.io)
+
+</div>
+
+This repo contains the configuration and documentation for my home infrastructure. I try to adhere to GitOps principles and automate as much as possible.
 
 ## ✨ Features
 

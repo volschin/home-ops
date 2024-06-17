@@ -1,0 +1,40 @@
+name: Suggest autofixes with Kubescape for PR by reviews
+on:
+  pull_request_target:
+permissions: {}
+jobs:
+  kubescape-fix-pr-reviews:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      actions: read
+      contents: read
+      security-events: write
+    steps:
+    - name: Harden Runner
+      uses: step-security/harden-runner@17d0e2bd7d51742c71671bd19fa12bdc9d40a3d6 # v2.8.1
+      with:
+        egress-policy: audit
+    - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+      with:
+        fetch-depth: 0
+        ref: ${{github.event.pull_request.head.ref}}
+        repository: ${{github.event.pull_request.head.repo.full_name}}
+    - uses: reviewdog/action-setup@3f401fe1d58fe77e10d665ab713057375e39b887 # v1.3.0
+    - run: reviewdog -version
+    - name: Get changed files
+      id: changed-files
+      uses: tj-actions/changed-files@d6babd6899969df1a11d14c368283ea4436bca78 # v44
+    - uses: kubescape/github-action@c91feb3b8dd145ff8a094f91d6836bba4abc4293 # v3.0.5
+      with:
+        files: ${{ steps.changed-files.outputs.all_changed_files }}
+        frameworks: NSA,MITRE,AllControls
+        fixFiles: true
+        continue-on-error: true
+        format: "sarif"
+    - name: PR Suggester according to SARIF file
+      if: github.event_name == 'pull_request_target'
+      uses: HollowMan6/sarif4reviewdog@1dce5522fa5792a629d99ef000e474699a9a9b8e # v1.0.1
+      with:
+        file: 'results.sarif'
+        level: warning
