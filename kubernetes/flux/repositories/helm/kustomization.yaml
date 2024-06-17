@@ -8,12 +8,14 @@ resources:
   - ./cilium.yaml
   - ./coredns.yaml
   - ./external-dns.yaml
+  - ./external-secrets.yaml
   - ./fairwinds.yaml
   - ./grafana.yaml
   - ./ingress-nginx.yaml
   - ./intel.yaml
   - ./jetstack.yaml
   - ./k8s-gateway.yaml
+  - ./longhorn.yaml
   - ./metrics-server.yaml
   - ./node-feature-discovery.yaml
   - ./openebs.yaml
