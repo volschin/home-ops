@@ -7,7 +7,7 @@ metadata:
 spec:
   secretStoreRef:
     kind: ClusterSecretStore
-    name: bitwarden-secret-manager
+    name: bitwarden-secrets-manager
   target:
     name: "${APP}-volsync-secret"
     template:
