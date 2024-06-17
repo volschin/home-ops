@@ -37,6 +37,7 @@ spec:
               tag: 9.14.0@sha256:2b35c7a9ff367fcadb1de9d3289ded0bffa944bb009eea08b608eba739c7fabd
             env:
               TZ: ${TIMEZONE}
+              NETWORK_KEY: ${ZWAVE_NETWORK_KEY}
               PORT: &port 80
             probes:
               liveness: &probes
@@ -44,7 +45,7 @@ spec:
                 custom: true
                 spec:
                   httpGet:
-                    path: /health
+                    path: /health/zwave
                     port: *port
                   initialDelaySeconds: 0
                   periodSeconds: 10
@@ -68,6 +69,9 @@ spec:
         fsGroup: 568
         fsGroupChangePolicy: OnRootMismatch
         seccompProfile: { type: RuntimeDefault }
+     # TODO: devices:
+      # Z-Wave UZB-1 home-id e5e8f5b9
+     # - /dev/serial/by-id/usb-0658_0200-if00:/dev/ttyACM0
     service:
       app:
         controller: zwave
@@ -80,6 +84,12 @@ spec:
       app:
         annotations:
           external-dns.alpha.kubernetes.io/target: "internal.${SECRET_DOMAIN}"
+          gethomepage.dev/enabled: "true"
+          gethomepage.dev/group: Home Automation
+          gethomepage.dev/name: Z-Wave UI
+          gethomepage.dev/icon: zwavejs2mqtt.png
+          gethomepage.dev/description: Z-Wave Schloss
+          gethomepage.dev/weight: "2"
         className: internal
         hosts:
           - host: "{{ .Release.Name }}.${SECRET_DOMAIN}"
