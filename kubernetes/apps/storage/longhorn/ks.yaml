@@ -12,7 +12,7 @@ spec:
       app.kubernetes.io/name: *app
   # dependsOn:
   #   - name: external-secrets-stores
-  path: ./kubernetes/utility/apps/storage/longhorn/app
+  path: ./kubernetes/apps/storage/longhorn/app
   prune: true
   sourceRef:
     kind: GitRepository
@@ -35,7 +35,7 @@ spec:
       app.kubernetes.io/name: *app
   dependsOn:
     - name: longhorn
-  path: ./kubernetes/utility/apps/storage/longhorn/storageclass
+  path: ./kubernetes/apps/storage/longhorn/storageclass
   prune: true
   sourceRef:
     kind: GitRepository
