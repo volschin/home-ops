@@ -129,10 +129,10 @@ spec:
         extraArgs:
           external.url: https://vmalert.${SECRET_DOMAIN}
         notifiers:
-          - url: http://alertmanager.monitoring.svc.cluster.local:9093
+          - url: http://alertmanager.observability.svc.cluster.local:9093
       ingress:
         enabled: true
-        ingressClassName: internal-nginx
+        ingressClassName: internal
         hosts:
           - vmalert.${SECRET_DOMAIN}
 
@@ -164,7 +164,7 @@ spec:
           key: prometheus-additional.yaml
       ingress:
         enabled: true
-        ingressClassName: internal-nginx
+        ingressClassName: internal
         hosts:
           - vmagent.${SECRET_DOMAIN}
 
