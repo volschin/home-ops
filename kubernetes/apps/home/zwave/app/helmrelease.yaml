@@ -26,9 +26,6 @@ spec:
     - name: volsync
       namespace: storage
   values:
-    defaultPodOptions:
-      nodeSelector:
-        aeotec.feature.node.kubernetes.io/zwave: "true" # TODO: check this for uzb-1
     controllers:
       zwave:
         annotations:
@@ -65,6 +62,8 @@ spec:
               limits:
                 memory: 512Mi
     defaultPodOptions:
+      nodeSelector:
+        aeotec.feature.node.kubernetes.io/zwave: "true" # TODO: check this for uzb-1
       securityContext:
         runAsNonRoot: true
         runAsUser: 568
