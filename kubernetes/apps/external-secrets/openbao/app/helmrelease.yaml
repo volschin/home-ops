@@ -17,6 +17,10 @@ spec:
       interval: 5m
   values:
     server:
+      image:
+        registry: quay.io
+        repository: openbao/openbao
+        tag: 2.0.0-beta20240618
       dataStorage:
         enabled: true
         storageClass: "longhorn"
