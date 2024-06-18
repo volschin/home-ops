@@ -26,6 +26,9 @@ spec:
     - name: volsync
       namespace: storage
   values:
+    defaultPodOptions:
+      nodeSelector:
+        aeotec.feature.node.kubernetes.io/zwave: "true" # TODO: check this for uzb-1
     controllers:
       zwave:
         annotations:
@@ -69,9 +72,6 @@ spec:
         fsGroup: 568
         fsGroupChangePolicy: OnRootMismatch
         seccompProfile: { type: RuntimeDefault }
-     # TODO: devices:
-      # Z-Wave UZB-1 home-id e5e8f5b9
-     # - /dev/serial/by-id/usb-0658_0200-if00:/dev/ttyACM0
     service:
       app:
         controller: zwave
@@ -80,6 +80,16 @@ spec:
             port: *port
           websocket:
             port: 3000
+    serviceMonitor:
+      app:
+        serviceName: *app
+        enabled: true # requires https://github.com/kvaster/zwavejs-prom
+        endpoints:
+          - port: http
+            scheme: http
+            path: /metrics
+            interval: 1m
+            scrapeTimeout: 10s
     ingress:
       app:
         annotations:
@@ -103,5 +113,13 @@ spec:
         existingClaim: zwave
         globalMounts:
           - path: /usr/src/app/store
+      usb:
+        # Z-Wave UZB-1 home-id e5e8f5b9
+        # - /dev/serial/by-id/usb-0658_0200-if00:/dev/ttyACM0
+        type: hostPath
+        hostPath: /dev/serial/by-id/usb-0658_0200-if00
+        hostPathType: CharDevice
+        globalMounts:
+          - path: /dev/serial/by-id/usb-0658_0200-if00
       tmp:
         type: emptyDir
