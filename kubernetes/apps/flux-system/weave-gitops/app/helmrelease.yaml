@@ -31,9 +31,10 @@ spec:
       enabled: true
       className: internal
       annotations:
-        external-dns.alpha.kubernetes.io/target: internal-utility.${SECRET_DOMAIN}
+        external-dns.alpha.kubernetes.io/target: internal.${SECRET_DOMAIN}
       hosts:
-        - host: gitops-utility.${SECRET_DOMAIN}
+      #  - host: gitops.${SECRET_DOMAIN}
+        - host: prometheus.${SECRET_DOMAIN}
           paths:
             - path: /
               pathType: Prefix
@@ -44,5 +45,5 @@ spec:
     rbac:
       create: true
       impersonationResourceNames: ["admin"]
-    podAnnotations:
-      secret.reloader.stakater.com/reload: cluster-user-auth
+    #podAnnotations:
+    #  secret.reloader.stakater.com/reload: cluster-user-auth
