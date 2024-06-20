@@ -18,7 +18,7 @@
   "dependencyDashboardOSVVulnerabilitySummary": "all",
   "suppressNotifications": ["prEditedNotification", "prIgnoreNotification"],
   "rebaseWhen": "conflicted",
-  "schedule": ["every weekday"],
+  "schedule": ["after 8am every weekday", "before 7pm every weekday"],
   "ignorePaths": ["**/*.sops.*"],
   "flux": {
     "fileMatch": ["(^|/)kubernetes/.+\\.ya?ml(?:\\.j2)?$"]
