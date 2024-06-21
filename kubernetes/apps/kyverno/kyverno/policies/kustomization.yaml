@@ -8,16 +8,20 @@ resources:
   - remove-cpu-limit.yaml
   # - snapshot-cronjob-controller.yaml
   # - sync-postgres-secrets.yaml
-  - restrict-deprecated-registry.yaml
+  - add-external-secret-prefix.yaml
   - annotate-base-images.yaml
   - block-large-images.yaml
+  - block-stale-images.yaml
   # - check-deprecated-apis.yaml
+  - cleanup-empty-replicasets.yaml
   - deny-ingress-implentationspecific.yaml
+  - disallow-empty-ingress-host.yaml
   - disallow-localhost-services.yaml
   # - ingress-prom-probes.yaml
   - inject-timezone.yaml
   - require-unique-external-dns.yaml
   - require-probes.yaml
+  - restrict-deprecated-registry.yaml
   - restrict-ingress-defaultbackend.yaml
   - restrict-node-port.yaml
   - verify-flux-images.yaml
