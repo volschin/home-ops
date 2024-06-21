@@ -8,7 +8,7 @@ resources:
   - remove-cpu-limit.yaml
   # - snapshot-cronjob-controller.yaml
   # - sync-postgres-secrets.yaml
-  - add-external-secret-prefix.yaml
+  # - add-external-secret-prefix.yaml
   - annotate-base-images.yaml
   - block-large-images.yaml
   - block-stale-images.yaml
