@@ -21,4 +21,3 @@ resources:
   - restrict-ingress-defaultbackend.yaml
   - restrict-node-port.yaml
   - verify-flux-images.yaml
-  - 
