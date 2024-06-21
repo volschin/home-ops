@@ -53,7 +53,7 @@
       "matchManagers": ["github-actions"],
       "automerge": true,
       "automergeType": "branch",
-      "automergeSchedule": [ "before 7am on Monday" ]
+      "automergeSchedule": [ "before 7am on Monday" ],
       "ignoreTests": true,
       "matchUpdateTypes": ["minor", "patch"]
     },
