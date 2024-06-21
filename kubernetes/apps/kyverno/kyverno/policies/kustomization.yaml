@@ -11,7 +11,7 @@ resources:
   - restrict-deprecated-registry.yaml
   - annotate-base-images.yaml
   - block-large-images.yaml
-  - check-deprecated-apis.yaml
+  # - check-deprecated-apis.yaml
   - deny-ingress-implentationspecific.yaml
   - disallow-localhost-services.yaml
   - ingress-prom-probes.yaml
