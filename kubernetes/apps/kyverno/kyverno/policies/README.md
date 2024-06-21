@@ -1,1 +1,1 @@
-# some notes
+# Notes about Policies
