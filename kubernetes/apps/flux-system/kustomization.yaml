@@ -7,3 +7,5 @@ resources:
   - ./capacitor/ks.yaml
   - ./notifications/ks.yaml
   - ./weave-gitops/ks.yaml
+  - ./podmonitor.yaml
+  - ./prometheusrule.yaml
