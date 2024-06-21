@@ -13,7 +13,7 @@ resources:
   - block-large-images.yaml
   - block-stale-images.yaml
   # - check-deprecated-apis.yaml
-  - cleanup-empty-replicasets.yaml
+  # - cleanup-empty-replicasets.yaml
   - deny-ingress-implentationspecific.yaml
   - disallow-empty-ingress-host.yaml
   - disallow-localhost-services.yaml
