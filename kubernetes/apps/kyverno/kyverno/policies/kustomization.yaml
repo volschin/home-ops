@@ -8,4 +8,16 @@ resources:
   - remove-cpu-limit.yaml
   # - snapshot-cronjob-controller.yaml
   # - sync-postgres-secrets.yaml
-  # - sync-zalando-postgres-secrets.yaml
+  - restrict-deprecated-registry.yaml
+  - annotate-base-images.yaml
+  - block-large-images.yaml
+  - check-deprecated-apis.yaml
+  - deny-ingress-implentationspecific.yaml
+  - disallow-localhost-services.yaml
+  - ingress-prom-probes.yaml
+  - inject-timezone.yaml
+  - require-unique-external-dns.yaml
+  - require-probes.yaml
+  - restrict-ingress-defaultbackend.yaml
+  - restrict-node-port.yaml
+  - verify-flux-images.yaml
