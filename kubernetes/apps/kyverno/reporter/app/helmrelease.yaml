@@ -44,7 +44,7 @@ spec:
           gethomepage.dev/icon: kyverno.svg
           gethomepage.dev/name: Kyverno Policy Reporter
         hosts:
-          - host: "{{ .Release.Name }}.${SECRET_DOMAIN}"
+          - host: "policy-reporter-ui.${SECRET_DOMAIN}"
             paths:
               - path: /
                 pathType: Prefix
