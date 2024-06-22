@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - ./namespace.yaml
   - ./kyverno/ks.yaml
+  - ./reporter/ks.yaml
