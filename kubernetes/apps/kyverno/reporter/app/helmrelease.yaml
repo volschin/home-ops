@@ -1,0 +1,61 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: policy-reporter
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: policy-reporter
+      version: 2.24.0
+      sourceRef:
+        kind: HelmRepository
+        name: kyverno-reporter
+        namespace: flux-system
+      interval: 15m
+
+  driftDetection:
+    mode: enabled
+  maxHistory: 3
+  install:
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
+
+  values:
+    api:
+      enabled: true
+    ui:
+      enabled: true
+      plugins:
+        kyverno: true
+      ingress:
+        enabled: true
+        className: internal
+        annotations:
+          
+        hosts:
+          - host: "policy-reporter-ui.${SECURE_DOMAIN}"
+            paths:
+              - path: /
+                pathType: Prefix
+
+    kyvernoPlugin:
+      enabled: true
+
+    global:
+      plugins:
+        kyverno: true
+
+    ingress:
+      enabled: false
+      className: internal
+      hosts:
+        - host: "policy-reporter.${SECURE_DOMAIN}"
+          paths:
+            - path: /
+              pathType: Prefix
