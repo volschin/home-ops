@@ -37,12 +37,20 @@ spec:
         enabled: true
         className: internal
         annotations:
-          
+          external-dns.alpha.kubernetes.io/target: policy-reporter-ui.${SECRET_DOMAIN}
+          gethomepage.dev/enabled: "true"
+          gethomepage.dev/description: Policy Reporting
+          gethomepage.dev/group: Security
+          gethomepage.dev/icon: kyverno.svg
+          gethomepage.dev/name: Kyverno Policy Reporter
         hosts:
-          - host: "policy-reporter-ui.${SECURE_DOMAIN}"
+          - host: "{{ .Release.Name }}.${SECRET_DOMAIN}"
             paths:
               - path: /
                 pathType: Prefix
+           #     service:
+           #       identifier: app
+           #       port: http
 
     kyvernoPlugin:
       enabled: true
@@ -55,7 +63,7 @@ spec:
       enabled: false
       className: internal
       hosts:
-        - host: "policy-reporter.${SECURE_DOMAIN}"
+        - host: "policy-reporter.${SECRET_DOMAIN}"
           paths:
             - path: /
               pathType: Prefix
