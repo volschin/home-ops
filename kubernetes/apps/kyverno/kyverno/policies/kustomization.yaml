@@ -2,8 +2,9 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
+  - baseline-latest.yaml
   # - apply-ingress-auth-annotations.yaml
-  # - apply-ingress-external-dns-annotations.yaml
+  - apply-ingress-external-dns-annotations.yaml
   # - apply-ingress-whitelist-annotations.yaml
   - remove-cpu-limit.yaml
   # - snapshot-cronjob-controller.yaml
@@ -25,5 +26,6 @@ resources:
   - restrict-ingress-defaultbackend.yaml
   - restrict-node-port.yaml
   - verify-flux-images.yaml
+  - add-ndots.yaml
   - add-ttl-jobs.yaml
   - prevent-naked-pods.yaml
