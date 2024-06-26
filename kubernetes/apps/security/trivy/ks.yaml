@@ -5,7 +5,7 @@ metadata:
   name: &app trivy-operator
   namespace: flux-system
 spec:
-  targetNamespace: kube-system
+  targetNamespace: security
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
