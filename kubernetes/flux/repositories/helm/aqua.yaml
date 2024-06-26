@@ -7,4 +7,4 @@ metadata:
 spec:
   type: oci
   interval: 1h
-  url: ghcr.io/aquasecurity/helm-charts
+  url: oci://ghcr.io/aquasecurity/helm-charts
