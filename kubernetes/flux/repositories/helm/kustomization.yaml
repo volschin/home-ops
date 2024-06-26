@@ -15,6 +15,7 @@ resources:
   - ./intel.yaml
   - ./jetstack.yaml
   - ./k8s-gateway.yaml
+  - ./kubernetes-dashboard.yaml
   - ./kyverno.yaml
   - ./kyverno-reporter.yaml
   - ./longhorn.yaml
