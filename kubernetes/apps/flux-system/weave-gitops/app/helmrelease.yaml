@@ -17,6 +17,10 @@ spec:
   install:
     remediation:
       retries: 3
+  image:
+  repository: ghcr.io/volschin/wego-app
+  pullPolicy: IfNotPresent
+  tag: "v0.39.0-rc.5"
   upgrade:
     cleanupOnFail: true
     remediation:
@@ -49,6 +53,11 @@ spec:
       className: internal
       annotations:
         external-dns.alpha.kubernetes.io/target: internal.${SECRET_DOMAIN}
+        gethomepage.dev/enabled: "true"
+        gethomepage.dev/group: Infrastructure
+        gethomepage.dev/name: Weave-gitops
+        gethomepage.dev/icon: https://raw.githubusercontent.com/joryirving/home-ops/main/docs/src/assets/icons/weave.png
+        gethomepage.dev/description: Flux Dashboard
       hosts:
       #  - host: gitops.${SECRET_DOMAIN}
         - host: prometheus.${SECRET_DOMAIN}
