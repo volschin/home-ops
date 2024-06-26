@@ -17,16 +17,16 @@ spec:
   install:
     remediation:
       retries: 3
-  image:
-    repository: ghcr.io/volschin/wego-app
-    pullPolicy: IfNotPresent
-    tag: "v0.39.0-rc.5"
   upgrade:
     cleanupOnFail: true
     remediation:
       strategy: rollback
       retries: 3
   values:
+    image:
+      repository: ghcr.io/volschin/wego-app
+      pullPolicy: IfNotPresent
+      tag: "v0.39.0-rc.5"
     resources:
       requests:
         cpu: 100m
