@@ -26,7 +26,7 @@ spec:
     image:
       #repository: ghcr.io/volschin/wego-app
       repository: ghcr.io/weaveworks/wego-app
-      pullPolicy: IfNotPresent
+      pullPolicy: always
       tag: "v0.38.0"
     resources:
       requests:
