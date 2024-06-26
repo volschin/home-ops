@@ -18,9 +18,9 @@ spec:
     remediation:
       retries: 3
   image:
-  repository: ghcr.io/volschin/wego-app
-  pullPolicy: IfNotPresent
-  tag: "v0.39.0-rc.5"
+    repository: ghcr.io/volschin/wego-app
+    pullPolicy: IfNotPresent
+    tag: "v0.39.0-rc.5"
   upgrade:
     cleanupOnFail: true
     remediation:
