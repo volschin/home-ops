@@ -12,6 +12,7 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: victoria-metrics
+        namespace: flux-system
   values:
     fullnameOverride: victoria-metrics
 
