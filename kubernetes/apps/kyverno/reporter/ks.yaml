@@ -1,0 +1,18 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: kyverno-reporter
+  namespace: flux-system
+spec:
+  interval: 10m
+  retryInterval: 5m
+  prune: true
+
+  dependsOn:
+    - name: kyverno
+
+  path: ./kubernetes/apps/kyverno/reporter/app
+  sourceRef:
+    kind: GitRepository
+    name: home-kubernetes

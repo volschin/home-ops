@@ -1,0 +1,31 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - baseline-latest.yaml
+  # - apply-ingress-auth-annotations.yaml
+  # - apply-ingress-external-dns-annotations.yaml
+  # - apply-ingress-whitelist-annotations.yaml
+  - remove-cpu-limit.yaml
+  # - snapshot-cronjob-controller.yaml
+  # - sync-postgres-secrets.yaml
+  # - add-external-secret-prefix.yaml
+  - annotate-base-images.yaml
+  - block-large-images.yaml
+  - block-stale-images.yaml
+  # - check-deprecated-apis.yaml
+  # - cleanup-empty-replicasets.yaml
+  - deny-ingress-implentationspecific.yaml
+  - disallow-empty-ingress-host.yaml
+  - disallow-localhost-services.yaml
+  # - ingress-prom-probes.yaml
+  - inject-timezone.yaml
+  - require-unique-external-dns.yaml
+  - require-probes.yaml
+  - restrict-deprecated-registry.yaml
+  - restrict-ingress-defaultbackend.yaml
+  - restrict-node-port.yaml
+  - verify-flux-images.yaml
+  - add-ndots.yaml
+  - add-ttl-jobs.yaml
+  - prevent-naked-pods.yaml

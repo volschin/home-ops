@@ -1,0 +1,25 @@
+---
+apiVersion: notification.toolkit.fluxcd.io/v1beta3
+kind: Provider
+metadata:
+  name: github-dispatch
+  namespace: flux-system
+spec:
+  type: githubdispatch
+  address: https://github.com/volschin/home-ops
+  secretRef:
+    name: github-token
+
+# https://fluxcd.io/flux/components/notification/providers/#github-dispatch
+---
+apiVersion: notification.toolkit.fluxcd.io/v1beta3
+kind: Alert
+metadata:
+  name: github-dispatch
+spec:
+  providerRef:
+    name: github-dispatch
+  eventSeverity: info
+  eventSources:
+    - kind: Kustomization
+      name: "*"

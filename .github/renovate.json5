@@ -4,7 +4,7 @@
     "config:recommended",
     "helpers:pinGitHubActionDigests",
     "docker:enableMajor",
-    "docker:pinDigests",
+    // "docker:pinDigests",
     "replacements:k8s-registry-move",
     ":disableRateLimiting",
     ":dependencyDashboard",
@@ -18,7 +18,7 @@
   "dependencyDashboardOSVVulnerabilitySummary": "all",
   "suppressNotifications": ["prEditedNotification", "prIgnoreNotification"],
   "rebaseWhen": "conflicted",
-  "schedule": ["every weekday"],
+  "schedule": ["after 8am every weekday", "before 7pm every weekday"],
   "ignorePaths": ["**/*.sops.*"],
   "flux": {
     "fileMatch": ["(^|/)kubernetes/.+\\.ya?ml(?:\\.j2)?$"]
@@ -53,6 +53,7 @@
       "matchManagers": ["github-actions"],
       "automerge": true,
       "automergeType": "branch",
+      "automergeSchedule": [ "before 7am on Monday" ],
       "ignoreTests": true,
       "matchUpdateTypes": ["minor", "patch"]
     },
