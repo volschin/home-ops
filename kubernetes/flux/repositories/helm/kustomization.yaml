@@ -16,6 +16,7 @@ resources:
   - ./intel.yaml
   - ./jetstack.yaml
   - ./k8s-gateway.yaml
+  - ./kepler.yaml
   - ./kyverno.yaml
   - ./kyverno-reporter.yaml
   - ./longhorn.yaml
