@@ -22,6 +22,11 @@ spec:
     remediation:
       strategy: rollback
       retries: 3
+  dependsOn:
+    - name: external-secrets-stores
+      namespace: external-secrets
+    - name: radarr
+    - name: sonarr
   values:
     controllers:
       recyclarr:
