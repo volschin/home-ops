@@ -22,9 +22,9 @@ spec:
     remediation:
       strategy: rollback
       retries: 3
-  dependsOn:
-    - name: external-secrets-store
-      namespace: external-secrets
+#  dependsOn:
+#    - name: external-secrets-stores
+#      namespace: external-secrets
   values:
     controllers:
       authelia:
