@@ -1,28 +1,19 @@
+---
+###############################################################
+#                         Users Database                      #
+###############################################################
+
+# This file can be used if you do not have an LDAP set up.
+
+# List of users
 users:
-  john:
+  authelia:
     disabled: false
-    displayname: 'John Doe'
-    password: '$argon2id$v=19$m=65536,t=3,p=2$BpLnfgDsc2WD8F2q$o/vzA4myCqZZ36bUGsDY//8mKUYNZZaR0t4MFFSs+iM'
-    email: 'john.doe@authelia.com'
+    displayname: "Authelia User"
+    # Password is authelia
+    password: "$6$rounds=50000$BpLnfgDsc2WD8F2q$Zis.ixdg9s/UOJYrs56b5QEZFiZECu0qZVNsIYxBaNJ7ucIL.nlxVCT5tqh8KHG8X4tlwCFm5r6NTOZZ5qRFN/"  # yamllint disable-line rule:line-length
+    email: authelia@authelia.com
     groups:
-      - 'admins'
-      - 'dev'
-  harry:
-    disabled: false
-    displayname: 'Harry Potter'
-    password: '$argon2id$v=19$m=65536,t=3,p=2$BpLnfgDsc2WD8F2q$o/vzA4myCqZZ36bUGsDY//8mKUYNZZaR0t4MFFSs+iM'
-    email: 'harry.potter@authelia.com'
-    groups: []
-  bob:
-    disabled: false
-    displayname: 'Bob Dylan'
-    password: '$argon2id$v=19$m=65536,t=3,p=2$BpLnfgDsc2WD8F2q$o/vzA4myCqZZ36bUGsDY//8mKUYNZZaR0t4MFFSs+iM'
-    email: 'bob.dylan@authelia.com'
-    groups:
-      - 'dev'
-  james:
-    disabled: false
-    displayname: 'James Dean'
-    password: '$argon2id$v=19$m=65536,t=3,p=2$BpLnfgDsc2WD8F2q$o/vzA4myCqZZ36bUGsDY//8mKUYNZZaR0t4MFFSs+iM'
-    email: 'james.dean@authelia.com'
-    groups: []
+      - admins
+      - dev
+...
