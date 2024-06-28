@@ -130,6 +130,6 @@ spec:
         type: configMap
         name: authelia-configmap
         globalMounts:
-          - path: /resources/configuration.yaml
+          - path: /config/configuration.yaml
             subPath: configuration.yaml
             readOnly: true
