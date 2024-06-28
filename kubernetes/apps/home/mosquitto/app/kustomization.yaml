@@ -8,6 +8,7 @@ resources:
  # - ../../../../templates/volsync
 configMapGenerator:
   - name: mosquitto-configmap
+    namespace: home
     files:
       - config/mosquitto.conf
 generatorOptions:
