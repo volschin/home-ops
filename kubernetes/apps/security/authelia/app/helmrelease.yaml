@@ -32,14 +32,6 @@ spec:
         strategy: RollingUpdate
         annotations:
           reloader.stakater.com/auto: "true"
-        initContainers:
-          init-db:
-            image:
-              repository: ghcr.io/onedr0p/postgres-init
-              tag: 16
-            envFrom: &envFrom
-              - secretRef:
-                  name: authelia-secret
         containers:
           app:
             image:
@@ -51,9 +43,11 @@ spec:
               AUTHELIA_TELEMETRY_METRICS_ADDRESS: tcp://0.0.0.0:8080
               AUTHELIA_TELEMETRY_METRICS_ENABLED: "true"
               AUTHELIA_THEME: dark
-              X_AUTHELIA_CONFIG: /config/configuration.yaml
+              X_AUTHELIA_CONFIG: /config/configuration.yml
               X_AUTHELIA_CONFIG_FILTERS: expand-env
-            envFrom: *envFrom
+            envFrom:
+              - secretRef:
+                  name: authelia-secret
             probes:
               liveness: &probes
                 enabled: true
@@ -130,6 +124,9 @@ spec:
         type: configMap
         name: authelia-configmap
         globalMounts:
-          - path: /config/configuration.yaml
-            subPath: configuration.yaml
+          - path: /config/configuration.yml
+            subPath: configuration.yml
+            readOnly: true
+          - path: /config/users_database.yml
+            subPath: users_database.yml
             readOnly: true

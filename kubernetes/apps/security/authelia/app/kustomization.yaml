@@ -6,12 +6,13 @@ namespace: security
 resources:
   - ./externalsecret.yaml
   - ./helmrelease.yaml
-  - ../../../../templates/gatus/external
+#  - ../../../../templates/gatus/external
 configMapGenerator:
   - name: authelia-configmap
     namespace: security
     files:
-      - ./config/configuration.yaml
+      - ./config/configuration.yml
+      - ./config/users_database.yml
 generatorOptions:
   disableNameSuffixHash: true
   # annotations:
