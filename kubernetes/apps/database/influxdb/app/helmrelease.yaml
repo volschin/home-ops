@@ -14,7 +14,7 @@ spec:
         kind: HelmRepository
         name: influxdata
         namespace: flux-system
-
+  # Values link: https://github.com/influxdata/helm-charts/blob/master/charts/influxdb2/values.yaml
   values:
     image:
       repository: influxdb
