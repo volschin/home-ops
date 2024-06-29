@@ -17,7 +17,7 @@ spec:
   # Values link: https://github.com/influxdata/helm-charts/blob/master/charts/influxdb2/values.yaml
   values:
     image:
-      repository: influxdb
+      repository: docker.io/library/influxdb
       tag: 2.7.6-alpine
 
     securityContext:
