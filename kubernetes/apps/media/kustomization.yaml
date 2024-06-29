@@ -7,7 +7,7 @@ resources:
   - ./jellyfin/ks.yaml
   - ./threadfin/ks.yaml
   #- ./epg/ks.yaml
-  - ./flaresolverr/ks.yaml
+  #- ./flaresolverr/ks.yaml
   - ./calibre-web/ks.yaml
   - ./prowlarr/ks.yaml
   - ./qbittorrent/ks.yaml
