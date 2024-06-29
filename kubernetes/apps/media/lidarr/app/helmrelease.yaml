@@ -27,7 +27,7 @@ spec:
       namespace: database
   values:
     controllers:
-      radarr:
+      lidarr:
         annotations:
           reloader.stakater.com/auto: "true"
         initContainers:
