@@ -17,4 +17,4 @@ resources:
   - ./recyclarr/ks.yaml
   - ./sonarr/ks.yaml
   - ./whisparr/ks.yaml
-  - ./tubearchivist/ks.yaml
+  #- ./tubearchivist/ks.yaml
