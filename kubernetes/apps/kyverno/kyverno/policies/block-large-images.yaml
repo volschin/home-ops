@@ -30,12 +30,12 @@ spec:
         operator: NotEquals
         value: DELETE
     validate:
-      message: "images with size greater than 2Gi not allowed"  
+      message: "images with size greater than 2Gi not allowed"
       foreach:
       - list: "request.object.spec.containers"
-        context: 
+        context:
         - name: imageSize
-          imageRegistry: 
+          imageRegistry:
             reference: "{{ element.image }}"
             # Note that we need to use `to_string` here to allow kyverno to treat it like a resource quantity of type memory
             # the total size of an image as calculated by docker is the total sum of its layer sizes
