@@ -118,4 +118,4 @@ spec:
         {{ request.object.apiVersion }}/{{ request.object.kind }} is deprecated and will be removed in v1.29.
         See: https://kubernetes.io/docs/reference/using-api/deprecation-guide/
       deny: {}
-  
+

@@ -36,7 +36,7 @@ spec:
       - list: "request.object.spec.containers"
         context:
         - name: imageData
-          imageRegistry: 
+          imageRegistry:
             reference: "{{ element.image }}"
         - name: basename
           variable:

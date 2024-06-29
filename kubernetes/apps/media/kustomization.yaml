@@ -4,3 +4,17 @@ kind: Kustomization
 resources:
   - ./namespace.yaml
   - ./arr/ks.yaml
+  - ./jellyfin/ks.yaml
+  - ./threadfin/ks.yaml
+  #- ./epg/ks.yaml
+  #- ./flaresolverr/ks.yaml
+  #- ./calibre-web/ks.yaml
+  - ./prowlarr/ks.yaml
+  - ./qbittorrent/ks.yaml
+  - ./radarr/ks.yaml
+  - ./readarr/ks.yaml
+  - ./lidarr/ks.yaml
+  - ./recyclarr/ks.yaml
+  - ./sonarr/ks.yaml
+  - ./whisparr/ks.yaml
+  #- ./tubearchivist/ks.yaml
