@@ -4,10 +4,11 @@ kind: Kustomization
 resources:
   - ./namespace.yaml
   - ./alertmanager/ks.yaml
-  - ./prometheus-operator-crds/ks.yaml
-  - ./victoria-metrics/ks.yaml
+  - ./goldilocks/ks.yaml
   - ./kepler/ks.yaml
   - ./kromgo/ks.yaml
-  - ./goldilocks/ks.yaml
+  - ./powertune/ks.yaml
+  - ./prometheus-operator-crds/ks.yaml
+  - ./victoria-metrics/ks.yaml
   # Exporters
   - ./exporters
