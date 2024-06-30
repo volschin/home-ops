@@ -68,9 +68,6 @@ spec:
           gethomepage.dev/name: Prowlarr
           gethomepage.dev/icon: prowlarr.png
           gethomepage.dev/description: Torrent/NZB Indexer Management
-          gethomepage.dev/widget.type: {{ .Release.Name }}
-          gethomepage.dev/widget.url: http://{{ .Release.Name }}.media
-          gethomepage.dev/widget.key: "{{ `{{HOMEPAGE_VAR_PROWLARR_TOKEN}}` }}"
           external-dns.alpha.kubernetes.io/target: internal.${SECRET_DOMAIN}
           nginx.ingress.kubernetes.io/configuration-snippet: |
             proxy_set_header Accept-Encoding "";
