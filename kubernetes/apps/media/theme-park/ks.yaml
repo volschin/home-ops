@@ -10,7 +10,7 @@ spec:
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
-  path: ./kubernetes/apps/default/theme-park/app
+  path: ./kubernetes/apps/media/theme-park/app
   prune: true
   sourceRef:
     kind: GitRepository
