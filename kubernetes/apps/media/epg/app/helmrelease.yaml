@@ -98,4 +98,3 @@ spec:
         existingClaim: config-easyepg
       tmp:
         type: emptyDir
-      
