@@ -1,4 +1,4 @@
-# ⛵ Home Lab
+# ⛵ HomeLab Monorepo
 
 <div align="center">
 
