@@ -1,0 +1,21 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: enforce-ciliumnetworkpolicy-annotations
+spec:
+  validationFailureAction: Enforce
+  background: false
+  rules:
+  - name: check-annotations
+    match:
+      any:
+      - resources:
+          kinds:
+          - CiliumNetworkPolicy
+    validate:
+      message: "Missing required annotation"
+      pattern:
+        metadata:
+          annotations:
+            purpose: "?*"
+            owner: "?*"

@@ -3,6 +3,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - ./actions-runner-controller.yaml
+  - ./aqua.yaml
   - ./backube.yaml
   - ./bjw-s.yaml
   - ./cilium.yaml
@@ -11,10 +12,14 @@ resources:
   - ./external-secrets.yaml
   - ./fairwinds.yaml
   - ./grafana.yaml
+  - ./influxdata.yaml
   - ./ingress-nginx.yaml
   - ./intel.yaml
   - ./jetstack.yaml
   - ./k8s-gateway.yaml
+  - ./kepler.yaml
+  - ./kyverno.yaml
+  - ./kyverno-reporter.yaml
   - ./longhorn.yaml
   - ./metrics-server.yaml
   - ./node-feature-discovery.yaml
@@ -25,3 +30,5 @@ resources:
   # - ./rook-ceph.yaml
   - ./spegel.yaml
   - ./stakater.yaml
+  - ./victoria-metrics.yaml
+  - ./weave-gitops.yaml

@@ -3,7 +3,6 @@ apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: &app goldilocks
-  namespace: observability
 spec:
   interval: 15m
   chart:
@@ -36,16 +35,16 @@ spec:
       replicaCount: 1
       ingress:
         enabled: true
-        ingressClassName: "internal"
+        className: internal
         annotations:
-          cert-manager.io/cluster-issuer: "letsencrypt-production"
+          external-dns.alpha.kubernetes.io/target: internal.${SECRET_DOMAIN}
           gethomepage.dev/enabled: "true"
           gethomepage.dev/name: "Goldilocks"
           gethomepage.dev/group: "Observability"
           gethomepage.dev/icon: "https://raw.githubusercontent.com/FairwindsOps/goldilocks/master/pkg/dashboard/assets/images/favicon.ico"
           gethomepage.dev/description: "Kubernetes Resource Recommendations"
         hosts:
-          - host: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"
+          - host: &host "goldilocks.${SECRET_DOMAIN}"
             paths:
               - path: /
                 type: Prefix
