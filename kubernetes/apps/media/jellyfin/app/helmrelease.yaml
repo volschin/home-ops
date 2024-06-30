@@ -24,7 +24,7 @@ spec:
       retries: 3
   dependsOn:
     - name: intel-device-plugin-gpu
-      namespace: gpu-system
+      namespace: kube-system
     #- name: volsync
     #  namespace: volsync-system
   values:
