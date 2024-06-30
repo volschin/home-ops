@@ -9,7 +9,7 @@
 <br/>
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/volschin/home-ops?style=for-the-badge&logo=github)](https://github.com/volschin/home-ops/commits/main/)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white&style=for-the-badge)](https://github.com/pre-commit/pre-commit)
-[![Renovate](https://img.shields.io/github/actions/workflow/status/onedr0p/home-ops/renovate.yaml?branch=main&label=Renovate&logo=renovatebot&style=for-the-badge&color=blue)](https://github.com/volschin/home-ops/actions/workflows/renovate.yaml)
+[![Renovate](https://img.shields.io/github/actions/workflow/status/volschin/home-ops/checkov.yaml?branch=main&label=Renovate&logo=renovatebot&style=for-the-badge&color=blue)](https://github.com/volschin/home-ops/actions/workflows/checkov.yaml)
 
 </div>
 
