@@ -7,3 +7,4 @@ resources:
   - ./intel-gpu-device.yaml
   - ./zigbee-device.yaml
   - ./zwave-device.yaml
+  - ./aeotec-zwave-device.yaml
