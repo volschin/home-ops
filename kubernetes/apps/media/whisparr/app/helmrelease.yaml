@@ -94,7 +94,19 @@ spec:
     ingress:
       app:
         annotations:
+          gethomepage.dev/enabled: "true"
+          gethomepage.dev/group: Media
+          gethomepage.dev/name: Whisparr
+          gethomepage.dev/icon: whisparr.svg
+          gethomepage.dev/description: Adult Management
+          gethomepage.dev/widget.type: whisparr
+          gethomepage.dev/widget.url: http://whisparr.media
+          gethomepage.dev/widget.key: "{{ `{{HOMEPAGE_VAR_WHISPARR_TOKEN}}` }}"
           external-dns.alpha.kubernetes.io/target: internal.${SECRET_DOMAIN}
+          nginx.ingress.kubernetes.io/configuration-snippet: |
+            proxy_set_header Accept-Encoding "";
+            sub_filter '</body>' '<link rel="stylesheet" type="text/css" href="https://theme-park.${SECRET_DOMAIN}/css/base/whisparr/nord.css"></body>;
+            sub_filter_once on;
         className: internal
         hosts:
           - host: "{{ .Release.Name }}.${SECRET_DOMAIN}"

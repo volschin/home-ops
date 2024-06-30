@@ -94,7 +94,19 @@ spec:
     ingress:
       app:
         annotations:
+          gethomepage.dev/enabled: "true"
+          gethomepage.dev/group: Media
+          gethomepage.dev/name: Radarr
+          gethomepage.dev/icon: radarr.svg
+          gethomepage.dev/description: Movies management
+          gethomepage.dev/widget.type: radarr
+          gethomepage.dev/widget.url: http://radarr.media
+          gethomepage.dev/widget.key: "{{ `{{HOMEPAGE_VAR_RADARR_TOKEN}}` }}"
           external-dns.alpha.kubernetes.io/target: internal.${SECRET_DOMAIN}
+          nginx.ingress.kubernetes.io/configuration-snippet: |
+            proxy_set_header Accept-Encoding "";
+            sub_filter '</body>' '<link rel="stylesheet" type="text/css" href="https://theme-park.${SECRET_DOMAIN}/css/base/radarr/nord.css"></body>;
+            sub_filter_once on;
         className: internal
         hosts:
           - host: "{{ .Release.Name }}.${SECRET_DOMAIN}"
