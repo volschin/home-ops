@@ -32,8 +32,9 @@ spec:
               repository: ghcr.io/volschin/tubearchivist-metrics
               tag: v0.1.0@sha256:2416e96563210e66467c35ea4f0aa4c314b58fffe343c570a643376820a2620e
             env:
-              PORT: &port 9934
-              URL: http://archivist-es.media.svc.cluster.local:9200
+              POLL_INTERVAL: 60
+              LISTEN_PORT: &port 9934
+              ES_URL: http://archivist-es.media.svc.cluster.local:9200
             envFrom:
               - secretRef:
                   name: archivist-metrics-secret
