@@ -30,8 +30,8 @@ spec:
         containers:
           app:
             image:
-              repository: ghcr.io/joryirving/theme-park
-              tag: 1.17.0@sha256:80b9c816ec3dd0dc0a5592aeba8f2ccf86009d1ba5785f35666c6339ee2900ca
+              repository: ghcr.io/onedr0p/theme-park
+              tag: 1.17.0@sha256:48dbee4cc052d57f76d7ec9c59a072733a4f46157cdf0a18c73ea2163065fc7a
             resources:
               requests:
                 cpu: 15m
