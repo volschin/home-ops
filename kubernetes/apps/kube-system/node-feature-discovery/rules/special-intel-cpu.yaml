@@ -1,4 +1,12 @@
 # https://kubernetes-sigs.github.io/node-feature-discovery/master/usage/customization-guide.html#custom-feature-source
+---
+# yaml-language-server: $schema=https://kubernetes-schemas.pages.dev/nfd.k8s-sigs.io/nodefeaturerule_v1alpha1.json
+apiVersion: nfd.k8s-sigs.io/v1alpha1
+kind: NodeFeatureRule
+metadata:
+  name: google-coral-device
+spec:
+  rules:
             - name: "cpu-6700t"
               labels:
                 "cpu-6700t": "true"
