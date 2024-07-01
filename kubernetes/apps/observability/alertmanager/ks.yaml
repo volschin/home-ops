@@ -11,7 +11,7 @@ spec:
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
-  interval: 10m
+  interval: 360m
   path: "./kubernetes/apps/observability/alertmanager/app"
   prune: true
   sourceRef:
@@ -20,3 +20,4 @@ spec:
   wait: true
   dependsOn:
     - name: external-secrets-stores
+      namespace: external-secrets
