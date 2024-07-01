@@ -9,7 +9,7 @@ spec:
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
-  interval: 30m
+  interval: 360m
   retryInterval: 1m
   timeout: 5m
   path: ./kubernetes/apps/observability/victoria-metrics/app
