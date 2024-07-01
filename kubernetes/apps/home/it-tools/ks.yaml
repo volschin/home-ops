@@ -15,7 +15,7 @@ spec:
     kind: GitRepository
     name: home-kubernetes
   wait: false # no flux ks dependents
-  interval: 30m
+  interval: 360m
   retryInterval: 1m
   timeout: 5m
   postBuild:
