@@ -5,7 +5,7 @@ kind: HelmRelease
 metadata:
   name: external-secrets
 spec:
-  interval: 30m
+  interval: 1h
   chart:
     spec:
       chart: external-secrets
@@ -28,8 +28,8 @@ spec:
       repository: ghcr.io/external-secrets/external-secrets
       tag: main
       pullPolicy: IfNotPresent
-    bitwarden-sdk-server:
-      enabled: true
+#    bitwarden-sdk-server:
+#      enabled: true
     grafana:
       enabled: true
     serviceMonitor:
