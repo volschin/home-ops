@@ -31,7 +31,7 @@ spec:
           app:
             image:
               repository: docker.io/takealug/new-easyepg
-              tag: latest@sha256:304dcf9b9eb73c3329b6b789eb8587a75dab9412481fbdc66702e65253dc77de
+              tag: latest@sha256:b5b74127bb4a4cd0a5516484e6c6283b0d4c6a457ff078e8e51788e8040138a3
             env:
               UPDATE: no
               REPO: script.service.easyepg-lite
