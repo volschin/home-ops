@@ -26,9 +26,10 @@ spec:
     installCRDs: true
     image:
       repository: ghcr.io/external-secrets/external-secrets
-    #  tag: v0.9.19
       tag: main
       pullPolicy: IfNotPresent
+    grafana:
+      enabled: true
     serviceMonitor:
       enabled: true
       interval: 1m
@@ -37,6 +38,10 @@ spec:
         enabled: true
         interval: 1m
     certController:
+      serviceMonitor:
+        enabled: true
+        interval: 1m
+    reportsController:
       serviceMonitor:
         enabled: true
         interval: 1m
