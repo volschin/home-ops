@@ -143,9 +143,9 @@ You have two different options for setting up your local workstation.
 ### 🔧 Stage 3: Bootstrap configuration
 
 > [!NOTE]
-> The [config.sample.yaml](./config.sample.yaml) file contains config that is **vital** to the bootstrap process.
+> The [config.sample.yaml](/onedr0p/cluster-template/blob/main/config.sample.yaml) file contains config that is **vital** to the bootstrap process.
 
-1. Generate the `config.yaml` from the [config.sample.yaml](./config.sample.yaml) configuration file.
+1. Generate the `config.yaml` from the [config.sample.yaml](/onedr0p/cluster-template/blob/main/config.sample.yaml) configuration file.
 
     ```sh
     task init
