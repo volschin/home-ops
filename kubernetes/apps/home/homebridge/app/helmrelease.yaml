@@ -1,0 +1,111 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: homebridge
+  namespace: home
+spec:
+  interval: 30m
+  chart:
+    spec:
+      chart: app-template
+      version: 2.4.0
+      sourceRef:
+        kind: HelmRepository
+        name: bjw-s
+        namespace: flux-system
+  maxHistory: 3
+  install:
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
+  uninstall:
+    keepHistory: false
+  values:
+    defaultPodOptions:
+      hostNetwork: true
+      dnsPolicy: ClusterFirstWithHostNet
+    controllers:
+      main:
+        strategy: Recreate
+        annotations:
+          reloader.stakater.com/auto: "true"
+        containers:
+          main:
+            image:
+              repository: homebridge/homebridge
+              tag: "2023-11-28"
+            env:
+              TZ: "${TZ}"
+              ENABLE_AVAHI: "1"
+            probes:
+              liveness: &probes
+                enabled: true
+                custom: true
+                spec:
+                  httpGet:
+                    path: /
+                    port: &port 8581
+                  initialDelaySeconds: 30
+                  periodSeconds: 10
+                  timeoutSeconds: 2
+                  failureThreshold: 3
+              readiness: *probes
+              startup:
+                enabled: false
+            resources:
+              requests:
+                cpu: 10m
+                memory: 100Mi
+              limits:
+                memory: 750Mi
+    service:
+      main:
+        ports:
+          http:
+            port: *port
+    ingress:
+      main:
+        enabled: true
+        ingressClassName: nginx
+        annotations:
+          cert-manager.io/cluster-issuer: letsencrypt-production
+          nginx.ingress.kubernetes.io/whitelist-source-range: 10.0.0.0/8,172.16.0.0/12,192.168.0.0/16
+        hosts:
+          - host: &host "homebridge.${SECRET_DOMAIN}"
+            paths:
+              - path: /
+                service:
+                  name: main
+                  port: http
+        tls:
+          - secretName: homebridge-tls
+            hosts:
+              - *host
+    configMaps:
+      config:
+        enabled: true
+        nameOverride: startup-sh
+        data:
+          startup.sh: |-
+            #!/bin/sh
+            npm install --save homebridge-dummy@latest
+            npm install --save homebridge-myq@latest
+            npm install --save homebridge-nest@latest
+            npm install --save homebridge-orbit-irrigation@latest
+            npm install --save homebridge-tplink-smarthome@latest
+            npm install --save -g homebridge-camera-ui@latest
+    persistence:
+      homebridge:
+        enabled: true
+        existingClaim: homebridge-config
+      startup-sh:
+        enabled: true
+        type: configMap
+        name: homebridge-startup-sh
+        globalMounts:
+          - path: /homebridge/startup.sh
+            subPath: startup.sh
+            defaultMode: 493
