@@ -22,5 +22,5 @@ spec:
   postBuild:
     substitute:
       APP: *app
-      GATUS_SUBDOMAIN: qb
+      GATUS_SUBDOMAIN: qbt
       VOLSYNC_CAPACITY: 2Gi
