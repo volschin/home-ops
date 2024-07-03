@@ -23,10 +23,18 @@ spec:
     excludeNamespaces: "{{ .Release.Namespace }}"
     operator:
       scanJobsConcurrentLimit: 3
+      builtInTrivyServer: true
       vulnerabilityScannerScanOnlyCurrentRevisions: true
       configAuditScannerScanOnlyCurrentRevisions: true
     serviceMonitor:
       enabled: true
     trivy:
       ignoreUnfixed: true
-  interval: 10m0s
+      resources:
+        requests:
+          cpu: 100m
+          memory: 100M
+        limits:
+          cpu: 500m
+          memory: 500M
+  interval: 15m
