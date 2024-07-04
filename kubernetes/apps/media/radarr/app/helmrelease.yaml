@@ -41,7 +41,7 @@ spec:
         containers:
           app:
             image:
-              repository: ghcr.io/onedr0p/radarr-develop
+              repository: ghcr.io/volschin/radarr-develop
               tag: 5.8.0.8897@sha256:2c9c733b4c89280cfcc25ba727b08bac7fee272917dfa28de675d4e0c3309684
             env:
               RADARR__APP__INSTANCENAME: Radarr
