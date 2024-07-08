@@ -6,5 +6,5 @@ metadata:
   name: kepler
   namespace: flux-system
 spec:
-  interval: 5m
+  interval: 1h
   url: https://sustainable-computing-io.github.io/kepler-helm-chart
