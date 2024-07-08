@@ -6,5 +6,5 @@ metadata:
   namespace: flux-system
 spec:
   type: oci
-  interval: 50m
+  interval: 30m
   url: oci://ghcr.io/stakater/charts
