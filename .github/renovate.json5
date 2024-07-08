@@ -1,25 +1,11 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended",
-    "helpers:pinGitHubActionDigests",
-    "docker:enableMajor",
+    "local>volschin/renovate-config"
     // "docker:pinDigests",
     "replacements:k8s-registry-move",
-    ":disableRateLimiting",
-    ":dependencyDashboard",
-    ":semanticCommits",
-    ":timezone(Europe/Berlin)",
-    ":automergeBranch",
     "github>onedr0p/home-ops//.github/renovate/grafanaDashboards.json5"
   ],
-  "dependencyDashboard": true,
-  "dependencyDashboardTitle": "Renovate Dashboard 🤖",
-  "dependencyDashboardOSVVulnerabilitySummary": "all",
-  "suppressNotifications": ["prEditedNotification", "prIgnoreNotification"],
-  "rebaseWhen": "conflicted",
-  "schedule": ["after 8am every weekday", "before 7pm every weekday"],
-  "ignorePaths": ["**/*.sops.*"],
   "flux": {
     "fileMatch": ["(^|/)kubernetes/.+\\.ya?ml(?:\\.j2)?$"]
   },
@@ -38,25 +24,9 @@
   "pip_requirements": {
     "fileMatch": ["(^|/)[\\w-]*requirements(-\\w+)?\\.(txt|pip)(?:\\.j2)?$"]
   },
-  "pre-commit": {
-    "enabled": true
-  },
-  // commit message topics
-  "commitMessageTopic": "{{depName}}",
-  "commitMessageExtra": " ( {{currentVersion}} → {{newVersion}} )",
-  "commitMessageSuffix": "",
   // package rules
   "packageRules": [
     // automerge
-    {
-      "description": ["Auto merge Github Actions"],
-      "matchManagers": ["github-actions"],
-      "automerge": true,
-      "automergeType": "branch",
-      "automergeSchedule": [ "before 7am on Monday" ],
-      "ignoreTests": true,
-      "matchUpdateTypes": ["minor", "patch", "digest"]
-    },
     {
       "description": "Auto-merge container digests and patch updates for trusted containers",
       "matchDatasources": ["docker"],
