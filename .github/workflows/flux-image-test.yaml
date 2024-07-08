@@ -12,37 +12,6 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  changed-clusters:
-    name: Changed Clusters
-    runs-on: ubuntu-latest
-    outputs:
-      matrix: ${{ steps.changed-clusters.outputs.all_changed_and_modified_files }}
-    steps:
-      - name: Generate Token
-        uses: actions/create-github-app-token@31c86eb3b33c9b601a1f60f98dcbfd1d70f379b4 # v1
-        id: app-token
-        with:
-          app-id: "${{ secrets.BOT_APP_ID }}"
-          private-key: "${{ secrets.BOT_APP_PRIVATE_KEY }}"
-
-      - name: Checkout
-        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
-        with:
-          token: "${{ steps.app-token.outputs.token }}"
-          fetch-depth: 0
-
-      - name: Get Changed Clusters
-        id: changed-clusters
-        uses: tj-actions/changed-files@cc733854b1f224978ef800d29e4709d5ee2883e4 # v44
-        with:
-          files: kubernetes/**
-          dir_names: true
-          dir_names_max_depth: 2
-          matrix: true
-
-      - name: List All Changed Clusters
-        run: echo "${{ steps.changed-clusters.outputs.all_changed_and_modified_files }}"
-
   extract-images:
     name: Extract Images
     runs-on: ubuntu-latest
