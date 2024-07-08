@@ -28,6 +28,15 @@
   "packageRules": [
     // automerge
     {
+      "description": "Auto merge Github Actions",
+      "matchManagers": ["github-actions"],
+      "automerge": true,
+      "automergeType": "branch",
+      "automergeSchedule": [ "before 7am on Monday" ],
+      "ignoreTests": true,
+      "matchUpdateTypes": ["minor", "patch", "digest"]
+    },
+    {
       "description": "Auto-merge container digests and patch updates for trusted containers",
       "matchDatasources": ["docker"],
       "automerge": true,
