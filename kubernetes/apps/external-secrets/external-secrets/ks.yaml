@@ -15,7 +15,9 @@ spec:
     kind: GitRepository
     name: home-kubernetes
   wait: true
-  interval: 360m
+  dependsOn:
+    - name: home-ca-issuer
+  interval: 120m
   retryInterval: 1m
   timeout: 5m
 ---
@@ -37,6 +39,6 @@ spec:
     kind: GitRepository
     name: home-kubernetes
   wait: true
-  interval: 360m
+  interval: 120m
   retryInterval: 1m
   timeout: 5m
