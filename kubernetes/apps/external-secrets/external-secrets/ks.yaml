@@ -17,6 +17,7 @@ spec:
   wait: true
   dependsOn:
     - name: home-ca-issuer
+      namespace: cert-manager
   interval: 120m
   retryInterval: 1m
   timeout: 5m
