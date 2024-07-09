@@ -14,10 +14,13 @@ metadata:
 spec:
   isCA: true
   commonName: home-selfsigned-ca
+  subject:
+    organizations:
+      - ${SECRET_DOMAIN}
   secretName: root-secret
   privateKey:
     algorithm: ECDSA
-    size: 256
+    size: 384
   issuerRef:
     name: selfsigned-issuer
     kind: ClusterIssuer
