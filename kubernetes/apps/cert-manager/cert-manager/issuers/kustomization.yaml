@@ -4,4 +4,4 @@ kind: Kustomization
 resources:
   - ./secret.sops.yaml
   - ./issuers.yaml
-  - ./self-signed.yaml
+  #- ./self-signed.yaml
