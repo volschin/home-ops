@@ -2,6 +2,7 @@
 
 ### Manual
 - https://github.com/external-secrets/external-secrets/blob/main/docs/provider/bitwarden-secrets-manager.md
+- https://cert-manager.io/docs/configuration/selfsigned/#bootstrapping-ca-issuers
 
 ### Code
 - https://github.com/external-secrets/bitwarden-sdk-server
