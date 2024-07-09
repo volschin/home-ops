@@ -20,7 +20,7 @@ spec:
   secretName: root-secret
   privateKey:
     algorithm: ECDSA
-    size: 384
+    size: 256
   issuerRef:
     name: selfsigned-issuer
     kind: ClusterIssuer
