@@ -41,7 +41,7 @@
       "matchDatasources": ["docker"],
       "automerge": true,
       "automergeType": "branch",
-      "matchUpdateTypes": ["digest"],
+      "matchUpdateTypes": ["patch", "digest"],
       "matchPackagePatterns": ["ghcr.io/bjw-s", "ghcr.io/onedr0p", "ghcr.io/volschin"]
     },
     // groups
