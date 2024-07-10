@@ -51,6 +51,7 @@
       "matchPackagePatterns": ["fluxcd"],
       "matchDatasources": ["docker", "github-tags"],
       "versioning": "semver",
+      "minimumReleaseAge": "3 days",
       "group": {
         "commitMessageTopic": "{{{groupName}}} group"
       }
@@ -63,6 +64,7 @@
         "siderolabs/installer"
       ],
       "matchDatasources": ["docker"],
+      "minimumReleaseAge": "3 days",
       "group": {
         "commitMessageTopic": "{{{groupName}}} group"
       }
@@ -122,6 +124,7 @@
     {
       "matchDatasources": ["docker"],
       "matchUpdateTypes": ["major"],
+      "minimumReleaseAge": "3 days",
       "commitMessagePrefix": "feat(container)!: "
     },
     {
