@@ -67,4 +67,4 @@ spec:
   postBuild:
     substituteFrom:
       - kind: Secret
-        name: bws-secrets
+        name: bws-secret
