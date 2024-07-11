@@ -28,3 +28,4 @@
 - { name: "prio: medium",            color: "ffec19" }
 # Uncategorized
 - { name: "hold/upstream",           color: "ee0701" }
+- { name: "broken-links",            color: "ee0701" }
