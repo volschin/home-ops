@@ -5,7 +5,7 @@ metadata:
   name: home-kubernetes
   namespace: flux-system
 spec:
-  interval: 60m
+  interval: 360m
   url: "ssh://git@github.com/volschin/home-ops.git"
   secretRef:
     name: github-deploy-key
