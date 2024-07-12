@@ -20,4 +20,3 @@ spec:
   wait: true
   dependsOn:
     - name: external-secrets-stores
-      namespace: external-secrets

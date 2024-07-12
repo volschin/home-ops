@@ -29,11 +29,19 @@ spec:
       prowlarr:
         annotations:
           reloader.stakater.com/auto: "true"
+        initContainers:
+          init-db:
+            image:
+              repository: ghcr.io/volschin/postgres-init
+              tag: 16
+            envFrom: &envFrom
+              - secretRef:
+                  name: prowlarr-secret
         containers:
           app:
             image:
-              repository: ghcr.io/onedr0p/prowlarr-develop
-              tag: 1.20.0.4590@sha256:ff536a040340ad7382f31bcb1a1a91ced08da25d4138db63dd4b77cc3748ce92
+              repository: ghcr.io/volschin/prowlarr-develop
+              tag: 1.20.1.4603@sha256:c32da729be1c8dea8c4692ba8d79aa3d779afec3ce49b61fa93ae2cecb5713ca
             env:
               TZ: ${TIMEZONE}
               PROWLARR__APP__INSTANCENAME: Prowlarr
@@ -44,9 +52,7 @@ spec:
               PROWLARR__LOG__LEVEL: info
               PROWLARR__SERVER__PORT: &port 80
               PROWLARR__UPDATE__BRANCH: develop
-            envFrom:
-            - secretRef:
-                name: prowlarr-secret
+            envFrom: *envFrom
             resources:
               requests:
                 cpu: 10m

@@ -8,7 +8,7 @@ spec:
   chart:
     spec:
       chart: trivy-operator
-      version: '0.23.3'
+      version: '0.24.1'
       reconcileStrategy: ChartVersion
       sourceRef:
         kind: HelmRepository
@@ -16,14 +16,14 @@ spec:
         namespace: flux-system
   install:
     createNamespace: true
-    crds: Skip
+    crds: CreateReplace
   upgrade:
-    crds: Skip
+    crds: CreateReplace
   values:
     excludeNamespaces: "{{ .Release.Namespace }}"
     operator:
-      scanJobsConcurrentLimit: 3
-      builtInTrivyServer: true
+      scanJobsConcurrentLimit: 2
+#      builtInTrivyServer: true
       vulnerabilityScannerScanOnlyCurrentRevisions: true
       configAuditScannerScanOnlyCurrentRevisions: true
     serviceMonitor:

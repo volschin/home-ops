@@ -33,7 +33,7 @@ spec:
         initContainers:
           init-db:
             image:
-              repository: ghcr.io/onedr0p/postgres-init
+              repository: ghcr.io/volschin/postgres-init
               tag: 16
             envFrom: &envFrom
               - secretRef:
@@ -41,8 +41,8 @@ spec:
         containers:
           app:
             image:
-              repository: ghcr.io/onedr0p/radarr-develop
-              tag: 5.8.0.8897@sha256:2c9c733b4c89280cfcc25ba727b08bac7fee272917dfa28de675d4e0c3309684
+              repository: ghcr.io/volschin/radarr-develop
+              tag: 5.8.1.8906@sha256:59045632e4befbfa5d381b9ae7e5b5bc5e89afac4def4e20f239dd668be9eb27
             env:
               RADARR__APP__INSTANCENAME: Radarr
               RADARR__APP__THEME: dark

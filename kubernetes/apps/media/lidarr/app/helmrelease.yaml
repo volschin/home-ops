@@ -33,7 +33,7 @@ spec:
         initContainers:
           init-db:
             image:
-              repository: ghcr.io/onedr0p/postgres-init
+              repository: ghcr.io/volschin/postgres-init
               tag: 16
             envFrom: &envFrom
               - secretRef:
@@ -41,8 +41,8 @@ spec:
         containers:
           app:
             image:
-              repository: ghcr.io/onedr0p/lidarr-develop
-              tag: 2.4.1.4234@sha256:78ee9b58cb41ce6674dcd1e181cab857419a5cc24423cf772f9bd80fe469f517
+              repository: ghcr.io/volschin/lidarr-develop
+              tag: 2.4.2.4238@sha256:361d7ebda5672df61faf92cfcc0b8f2d388ab102b1a3e6f4886b91a3ff0478c5
             env:
               RADARR__APP__INSTANCENAME: Lidarr
               RADARR__APP__THEME: dark

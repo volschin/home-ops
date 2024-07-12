@@ -10,7 +10,7 @@ spec:
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
-  interval: 360m
+  interval: 120m
   path: "./kubernetes/apps/home/mosquitto/app"
   prune: true
   sourceRef:
@@ -20,7 +20,6 @@ spec:
   dependsOn:
     #- name: volsync
     - name: external-secrets-stores
-      namespace: external-secrets
   postBuild:
     substitute:
       APP: *app

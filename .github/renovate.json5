@@ -1,25 +1,11 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended",
-    "helpers:pinGitHubActionDigests",
-    "docker:enableMajor",
+    "local>volschin/renovate-config",
     // "docker:pinDigests",
     "replacements:k8s-registry-move",
-    ":disableRateLimiting",
-    ":dependencyDashboard",
-    ":semanticCommits",
-    ":timezone(Europe/Berlin)",
-    ":automergeBranch",
     "github>onedr0p/home-ops//.github/renovate/grafanaDashboards.json5"
   ],
-  "dependencyDashboard": true,
-  "dependencyDashboardTitle": "Renovate Dashboard 🤖",
-  "dependencyDashboardOSVVulnerabilitySummary": "all",
-  "suppressNotifications": ["prEditedNotification", "prIgnoreNotification"],
-  "rebaseWhen": "conflicted",
-  "schedule": ["after 8am every weekday", "before 7pm every weekday"],
-  "ignorePaths": ["**/*.sops.*"],
   "flux": {
     "fileMatch": ["(^|/)kubernetes/.+\\.ya?ml(?:\\.j2)?$"]
   },
@@ -38,24 +24,25 @@
   "pip_requirements": {
     "fileMatch": ["(^|/)[\\w-]*requirements(-\\w+)?\\.(txt|pip)(?:\\.j2)?$"]
   },
-  "pre-commit": {
-    "enabled": true
-  },
-  // commit message topics
-  "commitMessageTopic": "{{depName}}",
-  "commitMessageExtra": " ( {{currentVersion}} → {{newVersion}} )",
-  "commitMessageSuffix": "",
   // package rules
   "packageRules": [
     // automerge
     {
-      "description": ["Auto merge Github Actions"],
+      "description": "Auto merge Github Actions",
       "matchManagers": ["github-actions"],
       "automerge": true,
       "automergeType": "branch",
       "automergeSchedule": [ "before 7am on Monday" ],
       "ignoreTests": true,
-      "matchUpdateTypes": ["minor", "patch"]
+      "matchUpdateTypes": ["minor", "patch", "digest"]
+    },
+    {
+      "description": "Auto-merge container digests and patch updates for trusted containers",
+      "matchDatasources": ["docker"],
+      "automerge": true,
+      "automergeType": "branch",
+      "matchUpdateTypes": ["patch", "digest"],
+      "matchPackagePatterns": ["ghcr.io/bjw-s", "ghcr.io/onedr0p", "ghcr.io/volschin"]
     },
     // groups
     {
@@ -64,10 +51,10 @@
       "matchPackagePatterns": ["fluxcd"],
       "matchDatasources": ["docker", "github-tags"],
       "versioning": "semver",
+      "minimumReleaseAge": "3 days",
       "group": {
         "commitMessageTopic": "{{{groupName}}} group"
-      },
-      "separateMinorPatch": true
+      }
     },
     {
       "description": ["Talos Group"],
@@ -77,10 +64,50 @@
         "siderolabs/installer"
       ],
       "matchDatasources": ["docker"],
+      "minimumReleaseAge": "3 days",
       "group": {
         "commitMessageTopic": "{{{groupName}}} group"
-      },
-      "separateMinorPatch": true
+      }
+    },
+    {
+      "description": ["Actions Runner Controller Group"],
+      "groupName": "Actions Runner Controller",
+      "matchPackagePatterns": [
+        "gha-runner-scale-set-controller",
+        "gha-runner-scale-set"
+      ],
+      "matchDatasources": ["docker", "helm"],
+      "group": {
+        "commitMessageTopic": "{{{groupName}}} group"
+      }
+    },
+    {
+      "description": ["Dragonfly Operator Group"],
+      "groupName": "Dragonfly Operator",
+      "matchPackagePatterns": ["dragonfly(?:db)?.operator"],
+      "matchDatasources": ["docker", "github-releases"],
+      "group": {
+        "commitMessageTopic": "{{{groupName}}} group"
+      }
+    },
+    {
+      "description": ["Intel Device Plugins Group"],
+      "groupName": "Intel-Device-Plugins",
+      "matchPackagePatterns": ["intel-device-plugins"],
+      "matchDatasources": ["helm"],
+      "group": {
+        "commitMessageTopic": "{{{groupName}}} group"
+      }
+    },
+    {
+      "description": ["Volsync Group"],
+      "groupName": "Volsync",
+      "matchPackagePatterns": ["volsync"],
+      "matchDatasources": ["docker", "helm"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "group": {
+        "commitMessageTopic": "{{{groupName}}} group"
+      }
     },
     // commit message topics
     {
@@ -97,6 +124,7 @@
     {
       "matchDatasources": ["docker"],
       "matchUpdateTypes": ["major"],
+      "minimumReleaseAge": "3 days",
       "commitMessagePrefix": "feat(container)!: "
     },
     {
@@ -197,6 +225,10 @@
     {
       "matchManagers": ["github-actions"],
       "addLabels": ["renovate/github-action"]
+    },
+    {
+      "matchManagers": ["pre-commit"],
+      "addLabels": ["renovate/pre-commit"]
     }
   ],
   // custom managers

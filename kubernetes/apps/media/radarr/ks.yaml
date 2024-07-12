@@ -12,14 +12,13 @@ spec:
       app.kubernetes.io/name: *app
   dependsOn:
     - name: external-secrets-stores
-      namespace: external-secrets
   path: ./kubernetes/apps/media/radarr/app
   prune: true
   sourceRef:
     kind: GitRepository
     name: home-kubernetes
   wait: false
-  interval: 360m
+  interval: 120m
   retryInterval: 1m
   timeout: 5m
   postBuild:

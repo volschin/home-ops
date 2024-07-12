@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: external-secrets
-      version: 0.9.19
+      version: 0.9.20
       sourceRef:
         kind: HelmRepository
         name: external-secrets
@@ -24,12 +24,8 @@ spec:
       retries: 3
   values:
     installCRDs: true
-#    image:
-#      repository: ghcr.io/external-secrets/external-secrets
-#      tag: main
-#      pullPolicy: IfNotPresent
-#    bitwarden-sdk-server:
-#      enabled: true
+    bitwarden-sdk-server:
+      enabled: true
     grafana:
       enabled: true
     serviceMonitor:

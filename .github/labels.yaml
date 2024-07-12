@@ -12,6 +12,7 @@
 # Renovate
 - { name: "renovate/container",      color: "027fa0" }
 - { name: "renovate/github-action",  color: "027fa0" }
+- { name: "renovate/pre-commit",     color: "027fa0" }
 - { name: "renovate/github-release", color: "027fa0" }
 - { name: "renovate/helm",           color: "027fa0" }
 - { name: "renovate/grafana-dashboard", color: "027fa0" }
@@ -27,3 +28,4 @@
 - { name: "prio: medium",            color: "ffec19" }
 # Uncategorized
 - { name: "hold/upstream",           color: "ee0701" }
+- { name: "broken-links",            color: "ee0701" }

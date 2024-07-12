@@ -33,7 +33,7 @@ spec:
         initContainers:
           init-db:
             image:
-              repository: ghcr.io/onedr0p/postgres-init
+              repository: ghcr.io/volschin/postgres-init
               tag: 16
             envFrom: &envFrom
               - secretRef:
@@ -41,8 +41,8 @@ spec:
         containers:
           app:
             image:
-              repository: ghcr.io/onedr0p/readarr-develop
-              tag: 0.3.29.2565@sha256:94b8dcd6ab934926c20797d5525cfe01fa91b07380329b995c597d4b6310050c
+              repository: ghcr.io/volschin/readarr-develop
+              tag: 0.3.30.2576@sha256:81802b74b01f1ec1ea6102b82088dcba03c0c976e61f68381d592f3046ec9b1b
             env:
               READARR__APP__INSTANCENAME: Readarr
               READARR__APP__THEME: dark
