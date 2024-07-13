@@ -28,7 +28,7 @@ resources:
   - ./portainer.yaml
   - ./postfinance.yaml
   - ./prometheus-community.yaml
-  # - ./rook-ceph.yaml
+  - ./smallstep.yaml
   - ./spegel.yaml
   - ./stakater.yaml
   - ./victoria-metrics.yaml
