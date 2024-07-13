@@ -16,6 +16,7 @@ spec:
     algorithm: RSA
     encoding: PKCS8
     size: 2048
+    rotationPolicy: Always
   issuerRef:
     name: home-ca-issuer
     kind: ClusterIssuer
