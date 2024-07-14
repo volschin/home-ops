@@ -10,6 +10,5 @@ resources:
   - ./intel-gpu-device.yaml
   - ./network-speed.yaml
   - ./phoscon-conbee.yaml
-  - ./zigbee-device.yaml
   - ./zwave-device.yaml
   - ./aeotec-zwave-device.yaml
