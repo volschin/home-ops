@@ -1,0 +1,54 @@
+apiVersion: nfd.k8s-sigs.io/v1alpha1
+kind: NodeFeatureRule
+metadata:
+  name: network-speed
+spec:
+  rules:
+    - name: "network speed 10M"
+      labels:
+        "feature.node.kubernetes.io/network-10M": "true"
+      matchFeatures:
+        - feature: network.device
+          matchExpressions:
+            operstate: {op: In, value: ["up"]}
+            speed: {op: In, value: ["10"]}
+    - name: "network speed 100M"
+      labels:
+        "feature.node.kubernetes.io/network-100M": "true"
+      matchFeatures:
+        - feature: network.device
+          matchExpressions:
+            operstate: {op: In, value: ["up"]}
+            speed: {op: In, value: ["100"]}
+    - name: "network speed 1G"
+      labels:
+        "feature.node.kubernetes.io/network-1G": "true"
+      matchFeatures:
+        - feature: network.device
+          matchExpressions:
+            operstate: {op: In, value: ["up"]}
+            speed: {op: In, value: ["1000"]}
+    - name: "network speed 2.5G"
+      labels:
+        "feature.node.kubernetes.io/network-2.5G": "true"
+      matchFeatures:
+        - feature: network.device
+          matchExpressions:
+            operstate: {op: In, value: ["up"]}
+            speed: {op: In, value: ["2500"]}
+    - name: "network speed 5G"
+      labels:
+        "feature.node.kubernetes.io/network-5G": "true"
+      matchFeatures:
+        - feature: network.device
+          matchExpressions:
+            operstate: {op: In, value: ["up"]}
+            speed: {op: In, value: ["5000"]}
+    - name: "network speed 10G"
+      labels:
+        "feature.node.kubernetes.io/network-10G": "true"
+      matchFeatures:
+        - feature: network.device
+          matchExpressions:
+            operstate: {op: In, value: ["up"]}
+            speed: {op: In, value: ["10000"]}

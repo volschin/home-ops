@@ -1,0 +1,14 @@
+---
+# yaml-language-server: $schema=https://kubernetes-schemas.pages.dev/nfd.k8s-sigs.io/nodefeaturerule_v1alpha1.json
+apiVersion: nfd.k8s-sigs.io/v1alpha1
+kind: NodeFeatureRule
+metadata:
+  name: google-coral-device
+spec:
+  rules:
+            - name: "intel-10g"
+              matchOn:
+                - pciId:
+                    class: ["0200"]
+                    vendor: ["8086"]
+                    device: ["10fb"]
