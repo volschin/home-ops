@@ -1,4 +1,4 @@
-# ⛵ Home Lab
+# ⛵ HomeLab Monorepo
 
 <div align="center">
 
@@ -6,6 +6,10 @@
 [![Kubernetes](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2Fvolschin%2Fhome-ops%2Fmain%2Fkubernetes%2Fbootstrap%2Ftalos%2Ftalconfig.yaml&query=%24.kubernetesVersion&style=for-the-badge&logo=kubernetes&label=%20&logoColor=white&color=%23326CE5)](https://kubernetes.io)&nbsp;&nbsp;
 [![Flux CD](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2Fvolschin%2Fhome-ops%2Fmain%2Fkubernetes%2Fflux%2Frepositories%2Foci%2Fflux-manifests.yaml&query=%24.spec.ref.tag&style=for-the-badge&logo=flux&label=%20&logoColor=%235468FF&color=black)](https://fluxcd.io)&nbsp;&nbsp;
 [![Cilium](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2Fvolschin%2Fhome-ops%2Fmain%2Fkubernetes%2Fapps%2Fkube-system%2Fcilium%2Fapp%2Fhelmrelease.yaml&query=%24.spec.chart.spec.version&style=for-the-badge&logo=cilium&label=%20&logoColor=black&color=%23F8C517)](https://cilium.io)
+<br/>
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/volschin/home-ops?style=for-the-badge&logo=github)](https://github.com/volschin/home-ops/commits/main/)
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white&style=for-the-badge)](https://github.com/pre-commit/pre-commit)
+[![Renovate](https://img.shields.io/github/actions/workflow/status/volschin/home-ops/checkov.yaml?branch=main&label=Renovate&logo=renovatebot&style=for-the-badge&color=blue)](https://github.com/volschin/home-ops/actions/workflows/checkov.yaml)
 
 </div>
 
@@ -139,9 +143,9 @@ You have two different options for setting up your local workstation.
 ### 🔧 Stage 3: Bootstrap configuration
 
 > [!NOTE]
-> The [config.sample.yaml](./config.sample.yaml) file contains config that is **vital** to the bootstrap process.
+> The [config.sample.yaml](/onedr0p/cluster-template/blob/main/config.sample.yaml) file contains config that is **vital** to the bootstrap process.
 
-1. Generate the `config.yaml` from the [config.sample.yaml](./config.sample.yaml) configuration file.
+1. Generate the `config.yaml` from the [config.sample.yaml](/onedr0p/cluster-template/blob/main/config.sample.yaml) configuration file.
 
     ```sh
     task init

@@ -31,6 +31,9 @@ spec:
             image:
               repository: ghcr.io/sberk42/fritzbox_exporter
               tag: latest@sha256:9943df16e5237146ed616fc9bcff1918ba4e72a8ad17e0015e7d803799ebbef9
+            env:
+              GATEWAY_URL: http://192.168.2.1:49000
+              LISTEN_ADDRESS: 0.0.0.0:9133
             envFrom:
               - secretRef:
                   name: fritzbox-exporter-secret

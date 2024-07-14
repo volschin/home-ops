@@ -5,11 +5,11 @@ kind: HelmRelease
 metadata:
   name: external-secrets
 spec:
-  interval: 30m
+  interval: 1h
   chart:
     spec:
       chart: external-secrets
-      version: 0.9.19
+      version: 0.9.20
       sourceRef:
         kind: HelmRepository
         name: external-secrets
@@ -24,6 +24,10 @@ spec:
       retries: 3
   values:
     installCRDs: true
+    bitwarden-sdk-server:
+      enabled: true
+    grafana:
+      enabled: true
     serviceMonitor:
       enabled: true
       interval: 1m
@@ -32,6 +36,10 @@ spec:
         enabled: true
         interval: 1m
     certController:
+      serviceMonitor:
+        enabled: true
+        interval: 1m
+    reportsController:
       serviceMonitor:
         enabled: true
         interval: 1m
