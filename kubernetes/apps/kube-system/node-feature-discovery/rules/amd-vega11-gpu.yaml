@@ -7,6 +7,9 @@ metadata:
 spec:
   rules:
     - name: "amd-vega11-gpu"
+      labels:
+        google.feature.node.kubernetes.io/coral: "true"
+      matchFeatures:
               matchOn:
                 - pciId:
                     class: ["0300"]
