@@ -42,7 +42,7 @@ spec:
           app:
             image:
               repository: ghcr.io/volschin/readarr-develop
-              tag: 0.3.30.2576@sha256:81802b74b01f1ec1ea6102b82088dcba03c0c976e61f68381d592f3046ec9b1b
+              tag: 0.3.31.2578@sha256:7f5cf70387505276d8599e081cb4a4e2736fcbcf60ab58905f38ee19d527e258
             env:
               READARR__APP__INSTANCENAME: Readarr
               READARR__APP__THEME: dark
