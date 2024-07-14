@@ -5,7 +5,7 @@ kind: HelmRelease
 metadata:
   name: kubernetes-dashboard
 spec:
-  interval: 5m
+  interval: 2h
   chart:
     spec:
       # renovate: registryUrl=https://kubernetes.github.io/dashboard
@@ -25,25 +25,27 @@ spec:
   uninstall:
     keepHistory: false
   values:
-    # https://github.com/kubernetes/dashboard/blob/master/docs/common/arguments.md
-    # When enabled, Dashboard login view will also be shown when Dashboard is not served over HTTPS.
-    #- --enable-insecure-login
-    # When enabled, the skip button on the login page will be shown.
-    #- --enable-skip-login
-    # When enabled, Dashboard settings page will not require user to be logged in and authorized to access settings page.
-    # - --disable-settings-authorizer
-    extraArgs:
-      - --enable-insecure-login
-      - --enable-skip-login
-      - --disable-settings-authorizer
     app:
-      image:
-        pullPolicy: IfNotPresent
+      env:
+        TZ: "${TIMEZONE}"
+      extraArgs:
+        - --enable-skip-login
+        - --disable-settings-authorizer
+        - --enable-insecure-login
+        - --token-ttl=43200 # seconds time to expire
       ingress:
         enabled: true
         ingressClassName: internal
         annotations:
-          hajimari.io/info: Kubernetes dashboard
+          gethomepage.dev/enabled: "true"
+          gethomepage.dev/group: Services
+          gethomepage.dev/name: Kubernetes Dashboard
+          gethomepage.dev/icon: mdi-kubernetes
+          nginx.ingress.kubernetes.io/auth-method: GET
+          nginx.ingress.kubernetes.io/auth-url: "http://authelia.auth.svc.cluster.local/api/verify"
+          nginx.ingress.kubernetes.io/auth-signin: "https://auth.${SECRET_EXTERNAL_DOMAIN}/?rm=$request_method"
+          nginx.ingress.kubernetes.io/auth-response-headers: Remote-User,Remote-Name,Remote-Groups,Remote-Email
+          nginx.ingress.kubernetes.io/auth-snippet: proxy_set_header X-Forwarded-Method $request_method;
         hosts:
           - kd.${SECRET_DOMAIN}
         tls:
