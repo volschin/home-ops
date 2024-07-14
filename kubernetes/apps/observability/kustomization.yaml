@@ -5,7 +5,7 @@ resources:
   - ./namespace.yaml
   - ./alertmanager/ks.yaml
   - ./goldilocks/ks.yaml
-  - ./kubernetes-dashboard/ks.yaml
+  #- ./kubernetes-dashboard/ks.yaml
   - ./kepler/ks.yaml
   - ./kromgo/ks.yaml
   - ./powertune/ks.yaml
