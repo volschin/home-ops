@@ -5,6 +5,7 @@ kind: Kustomization
 resources:
   - ./google-coral-device.yaml
   - ./nodefeaturerule-cpu.yaml
+  - ./nodefeaturerule-kernel.yaml
   - ./intel-gpu-device.yaml
   - ./network-speed.yaml
   - ./zigbee-device.yaml
