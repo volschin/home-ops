@@ -35,7 +35,7 @@ spec:
         - --token-ttl=43200 # seconds time to expire
       ingress:
         enabled: true
-        ingressClassName: internal
+        className: internal
         annotations:
           gethomepage.dev/enabled: "true"
           gethomepage.dev/group: Services
@@ -46,11 +46,11 @@ spec:
 #          nginx.ingress.kubernetes.io/auth-signin: "https://auth.${SECRET_DOMAIN}/?rm=$request_method"
 #          nginx.ingress.kubernetes.io/auth-response-headers: Remote-User,Remote-Name,Remote-Groups,Remote-Email
 #          nginx.ingress.kubernetes.io/auth-snippet: proxy_set_header X-Forwarded-Method $request_method;
-        hosts:
-          - kd.${SECRET_DOMAIN}
-        tls:
-          hosts:
-          - kd.${SECRET_DOMAIN}
+      hosts:
+        - &host "kubedash.${SECRET_DOMAIN}"
+      tls:
+        - hosts:
+            - *host
     metricsScraper:
       enabled: true
     nginx:
