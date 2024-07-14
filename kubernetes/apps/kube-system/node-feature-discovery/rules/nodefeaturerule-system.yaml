@@ -20,4 +20,3 @@ spec:
               - "VERSION_ID"
               - "VERSION_ID.major"
               - "VERSION_ID.minor"
-
