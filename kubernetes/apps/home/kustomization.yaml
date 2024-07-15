@@ -5,6 +5,7 @@ resources:
   # Pre Flux-Kustomizations
   - ./namespace.yaml
   # Flux-Kustomizations
+  - ./airsensor/ks.yaml
   - ./fhem/ks.yaml
   - ./hmcfgusb/ks.yaml
   - ./it-tools/ks.yaml
