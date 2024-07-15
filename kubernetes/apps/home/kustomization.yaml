@@ -6,7 +6,9 @@ resources:
   - ./namespace.yaml
   # Flux-Kustomizations
   - ./fhem/ks.yaml
+  - ./hmcfgusb/ks.yaml
   - ./it-tools/ks.yaml
   - ./mosquitto/ks.yaml
   - ./portainer/ks.yaml
+  - ./presence/ks.yaml
   - ./zwave/ks.yaml
