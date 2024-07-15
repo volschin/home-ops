@@ -1,0 +1,68 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: &app decluttarr
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: *app
+  template:
+    metadata:
+      labels:
+        app: *app
+    spec:
+      containers:
+        - name: *app
+          image: ghcr.io/manimatter/decluttarr:v1.46.1@sha256:0b388f13a7b200de162d583df6fb403448ace63c83aef6aa0a9dd43ee79906ca
+          env:
+            - name: LOG_LEVEL
+              value: "INFO"
+            - name: REMOVE_TIMER
+              value: "10"
+            - name: REMOVE_FAILED
+              value: "true"
+            - name: REMOVE_METADATA_MISSING
+              value: "true"
+            - name: REMOVE_MISSING_FILES
+              value: "true"
+            - name: REMOVE_FAILED_IMPORTS
+              value: "true"
+            - name: REMOVE_ORPHANS
+              value: "true"
+            - name: REMOVE_SLOW
+              value: "true"
+            - name: REMOVE_STALLED
+              value: "true"
+            - name: REMOVE_UNMONITORED
+              value: "false"
+            - name: MIN_DOWNLOAD_SPEED
+              value: "100"
+            - name: PERMITTED_ATTEMPTS
+              value: "3"
+            - name: NO_STALLED_REMOVAL_QBIT_TAG
+              value: "Don't Kill"
+            - name: IGNORE_PRIVATE_TRACKERS
+              value: "true"
+            - name: RADARR_URL
+              value: "http://radarr.media.svc.cluster.local"
+            - name: SONARR_URL
+              value: "http://sonarr.media.svc.cluster.local"
+            - name: LIDARR_URL
+              value: "http://lidarr:8686"
+            - name: READARR_URL
+              value: "http://readarr:8787"
+            - name: WHISPARR_URL
+              value: "http://whisparr:8787"
+            - name: QBITTORRENT_URL
+              value: "http://qbittorrent.media.svc.cluster.local"
+          envFrom:
+            - secretRef:
+                name: decluttarr-secret
+          resources:
+            requests:
+              cpu: 10m
+              memory: 100Mi
+            limits:
+              memory: 500Mi 
