@@ -4,6 +4,7 @@ kind: Kustomization
 resources:
   - ./namespace.yaml
   - ./arr/ks.yaml
+  - ./decluttarr/ks.yaml
   - ./jellyfin/ks.yaml
   - ./threadfin/ks.yaml
   - ./epg/ks.yaml
