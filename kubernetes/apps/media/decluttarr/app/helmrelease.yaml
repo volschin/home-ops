@@ -1,68 +1,116 @@
 ---
-apiVersion: apps/v1
-kind: Deployment
+# yaml-language-server: $schema=https://raw.githubusercontent.com/bjw-s/helm-charts/main/charts/other/app-template/schemas/helmrelease-helm-v2.schema.json
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
 metadata:
   name: &app decluttarr
 spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: *app
-  template:
-    metadata:
-      labels:
-        app: *app
+  interval: 30m
+  chart:
     spec:
-      containers:
-        - name: *app
-          image: ghcr.io/manimatter/decluttarr:v1.46.1@sha256:0b388f13a7b200de162d583df6fb403448ace63c83aef6aa0a9dd43ee79906ca
-          env:
-            - name: LOG_LEVEL
-              value: "INFO"
-            - name: REMOVE_TIMER
-              value: "10"
-            - name: REMOVE_FAILED
-              value: "true"
-            - name: REMOVE_METADATA_MISSING
-              value: "true"
-            - name: REMOVE_MISSING_FILES
-              value: "true"
-            - name: REMOVE_FAILED_IMPORTS
-              value: "true"
-            - name: REMOVE_ORPHANS
-              value: "true"
-            - name: REMOVE_SLOW
-              value: "true"
-            - name: REMOVE_STALLED
-              value: "true"
-            - name: REMOVE_UNMONITORED
-              value: "false"
-            - name: MIN_DOWNLOAD_SPEED
-              value: "100"
-            - name: PERMITTED_ATTEMPTS
-              value: "3"
-            - name: NO_STALLED_REMOVAL_QBIT_TAG
-              value: "Don't Kill"
-            - name: IGNORE_PRIVATE_TRACKERS
-              value: "true"
-            - name: RADARR_URL
-              value: "http://radarr.media.svc.cluster.local"
-            - name: SONARR_URL
-              value: "http://sonarr.media.svc.cluster.local"
-            - name: LIDARR_URL
-              value: "http://lidarr:8686"
-            - name: READARR_URL
-              value: "http://readarr:8787"
-            - name: WHISPARR_URL
-              value: "http://whisparr:8787"
-            - name: QBITTORRENT_URL
-              value: "http://qbittorrent.media.svc.cluster.local"
-          envFrom:
-            - secretRef:
-                name: decluttarr-secret
-          resources:
-            requests:
-              cpu: 10m
-              memory: 100Mi
-            limits:
-              memory: 500Mi
+      chart: app-template
+      version: 3.2.1
+      sourceRef:
+        kind: HelmRepository
+        name: bjw-s
+        namespace: flux-system
+  install:
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      strategy: rollback
+      retries: 3
+  values:
+    controllers:
+      decluttarr:
+        annotations:
+          reloader.stakater.com/auto: "true"
+        containers:
+          app:
+            image:
+              repository: ghcr.io/manimatter/decluttarr
+              tag: v1.46.1@sha256:0b388f13a7b200de162d583df6fb403448ace63c83aef6aa0a9dd43ee79906ca
+            env:
+              - name: LOG_LEVEL
+                value: "INFO"
+              - name: REMOVE_TIMER
+                value: "10"
+              - name: REMOVE_FAILED
+                value: "true"
+              - name: REMOVE_METADATA_MISSING
+                value: "true"
+              - name: REMOVE_MISSING_FILES
+                value: "true"
+              - name: REMOVE_FAILED_IMPORTS
+                value: "true"
+              - name: REMOVE_ORPHANS
+                value: "true"
+              - name: REMOVE_SLOW
+                value: "true"
+              - name: REMOVE_STALLED
+                value: "true"
+              - name: REMOVE_UNMONITORED
+                value: "false"
+              - name: MIN_DOWNLOAD_SPEED
+                value: "100"
+              - name: PERMITTED_ATTEMPTS
+                value: "3"
+              - name: NO_STALLED_REMOVAL_QBIT_TAG
+                value: "Don't Kill"
+              - name: IGNORE_PRIVATE_TRACKERS
+                value: "true"
+              - name: RADARR_URL
+                value: "http://radarr.media.svc.cluster.local"
+              - name: SONARR_URL
+                value: "http://sonarr.media.svc.cluster.local"
+              - name: LIDARR_URL
+                value: "http://lidarr:8686"
+              - name: READARR_URL
+                value: "http://readarr:8787"
+              - name: WHISPARR_URL
+                value: "http://whisparr:8787"
+              - name: QBITTORRENT_URL
+                value: "http://qbittorrent.media.svc.cluster.local"
+            envFrom:
+              - secretRef:
+                  name: decluttarr-secret
+            probes:
+              liveness: &probes
+                enabled: true
+                custom: true
+                spec:
+                  httpGet:
+                    path: /ping
+                    port: &port 4000
+                  initialDelaySeconds: 0
+                  periodSeconds: 30
+                  timeoutSeconds: 1
+                  failureThreshold: 3
+              readiness: *probes
+            securityContext:
+              allowPrivilegeEscalation: false
+              readOnlyRootFilesystem: true
+              capabilities: { drop: ["ALL"] }
+            resources:
+              requests:
+                cpu: 10m
+                memory: 100Mi
+              limits:
+                memory: 500Mi
+    defaultPodOptions:
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 568
+        runAsGroup: 568
+        fsGroup: 568
+        fsGroupChangePolicy: OnRootMismatch
+        supplementalGroups: [10000]
+        seccompProfile: { type: RuntimeDefault }
+    service:
+      app:
+        controller: *app
+        ports:
+          http:
+            port: *port
