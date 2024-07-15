@@ -5,6 +5,7 @@ resources:
   # Pre Flux-Kustomizations
   - ./namespace.yaml
   # Flux-Kustomizations
+  - ./fhem/ks.yaml
   - ./it-tools/ks.yaml
   - ./mosquitto/ks.yaml
   - ./portainer/ks.yaml
