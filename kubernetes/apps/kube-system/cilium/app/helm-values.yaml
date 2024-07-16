@@ -20,8 +20,6 @@ cni:
 endpointRoutes:
   enabled: true
 enableRuntimeDeviceDetection: true
-endpointRoutes:
-  enabled: true
 hubble:
   enabled: false
 ipam:
