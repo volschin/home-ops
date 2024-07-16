@@ -9,6 +9,7 @@ resources:
   - ./kubernetes-dashboard/ks.yaml
   - ./kepler/ks.yaml
   - ./kromgo/ks.yaml
+  - ./loki/ks.yaml
   - ./powertune/ks.yaml
   - ./prometheus-operator-crds/ks.yaml
   - ./victoria-metrics/ks.yaml
