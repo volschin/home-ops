@@ -1,7 +1,11 @@
 ---
 autoDirectNodeRoutes: true
+bandwidthManager:
+  enabled: true
+  bbr: true
 bpf:
-  masquerade: false
+  masquerade: true
+  tproxy: true
 cgroup:
   automount:
     enabled: false
@@ -13,6 +17,9 @@ cni:
   exclusive: false
 # NOTE: devices might need to be set if you have more than one active NIC on your hosts
 # devices: eno+ eth+
+endpointRoutes:
+  enabled: true
+enableRuntimeDeviceDetection: true
 endpointRoutes:
   enabled: true
 hubble:
@@ -30,7 +37,7 @@ gatewayAPI:
   enabled: true
 loadBalancer:
   algorithm: maglev
-  mode: snat
+  mode: hybrid
 localRedirectPolicy: true
 operator:
   replicas: 1
