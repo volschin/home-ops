@@ -4,6 +4,7 @@
     "local>volschin/renovate-config",
     // "docker:pinDigests",
     "replacements:k8s-registry-move",
+    "replacements:containerbase",
     "github>onedr0p/home-ops//.github/renovate/grafanaDashboards.json5"
   ],
   "flux": {
