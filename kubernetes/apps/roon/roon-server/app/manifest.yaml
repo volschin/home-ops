@@ -1,0 +1,235 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: roon
+  name: roon
+  namespace: home
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: roon.lan
+spec:
+  ports:
+  - name: roon
+    port: 9330
+    targetPort: 9330
+  selector:
+    app: roon
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    service: roon
+  name: roon
+  namespace: home
+spec:
+  strategy:
+    type: Recreate
+  replicas: 1
+  selector:
+    matchLabels:
+      app: roon
+  template:
+    metadata:
+      labels:
+        app: roon
+    spec:
+      hostNetwork: true
+      hostname: roon
+      containers:
+        - image: steefdebruijn/docker-roonserver:latest
+          securityContext:
+            privileged: true
+          name: roon
+          env:
+          - name: TZ
+            value: "<Insert your TZ here>"
+          ports:
+            - containerPort: 9101
+              protocol: TCP
+            - containerPort: 9102
+              protocol: TCP
+            - containerPort: 9103
+              protocol: TCP
+            - containerPort: 9104
+              protocol: TCP
+            - containerPort: 9105
+              protocol: TCP
+            - containerPort: 9106
+              protocol: TCP
+            - containerPort: 9107
+              protocol: TCP
+            - containerPort: 9108
+              protocol: TCP
+            - containerPort: 9109
+              protocol: TCP
+            - containerPort: 9110
+              protocol: TCP
+            - containerPort: 9332
+              protocol: TCP
+            - containerPort: 9330
+              protocol: TCP
+            - containerPort: 9003
+              protocol: UDP
+          resources:
+            requests:
+              memory: 500Mi
+            limits:
+              memory: 2000Mi
+          volumeMounts:
+
+          - mountPath: /app
+            name: roon-app
+
+          - mountPath: /music
+            name: roon-music
+
+          - mountPath: /data
+            name: roon-data
+
+          - mountPath: /backup
+            name: roon-backup
+
+      volumes:
+
+      - name: roon-app
+        persistentVolumeClaim:
+          claimName: roon-app
+
+      - name: roon-music
+        persistentVolumeClaim:
+          claimName: roon-music
+
+      - name: roon-data
+        persistentVolumeClaim:
+          claimName: roon-data
+
+      - name: roon-backup
+        persistentVolumeClaim:
+          claimName: roon-backup
+
+# Data Volume
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: roon-data
+  namespace: home
+spec:
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    server: store.lan
+    path: "/volume1/data/music/roon-data"
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: roon-data
+  namespace: home
+  annotations:
+    volume.beta.kubernetes.io/storage-class: ""
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+
+# Library volume
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: roon-music
+  namespace: home
+spec:
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    server: store.lan
+    path: "/volume1/data/music/library"
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: roon-music
+  namespace: home
+  annotations:
+    volume.beta.kubernetes.io/storage-class: ""
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+
+# App volume
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: roon-app
+  namespace: home
+spec:
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    server: store.lan
+    path: "/volume1/data/music/roon-app"
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: roon-app
+  namespace: home
+  annotations:
+    volume.beta.kubernetes.io/storage-class: ""
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+
+
+# Backup volumes
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: roon-backup
+  namespace: home
+spec:
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    server: store.lan
+    path: "/volume1/data/music/roon-backup"
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: roon-backup
+  namespace: home
+  annotations:
+    volume.beta.kubernetes.io/storage-class: ""
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
