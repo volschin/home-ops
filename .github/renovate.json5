@@ -70,8 +70,8 @@
       }
     },
     {
-      "description": ["Actions Runner Controller Group"],
-      "groupName": "Actions Runner Controller",
+      "description": ["Actions Runner Group"],
+      "groupName": "Actions Runner",
       "matchPackagePatterns": [
         "gha-runner-scale-set-controller",
         "gha-runner-scale-set"
@@ -82,8 +82,8 @@
       }
     },
     {
-      "description": ["Dragonfly Operator Group"],
-      "groupName": "Dragonfly Operator",
+      "description": ["Dragonfly Group"],
+      "groupName": "Dragonfly",
       "matchPackagePatterns": ["dragonfly(?:db)?.operator"],
       "matchDatasources": ["docker", "github-releases"],
       "group": {
