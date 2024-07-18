@@ -33,6 +33,17 @@ spec:
       repository: ghcr.io/angelnu/pod-gateway
       tag: v1.10.0@sha256:d728eac85f750b37c96a0dafd038561ea4b8035857802be1128ea9b19c61e181
     DNS: 172.16.1.1
+    service:
+      vpn:
+        enabled: true
+        type: LoadBalancer
+        annotations:
+          io.cilium/lb-ipam-ips: ${SVC_VPN_ADDR}
+        externalTrafficPolicy: Cluster
+        ports:
+          shadowsocks:
+            enabled: true
+            port: 8388
     addons:
       netshoot:
         enabled: true
@@ -41,7 +52,7 @@ spec:
         type: gluetun
         image:
           repository: ghcr.io/qdm12/gluetun
-          tag: v3.38.0@sha256:bdae21ec9b49d9bc02c84210c33c6934e14f21cc378a421c561539dafdf5f901
+          tag: v3.38.0@sha256:5522794f5cce6d84bc7f06b1e3a3b836ede9100c64aec94543cb503bb2ecb72f
         env:
           - name: VPN_SERVICE_PROVIDER
             value: custom
@@ -63,6 +74,12 @@ spec:
         securityContext:
           capabilities:
             add: ["NET_ADMIN"]
+        resources:
+          requests:
+            cpu: 5m
+            memory: 64M
+          limits:
+            memory: 64M
         networkPolicy:
           enabled: true
           egress:
