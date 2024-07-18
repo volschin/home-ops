@@ -1,0 +1,23 @@
+---
+# yaml-language-server: $schema=https://kubernetes-schemas.pages.dev/helm.toolkit.fluxcd.io/helmrelease_v2.json
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: kube-state-metrics
+spec:
+  interval: 60m
+  chart:
+    spec:
+      chart: kube-state-metrics
+      version: 5.21.0
+      interval: 30m
+      sourceRef:
+        kind: HelmRepository
+        name: prometheus-community
+        namespace: flux-system
+  values:
+    fullnameOverride: kube-state-metrics
+    prometheus:
+      monitor:
+        enabled: true
+        honorLabels: true
