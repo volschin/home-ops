@@ -19,6 +19,7 @@ resources:
   - ./jetstack.yaml
   - ./k8s-gateway.yaml
   - ./kubernetes-dashboard.yaml
+  - ./kube-state-metrics.yaml
   - ./kepler.yaml
   - ./kyverno.yaml
   - ./kyverno-reporter.yaml
