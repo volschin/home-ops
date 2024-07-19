@@ -12,6 +12,7 @@ resources:
   - ./external-dns.yaml
   - ./fairwinds.yaml
   - ./grafana.yaml
+  - ./immich.yaml
   - ./influxdata.yaml
   - ./ingress-nginx.yaml
   - ./intel.yaml
