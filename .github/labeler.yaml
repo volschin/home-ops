@@ -16,7 +16,7 @@ area/flux:
       - any-glob-to-any-file: "kubernetes/flux/**/*"
 area/taskfile:
   - changed-files:
-      - any-glob-to-any-file: 
+      - any-glob-to-any-file:
           - ".taskfiles/**/*"
           - "Taskfile*"
 area/docs:
