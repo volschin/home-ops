@@ -5,7 +5,7 @@ kind: HelmRelease
 metadata:
   name: weave-gitops
 spec:
-  interval: 30m
+  interval: 60m
   chart:
     spec:
       chart: weave-gitops
@@ -42,6 +42,9 @@ spec:
       readOnlyRootFilesystem: true
       runAsNonRoot: true
       runAsUser: 1000
+    envVars:
+      - name: WEAVE_GITOPS_FEATURE_OIDC_BUTTON_LABEL
+        value: "Login with OIDC"
     adminUser:
       create: true
       username: admin
@@ -60,8 +63,7 @@ spec:
         gethomepage.dev/icon: https://raw.githubusercontent.com/joryirving/home-ops/main/docs/src/assets/icons/weave.png
         gethomepage.dev/description: Flux Dashboard
       hosts:
-      #  - host: gitops.${SECRET_DOMAIN}
-        - host: prometheus.${SECRET_DOMAIN}
+        - host: gitops.${SECRET_DOMAIN}
           paths:
             - path: /
               pathType: Prefix
