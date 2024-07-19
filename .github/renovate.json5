@@ -5,6 +5,7 @@
     // "docker:pinDigests",
     "replacements:k8s-registry-move",
     "replacements:containerbase",
+    "baseBranches": ["main","next"],
     "github>onedr0p/home-ops//.github/renovate/grafanaDashboards.json5"
   ],
   "flux": {
