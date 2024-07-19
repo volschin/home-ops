@@ -41,7 +41,7 @@ spec:
           app:
             image:
               repository: ghcr.io/volschin/prowlarr-develop
-              tag: 1.20.1.4603@sha256:c32da729be1c8dea8c4692ba8d79aa3d779afec3ce49b61fa93ae2cecb5713ca
+              tag: 1.21.0.4615@sha256:f35ca21d59e886a063c8a5aaa92abc1e836b69f26ada5a327df63d182faba47f
             env:
               TZ: ${TIMEZONE}
               PROWLARR__APP__INSTANCENAME: Prowlarr
