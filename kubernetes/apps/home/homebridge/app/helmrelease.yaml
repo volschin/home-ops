@@ -83,7 +83,7 @@ spec:
           gethomepage.dev/description: FHEM für iPhone
           gethomepage.dev/widget.type: homebridge
           gethomepage.dev/widget.url: http://homebridge.home
-          gethomepage.dev/widget.fields: ["updates", "child_bridges"]
+          gethomepage.dev/widget.fields: "["updates", "child_bridges"]"
           gethomepage.dev/widget.username: externalsecret
           gethomepage.dev/widget.password: externalsecret
         hosts:
