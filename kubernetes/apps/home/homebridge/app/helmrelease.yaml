@@ -74,17 +74,18 @@ spec:
         enabled: true
         className: internal
         annotations:
-          cert-manager.io/cluster-issuer: letsencrypt-production
           nginx.ingress.kubernetes.io/whitelist-source-range: 10.0.0.0/8,172.16.0.0/12,192.168.0.0/16
-      #    homepage.group=Apple HomeKit
-      #    homepage.name=Homebridge FHEM
-      # homepage.icon=homebridge.svg
-      # homepage.description=FHEM für iPhone
-      # homepage.widget.type=homebridge
-      # homepage.widget.url=http://ha.local:8080/
-      # homepage.widget.fields=["updates", "child_bridges"]
-      # homepage.widget.username=externalsecret
-      # homepage.widget.password=externalsecret
+          external-dns.alpha.kubernetes.io/target: internal.${SECRET_DOMAIN}
+          gethomepage.dev/enabled: "true"
+          gethomepage.dev/group: Apple HomeKit
+          gethomepage.dev/name: Homebridge FHEM
+          gethomepage.dev/icon: homebridge.svg
+          gethomepage.dev/description: FHEM für iPhone
+          gethomepage.dev/widget.type: homebridge
+          gethomepage.dev/widget.url: http://homebridge.home
+          gethomepage.dev/widget.fields: ["updates", "child_bridges"]
+          gethomepage.dev/widget.username: externalsecret
+          gethomepage.dev/widget.password: externalsecret
         hosts:
           - host: &host "homebridge.${SECRET_DOMAIN}"
             paths:
