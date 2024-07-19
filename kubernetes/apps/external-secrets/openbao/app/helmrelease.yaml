@@ -61,7 +61,7 @@ spec:
       enabled: true
       annotations: |
         kubernetes.io/ingress.class: internal
-        
+
       hosts:
         - host: &host "vault.${SECRET_DOMAIN}"
           paths: ["/"]
