@@ -42,6 +42,8 @@ spec:
       readOnlyRootFilesystem: true
       runAsNonRoot: true
       runAsUser: 1000
+    additionalArgs:
+      - --insecure-no-authentication-user=admin
     envVars:
       - name: WEAVE_GITOPS_FEATURE_OIDC_BUTTON_LABEL
         value: "Login with OIDC"
@@ -71,8 +73,8 @@ spec:
       create: true
     metrics:
       enabled: true
-    #rbac:
-    #  create: true
-    #  impersonationResourceNames: ["admin"]
+    rbac:
+      create: true
+      impersonationResourceNames: ["admin"]
     #podAnnotations:
     #  secret.reloader.stakater.com/reload: cluster-user-auth
