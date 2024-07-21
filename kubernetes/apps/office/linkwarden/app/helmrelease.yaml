@@ -73,3 +73,5 @@ spec:
         globalMounts:
           - path: /data/data
         existingClaim: linkwarden-data
+      tmp:
+        type: emptyDir
