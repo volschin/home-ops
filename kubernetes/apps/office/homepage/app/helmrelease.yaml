@@ -48,25 +48,17 @@ spec:
             port: 3000
     ingress:
       app:
-        enabled: true
         className: internal
+        annotations:
+          external-dns.alpha.kubernetes.io/target: internal.${SECRET_DOMAIN}
         hosts:
-          - host: &host 18b.haus
+          - host: "home.${SECRET_DOMAIN}"
             paths:
               - path: /
+                pathType: Prefix
                 service:
                   identifier: app
                   port: http
-          - host: &www-host www.18b.haus
-            paths:
-              - path: /
-                service:
-                  identifier: app
-                  port: http
-        tls:
-          - hosts:
-              - *host
-              - *www-host
     persistence:
       config:
         enabled: true
