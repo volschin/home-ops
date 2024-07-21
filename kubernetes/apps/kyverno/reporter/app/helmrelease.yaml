@@ -25,7 +25,6 @@ spec:
     cleanupOnFail: true
     remediation:
       retries: 3
-
   values:
     api:
       enabled: true
@@ -37,7 +36,7 @@ spec:
         enabled: true
         className: internal
         annotations:
-          external-dns.alpha.kubernetes.io/target: policy-report.${SECRET_DOMAIN}
+          external-dns.alpha.kubernetes.io/target: internal.${SECRET_DOMAIN}
           gethomepage.dev/enabled: "true"
           gethomepage.dev/description: Policy Reporting
           gethomepage.dev/group: Security
@@ -51,14 +50,11 @@ spec:
            #     service:
            #       identifier: app
            #       port: http
-
     kyvernoPlugin:
       enabled: true
-
     global:
       plugins:
         kyverno: true
-
     ingress:
       enabled: false
       className: internal
