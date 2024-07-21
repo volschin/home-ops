@@ -46,12 +46,12 @@ data:
             href: https://dash.cloudflare.com/
             icon: cloudflare-zero-trust.png
             description: Cloudflared Tunnel Status
-            widget:
-              type: cloudflared
-              accountid: {{HOMEPAGE_VAR_CLOUDFLARED_ACCOUNTID}}
-              tunnelid: {{HOMEPAGE_VAR_CLOUDFLARED_TUNNELID}}
-              key: {{HOMEPAGE_VAR_CLOUDFLARED_API_TOKEN}}
-              fields: ["status"]
+        #    widget:
+        #      type: cloudflared
+        #      accountid: {{HOMEPAGE_VAR_CLOUDFLARED_ACCOUNTID}}
+        #      tunnelid: {{HOMEPAGE_VAR_CLOUDFLARED_TUNNELID}}
+        #      key: {{HOMEPAGE_VAR_CLOUDFLARED_API_TOKEN}}
+        #      fields: ["status"]
         - Fritz!Box:
             href: https://fritz.box
             icon: avmfritzbox.png
@@ -73,9 +73,9 @@ data:
             href: https://minio
             icon: minio.png
     - Tools:
-        - Zot Registry:
-            href: https://registry
-            icon: logo.svg
+        - Forgejo:
+            href: http://192.168.2.115:3000
+            icon: forgejo.svg
   settings.yaml: |
     title: Home
     favicon: https://github.com/walkxcode/dashboard-icons/blob/main/png/heimdall.png
@@ -102,10 +102,6 @@ data:
     hideVersion: true
     statusStyle: dot
     target: _blank
-    providers:
-      longhorn:
-        url: http://longhorn.storage.svc.cluster.local
-#      openweathermap: ${OPENWEATHERMAP_APIKEY}
   widgets.yaml: |
     - kubernetes:
         cluster:
@@ -118,12 +114,8 @@ data:
           memory: true
           show: true
           showLabel: true
-    - longhorn:
-        expanded: true
-        total: true
-        labels: true
-        nodes: true
     - openweathermap:
+        label: Berlin
         latitude: ${LATITUDE}
         longitude: ${LONGITUDE}
         units: metric
