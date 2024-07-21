@@ -103,7 +103,9 @@ data:
     target: _blank
     providers:
       longhorn:
-        url: https://longhorn.storage
+        url: https://longhorn.${SECRET_DOMAIN}
+      openweathermap
+        apiKey: ${OPENWEATHERMAP_APIKEY}
   widgets.yaml: |
     - kubernetes:
         cluster:
@@ -126,7 +128,6 @@ data:
         latitude: ${LATITUDE}
         longitude: ${LONGITUDE}
         units: metric
-        provider: openweathermap
         cache: 30
         format:
           maximumFractionDigits: 1
