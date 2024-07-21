@@ -104,7 +104,7 @@ data:
     providers:
       longhorn:
         url: https://longhorn.${SECRET_DOMAIN}
-      openweathermap
+      openweathermap:
         apiKey: ${OPENWEATHERMAP_APIKEY}
   widgets.yaml: |
     - kubernetes:
