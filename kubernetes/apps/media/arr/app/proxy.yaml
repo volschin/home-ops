@@ -6,6 +6,15 @@ metadata:
   namespace: media
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/group: Downloads
+    gethomepage.dev/name: Prowlarr
+    gethomepage.dev/icon: prowlarr.svg
+    gethomepage.dev/description: Torrent Indexer Management
+    gethomepage.dev/widget.type: prowlarr
+    gethomepage.dev/widget.url: http://arr.media/prowlarr/
+    gethomepage.dev/widget.key: "{{ `{{HOMEPAGE_VAR_PROWLARR_TOKEN}}` }}"
+    external-dns.alpha.kubernetes.io/target: internal.${SECRET_DOMAIN}
 spec:
   ingressClassName: internal
   rules:
