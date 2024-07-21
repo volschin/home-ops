@@ -106,14 +106,12 @@ data:
         cluster:
           cpu: true
           memory: true
-          uptime: true
           show: true
           showLabel: true
         nodes:
           cpu: true
-          cputemp: true
           memory: true
-          show: false
+          show: true
           showLabel: true
     - openweathermap:
         label: Berlin
