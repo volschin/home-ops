@@ -99,13 +99,13 @@ data:
       Tools:
         style: column
     showStats: false
+    hideVersion: true
     statusStyle: dot
     target: _blank
     providers:
       longhorn:
         url: https://longhorn.${SECRET_DOMAIN}
-      openweathermap:
-        apiKey: ${OPENWEATHERMAP_APIKEY}
+      openweathermap: ${OPENWEATHERMAP_APIKEY}
   widgets.yaml: |
     - kubernetes:
         cluster:
