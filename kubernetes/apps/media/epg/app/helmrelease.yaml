@@ -79,7 +79,7 @@ spec:
       app:
         annotations:
           gethomepage.dev/enabled: "true"
-          gethomepage.dev/group: Druck
+          gethomepage.dev/group: Tools
           gethomepage.dev/name: Easy EPG
           gethomepage.dev/icon: /icons/magentatv.png
           gethomepage.dev/description: EPG-Erstellung aus MagentaTV
