@@ -4,4 +4,5 @@ kind: Kustomization
 resources:
   - ./namespace.yaml
   - ./homepage/ks.yaml
+  - ./joplin/ks.yaml
   - ./stirling-pdf/ks.yaml
