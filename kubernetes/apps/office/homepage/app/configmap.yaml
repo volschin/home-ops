@@ -101,6 +101,9 @@ data:
     showStats: false
     statusStyle: dot
     target: _blank
+    providers:
+      longhorn:
+        url: https://longhorn.storage
   widgets.yaml: |
     - kubernetes:
         cluster:
@@ -113,6 +116,11 @@ data:
           memory: true
           show: true
           showLabel: true
+    - longhorn:
+        expanded: true
+        total: true
+        labels: true
+        nodes: true
     - openweathermap:
         label: Berlin
         latitude: ${LATITUDE}
