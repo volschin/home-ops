@@ -83,7 +83,7 @@ spec:
     persistence:
       data:
         globalMounts:
-          - path: /data/data
+          - path: /data/config
         existingClaim: linkwarden-data
       tmp:
         type: emptyDir
