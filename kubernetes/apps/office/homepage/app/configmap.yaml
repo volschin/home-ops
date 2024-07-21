@@ -104,7 +104,7 @@ data:
     target: _blank
     providers:
       longhorn:
-        url: https://longhorn.${SECRET_DOMAIN}
+        url: http://longhorn.storage.svc.cluster.local
       openweathermap: ${OPENWEATHERMAP_APIKEY}
   widgets.yaml: |
     - kubernetes:
