@@ -2,8 +2,10 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: homepage
-  namespace: office
+  name: &app homepage
+  labels:
+    app.kubernetes.io/instance: *app
+    app.kubernetes.io/name: *app
 rules:
   - apiGroups:
       - ""
@@ -41,10 +43,13 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
   name: &app homepage
+  labels:
+    app.kubernetes.io/instance: *app
+    app.kubernetes.io/name: *app
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: homepage
+  name: *app
 subjects:
   - kind: ServiceAccount
     name: *app
