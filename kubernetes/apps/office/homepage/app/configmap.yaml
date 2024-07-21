@@ -105,7 +105,7 @@ data:
     providers:
       longhorn:
         url: http://longhorn.storage.svc.cluster.local
-      openweathermap: ${OPENWEATHERMAP_APIKEY}
+#      openweathermap: ${OPENWEATHERMAP_APIKEY}
   widgets.yaml: |
     - kubernetes:
         cluster:
