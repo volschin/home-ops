@@ -65,9 +65,9 @@ spec:
         annotations:
           gethomepage.dev/enabled: "true"
           gethomepage.dev/group: Downloads
-          gethomepage.dev/name: Prowlarr
-          gethomepage.dev/icon: prowlarr.png
-          gethomepage.dev/description: Torrent/NZB Indexer Management
+          gethomepage.dev/name: Calibre-Web
+          gethomepage.dev/icon: calibre-web.png
+          gethomepage.dev/description: e-Book Verwaltung
           external-dns.alpha.kubernetes.io/target: internal.${SECRET_DOMAIN}
           nginx.ingress.kubernetes.io/configuration-snippet: |
             proxy_set_header Accept-Encoding "";
