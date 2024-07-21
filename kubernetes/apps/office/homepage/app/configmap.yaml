@@ -101,9 +101,9 @@ data:
     hideVersion: true
     statusStyle: dot
     target: _blank
-    providers:
-      longhorn:
-        url: http://longhorn.storage.svc.cluster.local
+#    providers:
+#      longhorn:
+#        url: http://longhorn.storage.svc.cluster.local
 #      openweathermap: ${OPENWEATHERMAP_APIKEY}
   widgets.yaml: |
     - kubernetes:
@@ -117,11 +117,11 @@ data:
           memory: true
           show: true
           showLabel: true
-    - longhorn:
-        expanded: true
-        total: true
-        labels: true
-        nodes: true
+ #   - longhorn:
+ #       expanded: true
+ #       total: true
+ #       labels: true
+ #       nodes: true
     - openweathermap:
         latitude: ${LATITUDE}
         longitude: ${LONGITUDE}
