@@ -50,6 +50,15 @@ spec:
               NEXT_PUBLIC_DISABLE_REGISTRATION: true
               NEXT_PUBLIC_CREDENTIALS_ENABLED: true
             envFrom: *envFrom
+            securityContext:
+              allowPrivilegeEscalation: false
+              capabilities: { drop: ["ALL"] }
+            resources:
+              requests:
+                cpu: 10m
+                memory: 512Mi
+              limits:
+                memory: 1Gi
     service:
       app:
         controller: *app
