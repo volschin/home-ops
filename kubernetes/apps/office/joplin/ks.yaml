@@ -10,7 +10,7 @@ spec:
     labels:
       app.kubernetes.io/name: *app
   dependsOn:
-    - name: external-dns
+    - name: external-secrets-stores
   path: ./kubernetes/apps/office/joplin/app
   prune: true
   sourceRef:
