@@ -122,14 +122,14 @@ data:
  #       total: true
  #       labels: true
  #       nodes: true
-    - openweathermap:
-        latitude: ${LATITUDE}
-        longitude: ${LONGITUDE}
-        units: metric
-        provider: openweathermap
-        cache: 30
-        format:
-          maximumFractionDigits: 1
+ #   - openweathermap:
+ #       latitude: ${LATITUDE}
+ #       longitude: ${LONGITUDE}
+ #       units: metric
+ #       provider: openweathermap
+ #       cache: 30
+ #       format:
+ #         maximumFractionDigits: 1
     - datetime:
         text_size: md
         format:
