@@ -56,7 +56,7 @@ spec:
           annotations:
             gethomepage.dev/enabled: "true"
             gethomepage.dev/description: Security Observability
-            gethomepage.dev/group: Monitoring
+            gethomepage.dev/group: Observability
             gethomepage.dev/icon: cilium.svg
             gethomepage.dev/name: Hubble
           hosts: ["hubble.${SECRET_DOMAIN}"]
