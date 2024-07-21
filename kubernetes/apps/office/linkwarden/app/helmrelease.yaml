@@ -48,7 +48,10 @@ spec:
               TIMEZONE: ${TIMEZONE}
               NEXTAUTH_URL: "https://link.${SECRET_DOMAIN}"
               NEXT_PUBLIC_DISABLE_REGISTRATION: true
-              NEXT_PUBLIC_CREDENTIALS_ENABLED: true
+              NEXT_PUBLIC_CREDENTIALS_ENABLED: false
+              DISABLE_NEW_SSO_USERS: false
+              STORAGE_FOLDER: "config" # Will always end up as /data/STOREAGE_FOLDER so eg /data/config
+              HOME: /data/config
             envFrom: *envFrom
             securityContext:
               allowPrivilegeEscalation: false
