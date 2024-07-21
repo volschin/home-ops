@@ -3,7 +3,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: alertmanager
+  name: &app alertmanager
 spec:
   interval: 60m
   chart:
@@ -21,7 +21,6 @@ spec:
         type: statefulset
         annotations:
           reloader.stakater.com/auto: "true"
-
         statefulset:
           volumeClaimTemplates:
             - name: storage
@@ -30,7 +29,6 @@ spec:
               storageClass: ceph-block
               globalMounts:
                 - path: /alertmanager
-
         containers:
           app:
             image:
@@ -38,7 +36,7 @@ spec:
               tag: v0.27.0
             ports:
               - name: http
-                containerPort: 9093
+                containerPort: &port 9093
             probes:
               liveness:
                 enabled: true
@@ -55,17 +53,21 @@ spec:
                 memory: 50M
               limits:
                 memory: 99M
-
     service:
       app:
-        controller: alertmanager
+        controller: *app
         ports:
           http:
-            port: 9093
-
+            port: *port
     ingress:
       app:
         className: internal
+        annotations:
+          gethomepage.dev/enabled: "true"
+          gethomepage.dev/group: Infrastructure
+          gethomepage.dev/name: Alert Manager
+          gethomepage.dev/icon: alertmanager.svg
+          gethomepage.dev/description: Benachrichtigung über Störungen
         hosts:
           - host: &host alertmanager.${SECRET_DOMAIN}
             paths:
@@ -76,7 +78,6 @@ spec:
         tls:
           - hosts:
               - *host
-
     persistence:
       config:
         type: configMap
