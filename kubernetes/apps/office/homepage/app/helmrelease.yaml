@@ -27,7 +27,7 @@ spec:
   values:
     controllers:
       homepage:
-        replicas: 2
+   #     replicas: 2
         strategy: RollingUpdate
         annotations:
           configmap.reloader.stakater.com/reload: *app
