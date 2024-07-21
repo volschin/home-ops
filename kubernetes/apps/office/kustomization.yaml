@@ -6,4 +6,5 @@ resources:
   - ./changedetection/ks.yaml
   - ./homepage/ks.yaml
   - ./joplin/ks.yaml
+  - ./linkwarden/ks.yaml
   - ./stirling-pdf/ks.yaml
