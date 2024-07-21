@@ -48,12 +48,6 @@ data:
         - OPNsense:
             href: https://opnsense
             icon: opnsense.png
-        - Proxmox VE:
-            href: https://pve
-            icon: proxmox.png
-        - UniFi:
-            href: https://unifi
-            icon: unifi-controller.png
     - Observability:
         - Prometheus (storage):
             href: https://prometheus
