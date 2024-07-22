@@ -1,3 +1,4 @@
+---
 apiVersion: v1
 kind: PersistentVolume
 metadata:
@@ -10,7 +11,7 @@ spec:
   accessModes:
     - ReadWriteMany
   nfs:
-    server: 192.168.2.115
+    server: ${NFS_SERVER_ADDR}
     path: "/Medien"
 ---
 apiVersion: v1
