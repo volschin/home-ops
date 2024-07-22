@@ -32,6 +32,8 @@ kind: ClusterRoleBinding
 metadata:
   name: system:kubernetes-dashboard
   namespace: observability
+  labels:
+    k8s-app: kubernetes-dashboard
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
