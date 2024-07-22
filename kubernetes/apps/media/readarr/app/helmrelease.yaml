@@ -120,8 +120,5 @@ spec:
       tmp:
         type: emptyDir
       media:
-        type: nfs
-        server: tank.internal
-        path: /mnt/tank/Media
-        globalMounts:
-          - path: /media
+        enabled: true
+        existingClaim: media-library
