@@ -43,9 +43,7 @@ spec:
           gethomepage.dev/name: Kubernetes Dashboard
           gethomepage.dev/icon: mdi-kubernetes
         hosts:
-          - &host "kubernetes.${SECRET_DOMAIN}"
-        tls:
-          - hosts:
-              - *host
+          - "kubernetes.${SECRET_DOMAIN}"
+        
     metricsScraper:
       enabled: true
