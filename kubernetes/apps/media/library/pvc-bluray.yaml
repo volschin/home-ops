@@ -11,7 +11,7 @@ spec:
   accessModes:
     - ReadWriteMany
   nfs:
-    server: 192.168.2.115
+    server: ${NFS_SERVER_ADDR}
     path: "/Bluray"
 ---
 apiVersion: v1
