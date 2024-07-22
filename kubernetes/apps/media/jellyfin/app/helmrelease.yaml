@@ -120,9 +120,5 @@ spec:
       transcode:
         type: emptyDir
       media:
-        type: nfs
-        server: osiris.286k.co
-        path: /pluto/media
-        globalMounts:
-          - path: /media
-            readOnly: false
+        enabled: true
+        existingClaim: media-library
