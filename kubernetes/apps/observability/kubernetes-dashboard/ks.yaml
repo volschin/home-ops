@@ -5,6 +5,10 @@ metadata:
   name: kubernetes-dashboard
   namespace: flux-system
 spec:
+  targetNamespace: observability
+  commonMetadata:
+    labels:
+      app.kubernetes.io/name: *app
   dependsOn:
     - name: cert-manager
     - name: metrics-server
