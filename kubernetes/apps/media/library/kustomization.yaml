@@ -4,4 +4,5 @@ kind: Kustomization
 resources:
   - ./pvc-bluray.yaml
   - ./pvc-media.yaml
+  - ./pvc-musik.yaml
   - ./pvc-sata-ssd.yaml
