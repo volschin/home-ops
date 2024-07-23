@@ -44,6 +44,5 @@ spec:
           gethomepage.dev/icon: mdi-kubernetes
         hosts:
           - "kubernetes.${SECRET_DOMAIN}"
-        
     metricsScraper:
       enabled: true
