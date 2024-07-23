@@ -40,7 +40,8 @@ spec:
               QBITTORRENT__PORT: &port 80
               QBITTORRENT__BT_PORT: &bittorrentPort 50413
               QBT_Application__MemoryWorkingSetLimit: 10000
-              QBT_Preferences__WebUI__AlternativeUIEnabled: false
+              QBT_Preferences__WebUI__AlternativeUIEnabled: true
+              QBT_Preferences__WebUI__RootFolder: /add-ons/VueTorrent
               QBT_Preferences__WebUI__AuthSubnetWhitelistEnabled: true
               QBT_Preferences__WebUI__AuthSubnetWhitelist: 10.0.0.0/8
               QBT_Preferences__WebUI__LocalHostAuth: false
@@ -73,6 +74,22 @@ spec:
                 memory: 1Gi
               limits:
                 memory: 12Gi
+          vuetorrent:
+            dependsOn: app
+            image:
+              repository: registry.k8s.io/git-sync/git-sync
+              tag: v4.2.2
+            args:
+              - --repo=https://github.com/WDaan/VueTorrent
+              - --ref=latest-release
+              - --period=86400s
+              - --root=/add-ons
+            resources:
+              requests:
+                cpu: 10m
+                memory: 25Mi
+              limits:
+                memory: 50Mi
     defaultPodOptions:
       securityContext:
         runAsNonRoot: true
@@ -104,7 +121,7 @@ spec:
           gethomepage.dev/icon: qbittorrent.svg
           gethomepage.dev/description: Bittorrent client
           gethomepage.dev/widget.type: qbittorrent
-          gethomepage.dev/widget.url: http://qbt.media
+          gethomepage.dev/widget.url: "http://qbittorrent.media.svc.cluster.local:8080"
           gethomepage.dev/widget.key: "{{ `{{HOMEPAGE_VAR_QBITTORRENT_TOKEN}}` }}"
           external-dns.alpha.kubernetes.io/target: internal.${SECRET_DOMAIN}
           nginx.ingress.kubernetes.io/configuration-snippet: |
@@ -122,6 +139,11 @@ spec:
     persistence:
       config:
         existingClaim: config-qbittorrent
+      add-ons:
+        enabled: true
+        type: emptyDir
+        globalMounts:
+          - path: /add-ons
       downloads:
         enabled: true
         existingClaim: ssd-share1
