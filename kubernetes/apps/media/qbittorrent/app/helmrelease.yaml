@@ -123,8 +123,5 @@ spec:
       config:
         existingClaim: config-qbittorrent
       media:
-        type: nfs
-        server: tank.internal
-        path: /mnt/tank/Media
-        globalMounts:
-          - path: /media
+        enabled: true
+        existingClaim: ssd-share1
