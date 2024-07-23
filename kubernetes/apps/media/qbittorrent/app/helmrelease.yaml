@@ -122,6 +122,6 @@ spec:
     persistence:
       config:
         existingClaim: config-qbittorrent
-      media:
+      downloads:
         enabled: true
         existingClaim: ssd-share1
