@@ -36,11 +36,11 @@ spec:
     copyMethod: "${VOLSYNC_COPYMETHOD:-Snapshot}"
     pruneIntervalDays: 7
     repository: "${APP}-volsync-r2-secret"
-    volumeSnapshotClassName: "${VOLSYNC_SNAPSHOTCLASS:-csi-ceph-blockpool}"
+    volumeSnapshotClassName: "${VOLSYNC_SNAPSHOTCLASS:-csi-longhorn-blockpool}"
     cacheCapacity: "${VOLSYNC_CACHE_CAPACITY:-4Gi}"
     cacheStorageClassName: "${VOLSYNC_CACHE_SNAPSHOTCLASS:-openebs-hostpath}"
     cacheAccessModes: ["${VOLSYNC_CACHE_ACCESSMODES:-ReadWriteOnce}"]
-    storageClassName: "${VOLSYNC_STORAGECLASS:-ceph-block}"
+    storageClassName: "${VOLSYNC_STORAGECLASS:-longhorn-block}"
     accessModes: ["${VOLSYNC_ACCESSMODES:-ReadWriteOnce}"]
     moverSecurityContext:
       runAsUser: 568
