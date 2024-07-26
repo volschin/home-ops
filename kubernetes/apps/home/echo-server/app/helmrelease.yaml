@@ -98,8 +98,8 @@ spec:
         enabled: true
         kind: HTTPRoute
         parentRefs:
-          - name: gateway-internal
-            namespace: networking
+          - name: cilium-internal
+            namespace: network
         hostnames:
           - "{{ .Release.Name }}.${SECRET_DOMAIN}"
         rules:
