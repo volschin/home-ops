@@ -36,7 +36,7 @@ spec:
       tls:
         certificateRefs:
           - kind: Secret
-            name: wildcard-cert-tls
+            name: "${SECRET_DOMAIN/./-}-production-tls"
   # TODO: Not yet supported - https://github.com/cilium/cilium/issues/21926
   # addresses:
   #   - type: IPAddress
@@ -70,7 +70,7 @@ spec:
       tls:
         certificateRefs:
           - kind: Secret
-            name: wildcard-cert-tls
+            name: "${SECRET_DOMAIN/./-}-production-tls"
   # Not yet supported - https://github.com/cilium/cilium/issues/21926
   # addresses:
   #   - type: IPAddress
