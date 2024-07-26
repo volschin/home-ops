@@ -35,7 +35,7 @@ gatewayAPI:
   enabled: true
 loadBalancer:
   algorithm: maglev
-  mode: hybrid
+  mode: dsr
 localRedirectPolicy: true
 operator:
   replicas: 1
@@ -45,6 +45,8 @@ routingMode: native
 securityContext:
   capabilities:
     ciliumAgent:
+      - PERFMON
+      - BPF
       - CHOWN
       - KILL
       - NET_ADMIN
