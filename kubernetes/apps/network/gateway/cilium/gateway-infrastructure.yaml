@@ -12,7 +12,7 @@ metadata:
   name: cilium-external
   namespace: networking
   annotations:
-    external-dns.alpha.kubernetes.io/target: ingress.garb.dev
+    external-dns.alpha.kubernetes.io/target: gateway.${SECRET_DOMAIN}
 spec:
   gatewayClassName: cilium
   infrastructure:
@@ -29,7 +29,7 @@ spec:
     - name: https
       protocol: HTTPS
       port: 443
-      hostname: "*.${SECRET_DOMAIN}""
+      hostname: "*.${SECRET_DOMAIN}"
       allowedRoutes:
         namespaces:
           from: All
