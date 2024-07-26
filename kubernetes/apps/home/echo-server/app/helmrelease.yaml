@@ -101,7 +101,7 @@ spec:
           - name: cilium-internal
             namespace: network
         hostnames:
-          - "{{ .Release.Name }}.${SECRET_DOMAIN}"
+          - "echo-gateway.${SECRET_DOMAIN}"
         rules:
           - backendRefs:
             - name: *app
