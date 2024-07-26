@@ -93,3 +93,16 @@ spec:
                 service:
                   identifier: app
                   port: http
+    route:
+      app:
+        enabled: true
+        kind: HTTPRoute
+        parentRefs:
+          - name: gateway-internal
+            namespace: networking
+        hostnames:
+          - "{{ .Release.Name }}.${SECRET_DOMAIN}"
+        rules:
+          - backendRefs:
+            - name: *app
+              port: *port
