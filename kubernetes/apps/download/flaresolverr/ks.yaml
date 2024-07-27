@@ -10,12 +10,12 @@ spec:
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
-  path: ./kubernetes/apps/media/flaresolverr/app
+  path: ./kubernetes/apps/download/flaresolverr/app
   prune: true
   sourceRef:
     kind: GitRepository
     name: home-kubernetes
-  wait: false # no flux ks dependents
-  interval: 360m
+  wait: true
+  interval: 6h
   retryInterval: 1m
   timeout: 5m
