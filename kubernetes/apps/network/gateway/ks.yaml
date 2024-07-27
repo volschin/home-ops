@@ -11,6 +11,8 @@ spec:
       app.kubernetes.io/name: *app
   path: ./kubernetes/apps/network/gateway/cilium
   prune: true
+  dependsOn:
+    - name: cilium
   sourceRef:
     kind: GitRepository
     name: home-kubernetes
