@@ -6,19 +6,19 @@ metadata:
   name: &app prowlarr
   namespace: flux-system
 spec:
-  targetNamespace: media
+  targetNamespace: download
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
   dependsOn:
     - name: external-secrets-stores
-  path: ./kubernetes/apps/media/prowlarr/app
+  path: ./kubernetes/apps/download/prowlarr/app
   prune: true
   sourceRef:
     kind: GitRepository
     name: home-kubernetes
   wait: false
-  interval: 360m
+  interval: 6h
   retryInterval: 1m
   timeout: 5m
   postBuild:
