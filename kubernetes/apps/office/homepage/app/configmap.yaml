@@ -10,6 +10,9 @@ data:
       - Github:
         - icon: github-light.png
           href: https://github.com/
+      - Kubesearch:
+        - icon: kubernetes-dashboard.svg
+          href: https://kubesearch.dev/
       - Terraform:
         - icon: terraform.svg
           href: https://volschin.app.spacelift.io/
@@ -39,21 +42,16 @@ data:
     mode: cluster
   services.yaml: |
     - Infrastructure:
-        - AdGuard Home:
-            href: https://adguard
-            icon: adguard-home.png
+        - Cloudflared:
+            href: https://dash.cloudflare.com/
+            icon: cloudflare-zero-trust.png
+            description: Cloudflared Tunnel Status
         - Fritz!Box:
             href: https://fritz.box
             icon: avmfritzbox.png
         - OPNsense:
             href: https://opnsense
             icon: opnsense.png
-        - Proxmox VE:
-            href: https://pve
-            icon: proxmox.png
-        - UniFi:
-            href: https://unifi
-            icon: unifi-controller.png
     - Observability:
         - Prometheus (storage):
             href: https://prometheus
@@ -75,7 +73,7 @@ data:
   settings.yaml: |
     background:
       image: https://images.unsplash.com/photo-1633259584604-afdc243122ea
-      opacity: 10
+      opacity: 20
     fiveColumns: true
     headerStyle: clean
     hideErrors: true
@@ -93,27 +91,28 @@ data:
       Tools:
         style: column
     showStats: false
-    statusStyle: dot
-    target: _self
-    title: Home
+    hideVersion: true
+    target: _blank
   widgets.yaml: |
-    - resources:
-      cpu: true
-      cputemp: true
-      memory: true
-      disk: [/,/app/config]
-      uptime: true
+    - kubernetes:
+        cluster:
+          cpu: true
+          memory: true
+          show: true
+        nodes:
+          cpu: true
+          memory: true
+          show: true
     - openweathermap:
-      label: Berlin
-      latitude: 52.51
-      longitude: 13.44
-      units: metric
-      provider: openweathermap
-      cache: 30
-      format:
-        maximumFractionDigits: 1
+        latitude: ${LATITUDE}
+        longitude: ${LONGITUDE}
+        units: metric
+        provider: openweathermap
+        cache: 30
+        format:
+          maximumFractionDigits: 1
     - datetime:
-      text_size: md
-      format:
-        timeStyle: short
-        hourCycle: h23
+        text_size: md
+        format:
+          timeStyle: short
+          hourCycle: h23
