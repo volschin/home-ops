@@ -99,12 +99,10 @@ data:
           cpu: true
           memory: true
           show: true
-          showLabel: true
         nodes:
           cpu: true
           memory: true
           show: true
-          showLabel: true
     - openweathermap:
         latitude: ${LATITUDE}
         longitude: ${LONGITUDE}
