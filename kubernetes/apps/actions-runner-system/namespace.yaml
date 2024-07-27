@@ -3,10 +3,9 @@ apiVersion: v1
 kind: Namespace
 metadata:
   name: actions-runner-system
-  annotations:
+  labels:
     kustomize.toolkit.fluxcd.io/prune: disabled
     volsync.backube/privileged-movers: "true"
-  labels:
     goldilocks.fairwinds.com/enabled: "true"
 ---
 # yaml-language-server: $schema=https://kubernetes-schemas.pages.dev/notification.toolkit.fluxcd.io/provider_v1beta3.json
