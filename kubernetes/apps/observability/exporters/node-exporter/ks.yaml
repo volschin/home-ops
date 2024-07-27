@@ -9,7 +9,7 @@ spec:
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
-  interval: 120m
+  interval: 6h
   path: ./kubernetes/apps/observability/exporters/node-exporter/app
   prune: true
   sourceRef:
