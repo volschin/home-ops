@@ -121,7 +121,7 @@ spec:
           gethomepage.dev/icon: qbittorrent.svg
           gethomepage.dev/description: Bittorrent client
           gethomepage.dev/widget.type: qbittorrent
-          gethomepage.dev/widget.url: "http://qbittorrent.media.svc.cluster.local:8080"
+          gethomepage.dev/widget.url: "http://qbittorrent.download.svc.cluster.local:8080"
           gethomepage.dev/widget.key: "{{ `{{HOMEPAGE_VAR_QBITTORRENT_TOKEN}}` }}"
           external-dns.alpha.kubernetes.io/target: internal.${SECRET_DOMAIN}
           nginx.ingress.kubernetes.io/configuration-snippet: |
