@@ -10,7 +10,7 @@ spec:
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
-  interval: 120m
+  interval: 6h
   path: "./kubernetes/apps/home/mosquitto/app"
   prune: true
   sourceRef:
