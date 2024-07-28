@@ -57,7 +57,7 @@ spec:
             type: prometheus
             uid: prometheus
             access: proxy
-            url: http://prometheus-operated.observability.svc.cluster.local:9090
+            url: http://prometheus.observability.svc.cluster.local:9090
             jsonData:
               timeInterval: 1m
             isDefault: true
@@ -72,7 +72,7 @@ spec:
             type: alertmanager
             uid: alertmanager
             access: proxy
-            url: http://alertmanager-operated.observability.svc.cluster.local:9093
+            url: http://alertmanager.observability.svc.cluster.local:9093
             jsonData:
               implementation: prometheus
     dashboardProviders:
