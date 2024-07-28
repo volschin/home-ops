@@ -25,9 +25,9 @@ spec:
   values:
     image:
       #repository: ghcr.io/volschin/wego-app
-      repository: ghcr.io/weaveworks/wego-app
+      repository: docker.io/choclab/wego-app
       pullPolicy: IfNotPresent
-      tag: "v0.38.0"
+      tag: "v0.38.0@sha256:ae450a81d70dd9f392f7bf89950b99ad5570d98227fb0da0bfd661a8f2337fa2"
     resources:
       requests:
         cpu: 100m
@@ -65,7 +65,7 @@ spec:
         gethomepage.dev/icon: https://raw.githubusercontent.com/joryirving/home-ops/main/docs/src/assets/icons/weave.png
         gethomepage.dev/description: Flux Dashboard
       hosts:
-        - host: gitops.${SECRET_DOMAIN}
+        - host: gitops-ee.${SECRET_DOMAIN}
           paths:
             - path: /
               pathType: Prefix
