@@ -25,9 +25,9 @@ spec:
   values:
     image:
       #repository: ghcr.io/volschin/wego-app
-      repository: docker.io/choclab/wego-app
+      repository: docker.io/choclab/weave-gitops-enterprise-ui-server
       pullPolicy: IfNotPresent
-      tag: "v0.38.0@sha256:ae450a81d70dd9f392f7bf89950b99ad5570d98227fb0da0bfd661a8f2337fa2"
+      tag: "dev-95fd7f87@sha256:ae450a81d70dd9f392f7bf89950b99ad5570d98227fb0da0bfd661a8f2337fa2"
     resources:
       requests:
         cpu: 100m
