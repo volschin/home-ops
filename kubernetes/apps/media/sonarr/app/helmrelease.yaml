@@ -42,7 +42,7 @@ spec:
           app:
             image:
               repository: ghcr.io/volschin/sonarr-develop
-              tag: 4.0.8.1929@sha256:68149ca5671ce85fa672faaa3366227014a63d325bd3c0478bc1e1a2f0125ae4
+              tag: 4.0.8.1967@sha256:01fae201e8a28af83a60111cac1577cd8573481709c38e5250f96fb250f4ce6b
             env:
               SONARR__APP__INSTANCENAME: Sonarr
               SONARR__APP__THEME: dark
