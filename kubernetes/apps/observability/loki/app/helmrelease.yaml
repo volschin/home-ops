@@ -9,8 +9,8 @@ spec:
   timeout: 15m
   chart:
     spec:
-      chart: loki
-      version: 6.7.3
+      chart: loki-distributed
+      version: 0.79.1
       sourceRef:
         kind: HelmRepository
         name: grafana
