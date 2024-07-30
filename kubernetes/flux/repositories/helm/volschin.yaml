@@ -6,5 +6,5 @@ metadata:
   namespace: flux-system
 spec:
   type: oci
-  interval: 60m
+  interval: 10m
   url: oci://ghcr.io/volschin/charts
