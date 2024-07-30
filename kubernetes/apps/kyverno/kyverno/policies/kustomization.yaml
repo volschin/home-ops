@@ -16,6 +16,7 @@ resources:
   - check-deprecated-apis.yaml
   # - cleanup-empty-replicasets.yaml
   #- deny-ingress-implentationspecific.yaml
+  - disallow-default-namespace.yaml
   - disallow-empty-ingress-host.yaml
   - disallow-localhost-services.yaml
   # - ingress-prom-probes.yaml
