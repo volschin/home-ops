@@ -13,7 +13,7 @@ resources:
   - annotate-base-images.yaml
   - block-large-images.yaml
   - block-stale-images.yaml
-  # - check-deprecated-apis.yaml
+  - check-deprecated-apis.yaml
   # - cleanup-empty-replicasets.yaml
   #- deny-ingress-implentationspecific.yaml
   - disallow-empty-ingress-host.yaml
