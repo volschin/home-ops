@@ -12,7 +12,7 @@ spec:
       version: 4.0.36
       sourceRef:
         kind: HelmRepository
-        name: weave-gitops
+        name: volschin
         namespace: flux-system
   install:
     remediation:
