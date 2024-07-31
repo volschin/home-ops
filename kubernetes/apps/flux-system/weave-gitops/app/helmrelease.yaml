@@ -27,7 +27,7 @@ spec:
   values:
     image:
       repository: ghcr.io/volschin/wego-app
-      tag: "0.39.0-rc.2"
+      tag: "0.39.0-rc.3"
       #repository: ghcr.io/weaveworks/wego-app
       #tag: "v0.38.0"
     resources:
