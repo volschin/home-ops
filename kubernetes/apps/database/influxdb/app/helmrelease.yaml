@@ -3,7 +3,6 @@ apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: &app influxdb
-  namespace: database
 spec:
   interval: 30m
   chart:
@@ -16,40 +15,47 @@ spec:
         namespace: flux-system
   # Values link: https://github.com/influxdata/helm-charts/blob/master/charts/influxdb2/values.yaml
   values:
+    fullnameOverride: *app
     image:
       repository: docker.io/library/influxdb
       tag: 2.7.8-alpine
-
     securityContext:
       fsGroupChangePolicy: "OnRootMismatch"
-
+    resources:
+      requests:
+        cpu: 100m
+        memory: 128Mi
+      limits:
+        memory: 2Gi
     pdb:
       create: false
-
+    env:
+      - name: TZ
+        value: "${TIMEZONE}"
     adminUser:
       organization: "home"
       user: "admin"
       bucket: "default"
-      existingSecret: "influxdb-secrets"
-
+      retention_policy: "0s"
+      # existingSecret: "influxdb-secrets"
+      ## Leave empty to generate a random password and token.
+      ## Or fill any of these values to use fixed values.
+      # password: "${SECRET_INFLUXDB_PASSWORD}"
+      # token: "${SECRET_INFLUXDB_TOKEN}"
     persistence:
-      enabled: true
-      useExisting: true
-      name: local-volume-database
-      subPath: *app
-
+      storageClass: longhorn
+      size: 10Gi
+    service:
+      type: LoadBalancer
+      loadBalancerIP: 10.172.90.40
     ingress:
       enabled: true
       className: internal
       annotations:
         gethomepage.dev/enabled: "true"
         gethomepage.dev/description: Time Series DB
-        gethomepage.dev/group: data-platform
-        gethomepage.dev/icon: influxdb.png
+        gethomepage.dev/group: Observability
+        gethomepage.dev/icon: influxdb.svg
         gethomepage.dev/name: InfluxDB
       hostname: "influxdb.${SECRET_DOMAIN}"
       tls: true
-
-    service:
-      type: LoadBalancer
-      loadBalancerIP: 10.172.90.40
