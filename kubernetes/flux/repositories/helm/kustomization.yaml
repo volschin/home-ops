@@ -9,7 +9,6 @@ resources:
   - ./cilium.yaml
   - ./coredns.yaml
   - ./external-dns.yaml
-  - ./external-secrets.yaml
   - ./fairwinds.yaml
   - ./grafana.yaml
   - ./influxdata.yaml
