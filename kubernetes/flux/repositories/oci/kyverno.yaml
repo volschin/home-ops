@@ -8,7 +8,7 @@ spec:
   interval: 12h
   url: oci://ghcr.io/kyverno/charts/kyverno
   ref:
-    tag: "3.2.5"
+    tag: "3.2.6"
   verify:
     provider: cosign
     matchOIDCIdentity:
