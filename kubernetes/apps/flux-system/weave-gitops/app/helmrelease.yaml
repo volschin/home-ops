@@ -27,8 +27,6 @@ spec:
   values:
     image:
       tag: "0.39.0-rc.5"
-      #repository: ghcr.io/weaveworks/wego-app
-      #tag: "v0.38.0"
     resources:
       requests:
         cpu: 100m
