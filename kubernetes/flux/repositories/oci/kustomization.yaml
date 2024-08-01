@@ -8,5 +8,6 @@ resources:
   - ./external-secrets.yaml
   - ./flux-manifests.yaml
   - ./grafana.yaml
+  - ./kyverno.yaml
   #- ./prometheus-community.yaml
   - ./spegel.yaml
