@@ -6,7 +6,7 @@ metadata:
 spec:
   chartRef:
     kind: OCIRepository
-    name: trivy-operator
+    name: aqua-trivy
     namespace: flux-system
   install:
     createNamespace: false
