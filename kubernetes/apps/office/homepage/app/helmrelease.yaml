@@ -4,15 +4,11 @@ kind: HelmRelease
 metadata:
   name: &app homepage
 spec:
-  interval: 2h
-  chart:
-    spec:
-      chart: app-template
-      version: 3.3.0
-      sourceRef:
-        kind: HelmRepository
-        name: bjw-s
-        namespace: flux-system
+  interval: 60m
+  chartRef:
+    kind: OCIRepository
+    name: app-template
+    namespace: flux-system
   maxHistory: 2
   install:
     remediation:
