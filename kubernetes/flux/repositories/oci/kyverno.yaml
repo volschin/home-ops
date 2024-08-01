@@ -11,6 +11,6 @@ spec:
     tag: "3.2.6"
   verify:
     provider: cosign
-#    matchOIDCIdentity:
-#      - issuer: "^https://token.actions.githubusercontent.com$"
-#        subject: "^https://github.com/kyverno/kyverno.*$"
+    matchOIDCIdentity:
+      - issuer: "^https://token.actions.githubusercontent.com$"
+        subject: "^https://github.com/kyverno/kyverno.*$"
