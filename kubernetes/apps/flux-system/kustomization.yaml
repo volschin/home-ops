@@ -4,9 +4,8 @@ kind: Kustomization
 resources:
   - ./namespace.yaml
   - ./webhooks/ks.yaml
-  #- ./capacitor/ks.yaml
   - ./notifications/ks.yaml
-  - ./gitops-ee/ks.yaml
+  #- ./gitops-ee/ks.yaml
   - ./weave-gitops/ks.yaml
   - ./podmonitor.yaml
   - ./prometheusrule.yaml
