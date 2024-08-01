@@ -4,10 +4,12 @@ kind: Kustomization
 resources:
   - ./aqua-trivy.yaml
   # - ./bjw-s.yaml
-  - ./capacitor.yaml
   - ./cloudnative-pg.yaml
-  # - ./external-secrets.yaml
+  - ./external-secrets.yaml
   - ./flux-manifests.yaml
   - ./grafana.yaml
+  - ./kyverno.yaml
   #- ./prometheus-community.yaml
-  #- ./spegel.yaml
+  - ./spegel.yaml
+  #- ./stakater.yaml
+  - ./volschin-gitops.yaml
