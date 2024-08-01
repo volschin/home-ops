@@ -9,7 +9,7 @@ spec:
     name: trivy-operator
     namespace: flux-system
   install:
-    createNamespace: true
+    createNamespace: false
     crds: CreateReplace
   upgrade:
     crds: CreateReplace
@@ -17,17 +17,12 @@ spec:
     excludeNamespaces: "{{ .Release.Namespace }}"
     operator:
       scanJobsConcurrentLimit: 2
-#      builtInTrivyServer: true
-      vulnerabilityScannerScanOnlyCurrentRevisions: true
-      configAuditScannerScanOnlyCurrentRevisions: true
+      clusterSbomCacheEnabled: true
+      metricsVulnIdEnabled: false
+      exposedSecretScannerEnabled: false
     serviceMonitor:
       enabled: true
     trivy:
       ignoreUnfixed: true
-      resources:
-        requests:
-          cpu: 100m
-          memory: 100M
-        limits:
-          memory: 500M
+      severity: UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL
   interval: 60m
