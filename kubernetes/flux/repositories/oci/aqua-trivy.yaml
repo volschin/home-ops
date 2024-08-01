@@ -1,0 +1,16 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: OCIRepository
+metadata:
+  name: aqua-trivy
+  namespace: flux-system
+spec:
+  interval: 12h
+  url: oci://ghcr.io/aquasecurity/helm-charts/trivy-operator
+  ref:
+    tag: "v0.24.1"
+  verify:
+    provider: cosign
+#    matchOIDCIdentity:
+#      - issuer: "^https://token.actions.githubusercontent.com$"
+#        subject: "^https://github.com/aquasecurity/trivy-operator.*$"
