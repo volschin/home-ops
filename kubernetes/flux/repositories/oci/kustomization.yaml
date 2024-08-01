@@ -4,7 +4,6 @@ kind: Kustomization
 resources:
   - ./aqua-trivy.yaml
   # - ./bjw-s.yaml
-  - ./capacitor.yaml
   - ./cloudnative-pg.yaml
   # - ./external-secrets.yaml
   - ./flux-manifests.yaml
