@@ -9,8 +9,8 @@ spec:
   url: oci://ghcr.io/aquasecurity/helm-charts/trivy-operator
   ref:
     tag: "0.24.1"
-  verify:
-    provider: cosign
+#  verify:
+#    provider: cosign
 #    matchOIDCIdentity:
 #      - issuer: "^https://token.actions.githubusercontent.com$"
 #        subject: "^https://github.com/aquasecurity/trivy-operator.*$"
