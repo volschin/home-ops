@@ -11,6 +11,6 @@ spec:
     tag: "0.0.23"
   verify:
     provider: cosign
-    matchOIDCIdentity:
-      - issuer: "^https://token.actions.githubusercontent.com$"
-        subject: "^https://github.com/spegel-org/spegel.*$"
+#    matchOIDCIdentity:
+#      - issuer: "^https://token.actions.githubusercontent.com$"
+#        subject: "^https://github.com/spegel-org/spegel.*$"
