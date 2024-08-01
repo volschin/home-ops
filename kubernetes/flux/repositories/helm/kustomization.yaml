@@ -35,4 +35,3 @@ resources:
   - ./stakater.yaml
   - ./victoria-metrics.yaml
   - ./volschin.yaml
-  - ./weave-gitops.yaml
