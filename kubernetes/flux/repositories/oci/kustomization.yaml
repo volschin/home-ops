@@ -9,4 +9,4 @@ resources:
   - ./flux-manifests.yaml
   - ./grafana.yaml
   #- ./prometheus-community.yaml
-  #- ./spegel.yaml
+  - ./spegel.yaml
