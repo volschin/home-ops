@@ -29,7 +29,6 @@ resources:
   - ./postfinance.yaml
   - ./prometheus-community.yaml
   - ./smallstep.yaml
-  - ./spegel.yaml
   - ./stakater.yaml
   - ./victoria-metrics.yaml
   #- ./volschin.yaml
