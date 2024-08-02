@@ -6,6 +6,9 @@ metadata:
   namespace: flux-system
 spec:
   interval: 12h
+  layerSelector:
+    mediaType: application/vnd.cncf.helm.chart.content.v1.tar+gzip
+    operation: copy
   url: oci://ghcr.io/cloudnative-pg/charts/cloudnative-pg
   ref:
     tag: "0.21.6"
