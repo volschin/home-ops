@@ -13,4 +13,4 @@ spec:
 #    provider: cosign
 #    matchOIDCIdentity:
 #      - issuer: "^https://token.actions.githubusercontent.com$"
-#        subject: "^https://github.com/aquasecurity/trivy-operator.*$"
+#        subject: "^https://github.com/bjw-s/helm-charts.*$"
