@@ -4,4 +4,4 @@ kind: Kustomization
 resources:
   - ./namespace.yaml
   - ./trivy/ks.yaml
-  - ./authelia/ks.yaml
+  #- ./authelia/ks.yaml
