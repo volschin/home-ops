@@ -6,6 +6,9 @@ metadata:
   namespace: flux-system
 spec:
   interval: 12h
+  layerSelector:
+    mediaType: application/vnd.cncf.helm.chart.content.v1.tar+gzip
+    operation: copy
   url: oci://ghcr.io/spegel-org/helm-charts/spegel
   ref:
     tag: "v0.0.23"
