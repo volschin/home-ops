@@ -8,7 +8,7 @@ spec:
   interval: 12h
   url: oci://ghcr.io/bjw-s/helm/app-template
   ref:
-    tag: "3.3.1"
+    tag: "3.3.2"
 #  verify:
 #    provider: cosign
 #    matchOIDCIdentity:
