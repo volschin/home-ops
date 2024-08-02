@@ -21,7 +21,8 @@ jobs:
     strategy:
       matrix:
         paths: ["kubernetes"]
-        resources: ["helmrelease", "kustomization"]
+        #resources: ["helmrelease", "kustomization"]
+        resources: ["kustomization"]
     steps:
       - name: Harden Runner
         uses: step-security/harden-runner@0d381219ddf674d61a7572ddd19d7941e271515c # v2.9.0
