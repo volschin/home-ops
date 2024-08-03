@@ -5,7 +5,6 @@
     // "docker:pinDigests",
     "replacements:k8s-registry-move",
     "replacements:containerbase",
-    "ignorePaths": ["**/*.sops.*", "**/.archive/**", "**/resources/**"],
     "github>onedr0p/home-ops//.github/renovate/grafanaDashboards.json5"
   ],
 //  "baseBranches": ["!/^renovate\\/.*/"],
