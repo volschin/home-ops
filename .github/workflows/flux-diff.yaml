@@ -21,8 +21,7 @@ jobs:
     strategy:
       matrix:
         paths: ["kubernetes"]
-        #resources: ["helmrelease", "kustomization"]
-        resources: ["kustomization"]
+        resources: ["helmrelease", "kustomization"]
     steps:
       - name: Harden Runner
         uses: step-security/harden-runner@0d381219ddf674d61a7572ddd19d7941e271515c # v2.9.0
@@ -40,7 +39,7 @@ jobs:
           path: default
 
       - name: Diff Resources
-        uses: docker://ghcr.io/allenporter/flux-local:v5.4.0
+        uses: docker://ghcr.io/jfroy/flux-local:v5.4.0@sha256:66ff74577bce614da5f7094fe8276264ca8d43ac6c4c5c3c13d307fdaed8bd38
         with:
           args: >-
             diff ${{ matrix.resources }}
