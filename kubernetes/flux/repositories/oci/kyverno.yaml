@@ -9,6 +9,7 @@ spec:
   layerSelector:
     mediaType: application/vnd.cncf.helm.chart.content.v1.tar+gzip
     operation: copy
+  # renovate: datasource=helm
   url: oci://ghcr.io/kyverno/charts/kyverno
   ref:
     tag: "3.2.5"
