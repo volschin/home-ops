@@ -9,6 +9,7 @@ spec:
   layerSelector:
     mediaType: application/vnd.cncf.helm.chart.content.v1.tar+gzip
     operation: copy
+  # renovate: datasource=helm
   url: oci://ghcr.io/aquasecurity/helm-charts/trivy-operator
   ref:
     tag: "0.24.1"
