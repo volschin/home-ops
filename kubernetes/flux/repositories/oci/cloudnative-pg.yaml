@@ -9,6 +9,7 @@ spec:
   layerSelector:
     mediaType: application/vnd.cncf.helm.chart.content.v1.tar+gzip
     operation: copy
+  # renovate: datasource=helm
   url: oci://ghcr.io/cloudnative-pg/charts/cloudnative-pg
   ref:
     tag: "0.21.6"
