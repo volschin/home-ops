@@ -9,7 +9,7 @@ spec:
   layerSelector:
     mediaType: "application/vnd.cncf.helm.chart.content.v1.tar+gzip"
     operation: copy
-  # renovate: datasource=helm
+  # renovate: datasource=helm depName=grafana-operator
   url: oci://ghcr.io/grafana/helm-charts/grafana-operator
   ref:
     semver: ">=5.9.0"
