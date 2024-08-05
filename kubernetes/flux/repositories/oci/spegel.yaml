@@ -9,7 +9,7 @@ spec:
   layerSelector:
     mediaType: application/vnd.cncf.helm.chart.content.v1.tar+gzip
     operation: copy
-  # renovate: datasource=helm
+  # renovate: datasource=helm depName=spegel
   url: oci://ghcr.io/spegel-org/helm-charts/spegel
   ref:
     tag: "v0.0.23"
