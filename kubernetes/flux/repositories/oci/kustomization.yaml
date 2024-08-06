@@ -10,6 +10,7 @@ resources:
   - ./flux-manifests.yaml
   - ./grafana.yaml
   - ./kyverno.yaml
+  - ./policy-reporter.yaml
   #- ./prometheus-community.yaml
   - ./spegel.yaml
   #- ./stakater.yaml
