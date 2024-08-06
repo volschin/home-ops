@@ -7,11 +7,11 @@ metadata:
   labels:
     substitution.flux.home.arpa/enabled: "true"
 spec:
-  interval: 15m
+  interval: 6h
   chart:
     spec:
       chart: podinfo
-      version: 6.4.0
+      version: 6.7.0
       sourceRef:
         kind: HelmRepository
         name: podinfo
