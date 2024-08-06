@@ -8,10 +8,12 @@ spec:
   interval: 360m
   retryInterval: 5m
   prune: true
-
+  targetNamespace: cert-manager
+  commonMetadata:
+    labels:
+      app.kubernetes.io/name: *app
   dependsOn:
     - name: kyverno
-
   path: ./kubernetes/apps/kyverno/reporter/app
   sourceRef:
     kind: GitRepository
