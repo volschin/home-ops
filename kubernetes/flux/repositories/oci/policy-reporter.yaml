@@ -16,5 +16,5 @@ spec:
   verify:
     provider: cosign
     matchOIDCIdentity:
-      - issuer: "^https://token.actions.githubusercontent.com$"
-        subject: "^https://github.com/kyverno/policy-reporter.*$"
+      - issuer: "^https://github.com/login/oauth$"
+        subject: "^frank.jogeleit@web.de$"
