@@ -18,8 +18,6 @@ resources:
   - ./k8s-gateway.yaml
   - ./kubernetes-dashboard.yaml
   - ./kepler.yaml
-  - ./kyverno.yaml
-  - ./kyverno-reporter.yaml
   - ./longhorn.yaml
   - ./metrics-server.yaml
   - ./node-feature-discovery.yaml
@@ -31,4 +29,3 @@ resources:
   - ./smallstep.yaml
   - ./stakater.yaml
   - ./victoria-metrics.yaml
-  #- ./volschin.yaml
