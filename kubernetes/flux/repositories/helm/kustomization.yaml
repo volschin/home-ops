@@ -30,4 +30,3 @@ resources:
   - ./smallstep.yaml
   - ./stakater.yaml
   - ./victoria-metrics.yaml
-  #- ./volschin.yaml
