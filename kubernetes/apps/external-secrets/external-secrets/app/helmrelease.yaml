@@ -19,6 +19,8 @@ spec:
       strategy: rollback
       retries: 3
   values:
+    image:
+      tag: main
     installCRDs: true
     bitwarden-sdk-server:
       enabled: true
