@@ -18,5 +18,5 @@ spec:
     kind: GitRepository
     name: home-kubernetes
   wait: true
-  dependsOn:
-    - name: external-secrets-stores
+#  dependsOn:
+#    - name: external-secrets-stores
