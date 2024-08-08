@@ -13,6 +13,8 @@ spec:
   values:
     controllers:
       mosquitto:
+        type: statefulset
+        replicas: 2
         annotations:
           reloader.stakater.com/auto: "true"
 
