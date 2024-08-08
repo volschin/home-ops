@@ -47,8 +47,8 @@ routingMode: native
 securityContext:
   capabilities:
     ciliumAgent:
-      - PERFMON
-      - BPF
+   #   - PERFMON
+   #   - BPF
       - CHOWN
       - KILL
       - NET_ADMIN
