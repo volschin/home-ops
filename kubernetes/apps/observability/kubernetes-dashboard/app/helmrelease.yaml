@@ -41,22 +41,22 @@ spec:
       - --insecure-bind-address=0.0.0.0
     ingress:
       enabled: true
-        className: internal
-        annotations:
-          external-dns.alpha.kubernetes.io/target: internal.${SECRET_DOMAIN}
-          nginx.ingress.kubernetes.io/proxy-body-size: "100m"
-          nginx.ingress.kubernetes.io/configuration-snippet: |
-            auth_request_set $required_groups 'kubernetes_dashboard';
-          nginx.ingress.kubernetes.io/whitelist-source-range: |
-            10.0.0.0/8,172.16.0.0/12,192.168.0.0/16
-          gethomepage.dev/enabled: "true"
-          gethomepage.dev/group: Services
-          gethomepage.dev/name: Kubernetes Dashboard
-          gethomepage.dev/icon: mdi-kubernetes
-        hosts:
-          - &host "dashboard.${SECRET_DOMAIN}"
-        tls:
-          - hosts:
-              - *host
+      className: internal
+      annotations:
+        external-dns.alpha.kubernetes.io/target: internal.${SECRET_DOMAIN}
+        nginx.ingress.kubernetes.io/proxy-body-size: "100m"
+        nginx.ingress.kubernetes.io/configuration-snippet: |
+          auth_request_set $required_groups 'kubernetes_dashboard';
+        nginx.ingress.kubernetes.io/whitelist-source-range: |
+          10.0.0.0/8,172.16.0.0/12,192.168.0.0/16
+        gethomepage.dev/enabled: "true"
+        gethomepage.dev/group: Services
+        gethomepage.dev/name: Kubernetes Dashboard
+        gethomepage.dev/icon: mdi-kubernetes
+      hosts:
+        - &host "dashboard.${SECRET_DOMAIN}"
+      tls:
+        - hosts:
+            - *host
     metricsScraper:
       enabled: true
