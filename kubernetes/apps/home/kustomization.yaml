@@ -9,5 +9,6 @@ resources:
   - ./home-assistant/ks.yaml
   - ./it-tools/ks.yaml
   - ./mosquitto/ks.yaml
+  - ./podinfo/ks.yaml
   - ./portainer/ks.yaml
   - ./zwave/ks.yaml
