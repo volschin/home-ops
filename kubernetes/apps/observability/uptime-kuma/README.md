@@ -4,7 +4,7 @@
 
 ![Infrastructure status page](/docs/assets/status-page.png){ loading=lazy }
 
-In addition to a [dashboard](/cluster/home/homepage), each homelab needs a status page. Uptime Kuma is a great candidate for this. It provides a minimal but beautiful interface, can be hichly customized and every major notification platform is supported. One minor issue is the lack of support for a programmatic way to configure monitors, [but hopefully this will be added some time in the future](https://github.com/louislam/uptime-kuma/issues/118)...
+In addition to a [dashboard](/kubernetes/apps/home/homepage), each homelab needs a status page. Uptime Kuma is a great candidate for this. It provides a minimal but beautiful interface, can be hichly customized and every major notification platform is supported. One minor issue is the lack of support for a programmatic way to configure monitors, [but hopefully this will be added some time in the future](https://github.com/louislam/uptime-kuma/issues/118)...
 
 ## Created Resources
 
