@@ -4,10 +4,14 @@ on:
   push:
     branches:
       - main
+permissions: {}
+
 jobs:
   docs:
     name: Build Docs
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       # checkout
       - uses: actions/checkout@v4
