@@ -18,7 +18,7 @@ spec:
     fullnameOverride: *app
     image:
       repository: docker.io/library/influxdb
-      tag: 2.7.8-alpine
+      tag: 2.7.9-alpine
     securityContext:
       fsGroupChangePolicy: "OnRootMismatch"
     resources:
