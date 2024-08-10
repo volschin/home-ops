@@ -26,13 +26,12 @@ spec:
   uninstall:
     keepHistory: false
   values:
-
     resources:
       requests:
         cpu: 1m
         memory: 16Mi
       limits:
-        cpu: 500m
+        cpu: 200m
         memory: 100Mi
 
     ingress:
@@ -40,16 +39,12 @@ spec:
       className: internal
       annotations:
         external-dns.alpha.kubernetes.io/target: "internal.${SECRET_DOMAIN}"
-        hajimari.io/appName: "podinfo"
-        hajimari.io/enable: "true"
-        hajimari.io/icon: "alarm-light-outline"
 
       hosts:
         - host: &host "podinfo.${SECRET_DOMAIN}"
           paths:
             - path: /
               pathType: ImplementationSpecific
-
       tls:
         - hosts:
             - *host
