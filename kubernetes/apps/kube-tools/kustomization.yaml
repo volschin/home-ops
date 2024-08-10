@@ -9,3 +9,4 @@ resources:
   - ./it-tools/ks.yaml
   - ./kubernetes-dashboard/ks.yaml
   - ./portainer/ks.yaml
+  - ./powertune/ks.yaml
