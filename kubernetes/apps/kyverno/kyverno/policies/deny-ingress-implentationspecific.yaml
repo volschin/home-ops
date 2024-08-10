@@ -12,7 +12,7 @@ metadata:
       much validation, and CVE-2022-4886 demonstrates that this leads to
       security issues. This policy denies an Ingress with this pathType.
 spec:
-  validationFailureAction: Enforce
+  validationFailureAction: Audit
   background: false
   rules:
     - name: check-ingress-pathtype
