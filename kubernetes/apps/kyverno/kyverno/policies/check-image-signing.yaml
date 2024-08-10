@@ -15,3 +15,5 @@ spec:
       verifyImages:
       - imageReferences:
         - "*"
+        mutateDigest: false
+        verifyDigest: false
