@@ -5,17 +5,17 @@ metadata:
   name: &app portainer
   namespace: flux-system
 spec:
-  targetNamespace: home
+  targetNamespace: kube-tools
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
-  path: ./kubernetes/apps/home/portainer/app
+  path: ./kubernetes/apps/kube-tools/portainer/app
   prune: true
   sourceRef:
     kind: GitRepository
     name: home-kubernetes
   wait: false # no flux ks dependents
-  interval: 360m
+  interval: 6h
   retryInterval: 1m
   timeout: 5m
   postBuild:
