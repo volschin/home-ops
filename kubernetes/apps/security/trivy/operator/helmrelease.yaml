@@ -25,5 +25,5 @@ spec:
       enabled: true
     trivy:
       ignoreUnfixed: true
-      severity: UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL
-  interval: 60m
+      severity: MEDIUM,HIGH,CRITICAL
+  interval: 6h
