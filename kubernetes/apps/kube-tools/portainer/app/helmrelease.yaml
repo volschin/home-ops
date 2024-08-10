@@ -5,7 +5,7 @@ metadata:
   name: portainer
   namespace: flux-system
 spec:
-  interval: 5m
+  interval: 6h
   dependsOn:
     - name: longhorn
       namespace: storage
@@ -17,10 +17,9 @@ spec:
         kind: HelmRepository
         name: portainer
         namespace: flux-system
-      interval: 24h
   values:
     persistence:
-      size: 256Mi
+      size: 128Mi
       storageClass: longhorn
     ingress:
       enabled: true
