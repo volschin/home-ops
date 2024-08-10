@@ -5,19 +5,19 @@ metadata:
   name: &app kubernetes-dashboard
   namespace: flux-system
 spec:
-  targetNamespace: observability
+  targetNamespace: kube-tools
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
   dependsOn:
     - name: cert-manager
     - name: metrics-server
-  path: ./kubernetes/apps/observability/kubernetes-dashboard/app
+  path: ./kubernetes/apps/kube-tools/kubernetes-dashboard/app
   prune: true
   sourceRef:
     kind: GitRepository
     name: home-kubernetes
   wait: false
-  interval: 360m
+  interval: 6h
   retryInterval: 1m
   timeout: 5m
