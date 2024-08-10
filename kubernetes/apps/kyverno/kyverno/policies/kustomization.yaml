@@ -16,6 +16,7 @@ resources:
   - block-large-images.yaml
   - block-stale-images.yaml
   - check-deprecated-apis.yaml
+  - unique-ingress-host-and-path-policy.yaml
   # - cleanup-empty-replicasets.yaml
   #- deny-ingress-implentationspecific.yaml
   - disallow-default-namespace.yaml
