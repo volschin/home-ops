@@ -31,7 +31,7 @@ resources:
   - restrict-node-port.yaml
   - verify-flux-images.yaml
   - verify-signed-images.yaml
-  #- check-image-signing.yaml
+  - check-image-signing.yaml
   - verify-git-repositories.yaml
   - add-ndots.yaml
   - add-ttl-jobs.yaml
