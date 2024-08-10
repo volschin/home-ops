@@ -5,15 +5,15 @@ metadata:
   name: &app podinfo
   namespace: flux-system
 spec:
-  targetNamespace: home
+  targetNamespace: kube-tools
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
-  path: ./kubernetes/apps/home/podinfo/app
+  path: ./kubernetes/apps/kube-tools/podinfo/app
   prune: true
   sourceRef:
     kind: GitRepository
     name: home-kubernetes
-  interval: 360m
+  interval: 6h
   retryInterval: 1m
   timeout: 5m
