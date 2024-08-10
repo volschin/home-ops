@@ -16,8 +16,8 @@ metadata:
       This can quickly overrun a Node and may result in a denial of service for other
       workloads. This policy adds a sizeLimit field to all Pods mounting emptyDir
       volumes, if not present, and sets it to 100Mi.
-spec: 
-  rules: 
+spec:
+  rules:
   - name: mutate-emptydir
     match:
       any:
