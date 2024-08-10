@@ -8,5 +8,6 @@ resources:
   #- ./echo-server/ks.yaml
   - ./it-tools/ks.yaml
   - ./kubernetes-dashboard/ks.yaml
+  - ./podinfo/ks.yaml
   - ./portainer/ks.yaml
   - ./powertune/ks.yaml
