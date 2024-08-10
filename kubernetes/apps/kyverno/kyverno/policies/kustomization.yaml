@@ -4,6 +4,7 @@ kind: Kustomization
 resources:
   - baseline-latest.yaml
   - add-psa-namespace-reporting.yaml
+  - add-emptydir-sizelimit-policy.yaml
   # - apply-ingress-auth-annotations.yaml
   # - apply-ingress-external-dns-annotations.yaml
   # - apply-ingress-whitelist-annotations.yaml
