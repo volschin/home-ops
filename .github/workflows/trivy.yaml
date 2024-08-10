@@ -2,7 +2,9 @@ name: trivy
 on:
   pull_request:
     branches: ["main"]
-    paths: ["kubernetes/**"]
+    paths:
+      - "kubernetes/**"
+      - "!kubernetes/**.md"
 permissions: {}
 jobs:
   trivy:
