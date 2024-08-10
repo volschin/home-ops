@@ -37,7 +37,7 @@ spec:
           main:
             image:
               repository: ghcr.io/volschin/calibre-web
-              tag: 0.6.22@sha256:e8f2e7c50e3d2ccb7a1971bd8f0c63baa54457891d910ae81615657a073032fb
+              tag: 0.6.23@sha256:bfb483d123ef338eb762c3bb070dd9c6d2f46e44ca0a31049ac07c342f35e6ac
             env:
               TZ: ${TIMEZONE}
               CACHE_DIR: /cache

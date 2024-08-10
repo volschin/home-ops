@@ -19,6 +19,9 @@ spec:
       strategy: rollback
       retries: 3
   values:
+    image:
+      repository: ghcr.io/volschin/external-secrets
+      tag: main@sha256:4f3be7f34dbf859ef3e430082bf62277e4679846fdf17f981847b6c184ee20ff
     installCRDs: true
     bitwarden-sdk-server:
       enabled: true

@@ -11,7 +11,7 @@ spec:
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
-  interval: 360m
+  interval: 6h
   path: "./kubernetes/apps/observability/alertmanager/app"
   prune: true
   sourceRef:
