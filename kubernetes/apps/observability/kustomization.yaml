@@ -8,12 +8,11 @@ resources:
   - ./goldilocks/ks.yaml
   - ./grafana/ks.yaml
   - ./kube-state-metrics/ks.yaml
-  - ./kubernetes-dashboard/ks.yaml
   - ./kepler/ks.yaml
   - ./kromgo/ks.yaml
   - ./loki/ks.yaml
-  - ./powertune/ks.yaml
   - ./prometheus-operator-crds/ks.yaml
+  - ./vector/ks.yaml
   - ./victoria-metrics/ks.yaml
   # Exporters
   - ./exporters

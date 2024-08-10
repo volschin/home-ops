@@ -5,7 +5,8 @@ resources:
   # Pre Flux-Kustomizations
   - ./namespace.yaml
   # Flux-Kustomizations
-  - ./echo-server/ks.yaml
-  - ./home-assistant/ks.yaml
-  - ./mosquitto/ks.yaml
-  - ./zwave/ks.yaml
+  #- ./echo-server/ks.yaml
+  - ./it-tools/ks.yaml
+  - ./kubernetes-dashboard/ks.yaml
+  - ./portainer/ks.yaml
+  - ./powertune/ks.yaml

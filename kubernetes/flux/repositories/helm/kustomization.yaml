@@ -7,6 +7,7 @@ resources:
   - ./backube.yaml
   - ./bjw-s.yaml
   - ./cilium.yaml
+  - ./cloudflare-exporter.yaml
   - ./coredns.yaml
   - ./external-dns.yaml
   - ./fairwinds.yaml
@@ -28,4 +29,5 @@ resources:
   - ./prometheus-community.yaml
   - ./smallstep.yaml
   - ./stakater.yaml
+  - ./vector.yaml
   - ./victoria-metrics.yaml
