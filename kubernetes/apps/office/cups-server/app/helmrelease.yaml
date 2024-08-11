@@ -30,7 +30,7 @@ spec:
     image:
       # https://hub.docker.com/r/olbat/cupsd
       repository: docker.io/olbat/cupsd
-      tag: latest
+      tag: stable-2024-08-09@sha256:da6bcbac3990df8376bfacebddaca22d6ba49962d829dbb787a3e25c26aaa5e8
     env:
       TZ: "${TIMEZONE}"
     service:
