@@ -33,9 +33,9 @@ spec:
       message: "Images containing built-in volumes are prohibited."
       foreach:
       - list: "request.object.spec.containers"
-        context: 
+        context:
         - name: imageData
-          imageRegistry: 
+          imageRegistry:
             reference: "{{ element.image }}"
         deny:
           conditions:
