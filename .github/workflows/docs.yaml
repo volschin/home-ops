@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - main
+    paths:
+      - "docs/**"
+      - "kubernetes/**.md"
+      - "README.md"
 permissions: {}
 
 jobs:
