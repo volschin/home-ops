@@ -4,7 +4,7 @@ name: "Kubeconform"
 
 on:
   pull_request:
-    branches: ["main"]
+    branches: ["main", "renovate/**"]
     paths:
       - "kubernetes/**"
       - "!kubernetes/**.md"
