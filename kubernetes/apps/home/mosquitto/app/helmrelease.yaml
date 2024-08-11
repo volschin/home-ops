@@ -55,12 +55,12 @@ spec:
       config:
         name: mosquitto-config
         type: configMap
-      data:
-        existingClaim: mosquitto-data
-        advancedMounts:
-          mosquitto:
-            app:
-              - path: /data
+   #   data:
+   #     existingClaim: mosquitto-data
+   #     advancedMounts:
+   #       mosquitto:
+   #         app:
+   #           - path: /data
     service:
       app:
         controller: *app
