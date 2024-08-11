@@ -1,7 +1,7 @@
 name: Kubescape scanning for misconfigurations
 on:
   push:
-    branches: [ main ]
+    branches: [ "main", "renovate/**" ]
     paths: ["kubernetes/**.yaml"]
 permissions: {}
 jobs:
