@@ -4,7 +4,7 @@ kind: Namespace
 metadata:
   name: office
   labels:
-    pod-security.kubernetes.io/enforce: baseline
+    pod-security.kubernetes.io/enforce: privileged
     pod-security.kubernetes.io/enforce-version: v1.30
     # We are setting these to our _desired_ `enforce` level.
     pod-security.kubernetes.io/audit: restricted
