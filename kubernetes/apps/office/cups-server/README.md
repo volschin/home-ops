@@ -4,7 +4,7 @@
 
 > A community-supported supercharged version of paperless: scan, index and archive all your physical documents.
 
-CUPS server is a 
+CUPS server is a
 
 - Machine learning powered document matching.
 - [More features can be found on their GitHub repository](https://github.com/paperless-ngx/paperless-ngx#features)
