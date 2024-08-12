@@ -24,6 +24,9 @@ spec:
     serviceMonitor:
       enabled: true
     trivy:
+      image:
+        # removate repository: "ghcr.io/aquasecurity/trivy"
+        tag: "0.54.1"
       ignoreUnfixed: true
       severity: MEDIUM,HIGH,CRITICAL
   interval: 6h
