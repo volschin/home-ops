@@ -15,7 +15,6 @@ spec:
   wait: true
   dependsOn:
     - name: prometheus-operator-crds
-      namespace: observability
   path: ./kubernetes/apps/security/trivy/operator
   sourceRef:
     kind: GitRepository
