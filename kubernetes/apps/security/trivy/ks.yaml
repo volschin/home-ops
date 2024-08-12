@@ -13,9 +13,9 @@ spec:
   retryInterval: 5m
   prune: true
   wait: true
-  #dependsOn:
-  #  - name: prometheus-operator-crds
-  #    namespace: observability
+  dependsOn:
+    - name: prometheus-operator-crds
+      namespace: observability
   path: ./kubernetes/apps/security/trivy/operator
   sourceRef:
     kind: GitRepository
