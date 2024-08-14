@@ -39,10 +39,10 @@ spec:
         ingressClassName: intern
         annotations:
           gethomepage.dev/enabled: "true"
-          gethomepage.dev/group: Infrastructure
+          gethomepage.dev/group: Observability
           gethomepage.dev/name: VictoriaLogs
           gethomepage.dev/icon: si-victoriametrics
-
+          external-dns.alpha.kubernetes.io/target: internal.${SECRET_DOMAIN}
         hosts:
           - name: &host "logs.${SECRET_DOMAIN}"
             path: /
