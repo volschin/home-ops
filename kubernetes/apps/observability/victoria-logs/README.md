@@ -1,4 +1,4 @@
-# `loki`
+# `victoria-logs`
 
 ## Introduction
 
@@ -6,9 +6,9 @@
 
 | Kind                                | Name             |
 | ----------------------------------- | ---------------- |
-| [`HelmRelease`][ref-helm-release]   | `loki`           |
-| [`Certificate`][ref-certificate]    | `loki.${DOMAIN_INTERNAL}` |
-| [`IngressRoute`][ref-ingress-route] | `loki`           |
+| [`HelmRelease`][ref-helm-release]   | `victoria-logs`           |
+| [`Certificate`][ref-certificate]    | `logs.${DOMAIN_INTERNAL}` |
+| [`IngressRoute`][ref-ingress-route] | `logs`           |
 
 [ref-helm-release]: https://fluxcd.io/docs/components/helm/helmreleases/
 [ref-certificate]: https://cert-manager.io/docs/reference/api-docs/#cert-manager.io/v1.Certificate
