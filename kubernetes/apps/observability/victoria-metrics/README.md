@@ -1,7 +1,7 @@
 # VictoriaMetrics
 
 ## Introduction
-VictoriaMetrics is a fast, cost-effective and scalable monitoring solution and time series database. It delivers high performance and reliability and is a full replacement for prometheusThanos and can use the Prometheus CRD's. It uses the alert manager as independent install.
+VictoriaMetrics is a fast, cost-effective and scalable monitoring solution and time series database. It delivers high performance and reliability and is a full replacement for Prometheus/Thanos and can use the Prometheus CRD's. It uses the alert manager as independent install.
 
 ## Links
 - https://victoriametrics.com
