@@ -42,7 +42,7 @@ spec:
           gethomepage.dev/group: Infrastructure
           gethomepage.dev/name: VictoriaLogs
           gethomepage.dev/icon: si-victoriametrics
-          
+
         hosts:
           - name: &host "logs.${SECRET_DOMAIN}"
             path: /
@@ -58,4 +58,3 @@ spec:
         limits:
           memory: 100Mi
           ephemeral-storage: 2Gi
-        
