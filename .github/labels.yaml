@@ -7,6 +7,21 @@
 - { name: "area/github",             color: "0e8a16" }
 - { name: "area/kubernetes",         color: "0e8a16" }
 - { name: "area/taskfile",           color: "0e8a16" }
+# Namespace
+- { name: "ns/kube-system",          color: "ffc300" }
+- { name: "ns/kube-tools",           color: "ffc300" }
+- { name: "ns/flux-system",          color: "ffc300" }
+- { name: "ns/database",             color: "ffc300" }
+- { name: "ns/storage",              color: "ffc300" }
+- { name: "ns/finance",              color: "ffc300" }
+- { name: "ns/home",                 color: "ffc300" }
+- { name: "ns/network",              color: "ffc300" }
+- { name: "ns/o11y",                 color: "ffc300" }
+- { name: "ns/office",               color: "ffc300" }
+- { name: "ns/security",             color: "ffc300" }
+- { name: "ns/media",                color: "ffc300" }
+- { name: "ns/download",             color: "ffc300" }
+- { name: "ns/health",               color: "ffc300" }
 # Distro
 - { name: "distro/talos",            color: "ffc300" }
 # Renovate
