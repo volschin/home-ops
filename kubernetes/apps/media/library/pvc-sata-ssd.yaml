@@ -1,0 +1,31 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: ssd-share1
+  namespace: media
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 2T
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    server: ${NFS_SERVER_ADDR}
+    path: "/satashare1-1"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ssd-share1
+  namespace: media
+  annotations:
+    k8up.io/backup: false
+spec:
+  storageClassName: manual
+  volumeName: ssd-share1
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1T

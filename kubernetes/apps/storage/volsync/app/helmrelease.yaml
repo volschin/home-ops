@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: volsync
-      version: 0.9.1
+      version: 0.10.0
       sourceRef:
         kind: HelmRepository
         name: backube
@@ -24,7 +24,7 @@ spec:
       retries: 3
   dependsOn:
     - name: snapshot-controller
-      namespace: volsync-system
+      namespace: storage
   values:
     manageCRDs: true
     metrics:

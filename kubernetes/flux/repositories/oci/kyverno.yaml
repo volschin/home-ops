@@ -1,0 +1,21 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: OCIRepository
+metadata:
+  name: kyverno
+  namespace: flux-system
+spec:
+  interval: 12h
+  layerSelector:
+    mediaType: application/vnd.cncf.helm.chart.content.v1.tar+gzip
+    operation: copy
+  # renovate: datasource=helm depName=kyverno
+  url: oci://ghcr.io/kyverno/charts/kyverno
+  ref:
+    tag: 3.2.5
+    # @sha256:a07aa09708b81159fe303a93bcd6b2e8ca0deceecb88d0ae6f37bc9dd9513634
+  verify:
+    provider: cosign
+    matchOIDCIdentity:
+      - issuer: "^https://token.actions.githubusercontent.com$"
+        subject: "^https://github.com/kyverno/kyverno.*$"

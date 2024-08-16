@@ -5,15 +5,11 @@ kind: HelmRelease
 metadata:
   name: &app whisparr
 spec:
-  interval: 30m
-  chart:
-    spec:
-      chart: app-template
-      version: 3.2.1
-      sourceRef:
-        kind: HelmRepository
-        name: bjw-s
-        namespace: flux-system
+  interval: 60m
+  chartRef:
+    kind: OCIRepository
+    name: app-template
+    namespace: flux-system
   install:
     remediation:
       retries: 3
@@ -121,8 +117,5 @@ spec:
       tmp:
         type: emptyDir
       media:
-        type: nfs
-        server: tank.internal
-        path: /mnt/tank/Media
-        globalMounts:
-          - path: /media
+        enabled: true
+        existingClaim: media-library

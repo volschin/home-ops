@@ -5,15 +5,11 @@ kind: HelmRelease
 metadata:
   name: &app decluttarr
 spec:
-  interval: 30m
-  chart:
-    spec:
-      chart: app-template
-      version: 3.2.1
-      sourceRef:
-        kind: HelmRepository
-        name: bjw-s
-        namespace: flux-system
+  interval: 60m
+  chartRef:
+    kind: OCIRepository
+    name: app-template
+    namespace: flux-system
   install:
     remediation:
       retries: 3
@@ -31,7 +27,7 @@ spec:
           app:
             image:
               repository: ghcr.io/manimatter/decluttarr
-              tag: v1.46.1@sha256:0b388f13a7b200de162d583df6fb403448ace63c83aef6aa0a9dd43ee79906ca
+              tag: v1.47.1@sha256:bc3e62038ce9654a6a0db4b484cb054d762d909390c5bcf6d850c77a0aa432a9
             env:
               - name: LOG_LEVEL
                 value: "INFO"

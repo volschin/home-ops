@@ -7,13 +7,13 @@ distro/talos:
       - any-glob-to-any-file: "kubernetes/bootstrap/talos/**/*"
 area/github:
   - changed-files:
-      - any-glob-to-any-file: ".github/**/*"
+      - any-glob-to-any-file: ".github/**/*.yaml"
 area/kubernetes:
   - changed-files:
-      - any-glob-to-any-file: "kubernetes/apps/**/*"
+      - any-glob-to-any-file: "kubernetes/apps/**/*.yaml"
 area/flux:
   - changed-files:
-      - any-glob-to-any-file: "kubernetes/flux/**/*"
+      - any-glob-to-any-file: "kubernetes/flux/**/*.yaml"
 area/taskfile:
   - changed-files:
       - any-glob-to-any-file:
@@ -24,3 +24,59 @@ area/docs:
       - any-glob-to-any-file:
           - "docs/**/*"
           - "README.md"
+          - "kubernetes/**/*.md"
+ns/home:
+    - changed-files:
+      - any-glob-to-any-file:
+          - "kubernetes/apps/home/**/*"
+ns/kube-tools:
+    - changed-files:
+      - any-glob-to-any-file:
+          - "kubernetes/apps/kube-tools/**/*"
+ns/kube-system:
+    - changed-files:
+      - any-glob-to-any-file:
+          - "kubernetes/apps/kube-system/**/*"
+ns/flux-system:
+    - changed-files:
+      - any-glob-to-any-file:
+          - "kubernetes/apps/flux-system/**/*"
+ns/database:
+    - changed-files:
+      - any-glob-to-any-file:
+          - "kubernetes/apps/database/**/*"
+ns/storage:
+    - changed-files:
+      - any-glob-to-any-file:
+          - "kubernetes/apps/storage/**/*"
+          - "kubernetes/apps/openebs-system/**/*"
+ns/network:
+    - changed-files:
+      - any-glob-to-any-file:
+          - "kubernetes/apps/network/**/*"
+          - "kubernetes/apps/vpn/**/*"
+ns/o11y:
+    - changed-files:
+      - any-glob-to-any-file:
+          - "kubernetes/apps/observability/**/*"
+ns/security:
+    - changed-files:
+      - any-glob-to-any-file:
+          - "kubernetes/apps/security/**/*"
+          - "kubernetes/apps/kyverno/**/*"
+          - "kubernetes/apps/cert-manager/**/*"
+          - "kubernetes/apps/external-secrets/**/*"
+ns/office:
+    - changed-files:
+      - any-glob-to-any-file:
+          - "kubernetes/apps/office/**/*"
+ns/health:
+    - changed-files:
+      - any-glob-to-any-file:
+          - "kubernetes/apps/health/**/*"
+ns/media:
+    - changed-files:
+      - any-glob-to-any-file:
+          - "kubernetes/apps/media/**/*"
+          - "kubernetes/apps/download/**/*"
+          - "kubernetes/apps/roon/**/*"

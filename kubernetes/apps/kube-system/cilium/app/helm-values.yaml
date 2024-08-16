@@ -1,7 +1,11 @@
 ---
 autoDirectNodeRoutes: true
+bandwidthManager:
+  enabled: true
+  bbr: true
 bpf:
-  masquerade: false
+  masquerade: true
+  tproxy: true
 cgroup:
   automount:
     enabled: false
@@ -9,12 +13,15 @@ cgroup:
 cluster:
   id: 1
   name: "homelab"
-cni:
-  exclusive: false
+#cni:
+#  exclusive: false
 # NOTE: devices might need to be set if you have more than one active NIC on your hosts
 # devices: eno+ eth+
 endpointRoutes:
   enabled: true
+envoy:
+  enabled: false
+enableRuntimeDeviceDetection: true
 hubble:
   enabled: false
 ipam:
@@ -30,7 +37,7 @@ gatewayAPI:
   enabled: true
 loadBalancer:
   algorithm: maglev
-  mode: snat
+  mode: dsr
 localRedirectPolicy: true
 operator:
   replicas: 1
@@ -40,6 +47,8 @@ routingMode: native
 securityContext:
   capabilities:
     ciliumAgent:
+   #   - PERFMON
+   #   - BPF
       - CHOWN
       - KILL
       - NET_ADMIN

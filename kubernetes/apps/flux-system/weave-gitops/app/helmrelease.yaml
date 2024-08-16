@@ -5,15 +5,11 @@ kind: HelmRelease
 metadata:
   name: weave-gitops
 spec:
-  interval: 30m
-  chart:
-    spec:
-      chart: weave-gitops
-      version: 4.0.36
-      sourceRef:
-        kind: HelmRepository
-        name: weave-gitops
-        namespace: flux-system
+  interval: 60m
+  chartRef:
+    kind: OCIRepository
+    name: gitops
+    namespace: flux-system
   install:
     remediation:
       retries: 3
@@ -24,9 +20,8 @@ spec:
       retries: 3
   values:
     image:
-      #repository: ghcr.io/volschin/wego-app
+      #tag: "0.39.0-rc.2"
       repository: ghcr.io/weaveworks/wego-app
-      pullPolicy: IfNotPresent
       tag: "v0.38.0"
     resources:
       requests:
@@ -42,6 +37,11 @@ spec:
       readOnlyRootFilesystem: true
       runAsNonRoot: true
       runAsUser: 1000
+    additionalArgs:
+      - --insecure-no-authentication-user=admin
+    envVars:
+      - name: WEAVE_GITOPS_FEATURE_OIDC_BUTTON_LABEL
+        value: "Login with OIDC"
     adminUser:
       create: true
       username: admin
@@ -60,17 +60,16 @@ spec:
         gethomepage.dev/icon: https://raw.githubusercontent.com/joryirving/home-ops/main/docs/src/assets/icons/weave.png
         gethomepage.dev/description: Flux Dashboard
       hosts:
-      #  - host: gitops.${SECRET_DOMAIN}
-        - host: prometheus.${SECRET_DOMAIN}
+        - host: gitops.${SECRET_DOMAIN}
           paths:
             - path: /
               pathType: Prefix
     networkPolicy:
-      create: false
+      create: true
     metrics:
       enabled: true
-    #rbac:
-    #  create: true
-    #  impersonationResourceNames: ["admin"]
+    rbac:
+      create: true
+      impersonationResourceNames: ["admin"]
     #podAnnotations:
     #  secret.reloader.stakater.com/reload: cluster-user-auth

@@ -2,15 +2,19 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
+  # Pre-Flux
   - ./namespace.yaml
+  # Flux
   - ./alertmanager/ks.yaml
   - ./gatus/ks.yaml
   - ./goldilocks/ks.yaml
-  - ./kubernetes-dashboard/ks.yaml
+  - ./grafana/ks.yaml
+  - ./kube-state-metrics/ks.yaml
   - ./kepler/ks.yaml
   - ./kromgo/ks.yaml
-  - ./powertune/ks.yaml
   - ./prometheus-operator-crds/ks.yaml
+  - ./vector/ks.yaml
+  - ./victoria-logs/ks.yaml
   - ./victoria-metrics/ks.yaml
   # Exporters
   - ./exporters

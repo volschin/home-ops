@@ -4,8 +4,19 @@ kind: Ingress
 metadata:
   name: arr
   namespace: media
+  labels:
+    kubernetes.io/service-name: arr
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/group: Downloads
+    gethomepage.dev/name: Prowlarr
+    gethomepage.dev/icon: prowlarr.svg
+    gethomepage.dev/description: Torrent Indexer Management
+    gethomepage.dev/widget.type: prowlarr
+    gethomepage.dev/widget.url: http://arr.media/prowlarr/
+    gethomepage.dev/widget.key: "{{ `{{HOMEPAGE_VAR_PROWLARR_TOKEN}}` }}"
+    external-dns.alpha.kubernetes.io/target: internal.${SECRET_DOMAIN}
 spec:
   ingressClassName: internal
   rules:
@@ -32,13 +43,19 @@ spec:
       targetPort: 80
       name: http
 ---
-apiVersion: v1
-kind: Endpoints
+apiVersion: discovery.k8s.io/v1
+kind: EndpointSlice
 metadata:
   name: arr # Must be equal to Service name for automatic mapping
   namespace: media
-subsets:
-- addresses:
-  - ip: 192.168.2.132 # IP address of your external service that you would like to proxy requests to
-  ports:
-  - port: 89
+  labels:
+    kubernetes.io/service-name: arr
+addressType: IPv4
+ports:
+  - name: http
+    appProtocol: http
+    protocol: TCP
+    port: 89
+endpoints:
+  - addresses:
+      - 192.168.2.132

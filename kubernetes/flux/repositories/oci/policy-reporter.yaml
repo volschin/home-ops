@@ -1,0 +1,20 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: OCIRepository
+metadata:
+  name: policy-reporter
+  namespace: flux-system
+spec:
+  interval: 12h
+  layerSelector:
+    mediaType: application/vnd.cncf.helm.chart.content.v1.tar+gzip
+    operation: copy
+  # renovate: datasource=helm depName=policy-reporter
+  url: oci://ghcr.io/kyverno/charts/policy-reporter
+  ref:
+    tag: 2.24.1
+  verify:
+    provider: cosign
+    matchOIDCIdentity:
+      - issuer: "^https://github.com/login/oauth$"
+        subject: "^frank.jogeleit@web.de$"

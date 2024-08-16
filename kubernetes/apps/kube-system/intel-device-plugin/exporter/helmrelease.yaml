@@ -5,15 +5,11 @@ kind: HelmRelease
 metadata:
   name: intel-gpu-exporter
 spec:
-  interval: 15m
-  chart:
-    spec:
-      chart: app-template
-      version: 3.2.1
-      sourceRef:
-        kind: HelmRepository
-        name: bjw-s
-        namespace: flux-system
+  interval: 60m
+  chartRef:
+    kind: OCIRepository
+    name: app-template
+    namespace: flux-system
   maxHistory: 2
   install:
     createNamespace: true
@@ -36,7 +32,7 @@ spec:
           main:
             image:
               repository: ghcr.io/onedr0p/intel-gpu-exporter
-              tag: rolling@sha256:146db4d8dcbb2aa40fe9c2cbae98e271b1299c0c704e7fcdeff680f9ee46b2e5
+              tag: rolling@sha256:1511f71b317fa7b7ef297bd2fb27f403800562b3461fc414992c245ee68335e2
             securityContext:
               privileged: true
             resources:

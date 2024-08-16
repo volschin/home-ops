@@ -8,8 +8,7 @@ resources:
   - ./airsensor/ks.yaml
   - ./fhem/ks.yaml
   - ./hmcfgusb/ks.yaml
-  - ./it-tools/ks.yaml
   - ./mosquitto/ks.yaml
-  - ./portainer/ks.yaml
   - ./presence/ks.yaml
+  - ./home-assistant/ks.yaml
   - ./zwave/ks.yaml

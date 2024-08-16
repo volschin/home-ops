@@ -5,15 +5,11 @@ kind: HelmRelease
 metadata:
   name: readarr
 spec:
-  interval: 30m
-  chart:
-    spec:
-      chart: app-template
-      version: 3.2.1
-      sourceRef:
-        kind: HelmRepository
-        name: bjw-s
-        namespace: flux-system
+  interval: 60m
+  chartRef:
+    kind: OCIRepository
+    name: app-template
+    namespace: flux-system
   install:
     remediation:
       retries: 3
@@ -42,7 +38,7 @@ spec:
           app:
             image:
               repository: ghcr.io/volschin/readarr-develop
-              tag: 0.3.30.2576@sha256:81802b74b01f1ec1ea6102b82088dcba03c0c976e61f68381d592f3046ec9b1b
+              tag: 0.3.32.2587@sha256:1c5c4669e150d3ca973a273eee12294518c984b119dcee9e4e2392b2b7f1e043
             env:
               READARR__APP__INSTANCENAME: Readarr
               READARR__APP__THEME: dark
@@ -120,8 +116,5 @@ spec:
       tmp:
         type: emptyDir
       media:
-        type: nfs
-        server: tank.internal
-        path: /mnt/tank/Media
-        globalMounts:
-          - path: /media
+        enabled: true
+        existingClaim: media-library
