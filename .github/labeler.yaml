@@ -24,7 +24,7 @@ area/docs:
       - any-glob-to-any-file:
           - "docs/**/*"
           - "README.md"
-          - "kubernetes/**/*.md
+          - "kubernetes/**/*.md"
 ns/home:
     - changed-files:
       - any-glob-to-any-file:
