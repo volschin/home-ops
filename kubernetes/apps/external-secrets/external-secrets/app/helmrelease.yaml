@@ -20,8 +20,8 @@ spec:
       retries: 3
   values:
     image:
-      repository: ghcr.io/volschin/external-secrets
-      tag: main@sha256:4f3be7f34dbf859ef3e430082bf62277e4679846fdf17f981847b6c184ee20ff
+      repository: ghcr.io/external-secrets/external-secrets
+      tag: main@sha256:d6be79b85a761b8ab3bb2dde6b62bfe4f67e9f3011a4dc4f0cde830a0df1293d
     installCRDs: true
     bitwarden-sdk-server:
       enabled: true
