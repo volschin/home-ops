@@ -5,15 +5,11 @@ kind: HelmRelease
 metadata:
   name: &app radarr
 spec:
-  interval: 30m
-  chart:
-    spec:
-      chart: app-template
-      version: 3.2.1
-      sourceRef:
-        kind: HelmRepository
-        name: bjw-s
-        namespace: flux-system
+  interval: 60m
+  chartRef:
+    kind: OCIRepository
+    name: app-template
+    namespace: flux-system
   install:
     remediation:
       retries: 3
@@ -42,7 +38,7 @@ spec:
           app:
             image:
               repository: ghcr.io/volschin/radarr-develop
-              tag: 5.8.2.8915@sha256:942c027df810dc45476adb277d00290f45d79244891497dfed4770507e25edb9
+              tag: 5.8.3.8933@sha256:b8eb57bbacf6b27a479249dd02596c21b32b8ccdde4dcbcb8f8383b4329585aa
             env:
               RADARR__APP__INSTANCENAME: Radarr
               RADARR__APP__THEME: dark
@@ -121,8 +117,5 @@ spec:
       tmp:
         type: emptyDir
       media:
-        type: nfs
-        server: tank.internal
-        path: /mnt/tank/Media
-        globalMounts:
-          - path: /media
+        enabled: true
+        existingClaim: media-library

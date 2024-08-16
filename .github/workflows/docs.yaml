@@ -1,0 +1,42 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+name: Build Docs
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "docs/**"
+      - "kubernetes/**.md"
+      - "README.md"
+permissions: {}
+
+jobs:
+  docs:
+    name: Build Docs
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      # checkout
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+
+      # setup taskfile
+      - uses: arduino/setup-task@b91d5d2c96a56797b48ac1e0e89220bf64044611 # v2.0.0
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+      # setup cache for social cards
+      - uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.0.2
+        with:
+          key: ${{ github.ref }}
+          path: .cache
+
+      # create pages for docs
+      - name: Create pages for docs
+        run: task docs
+
+      # deploy docs
+      - uses: mhausenblas/mkdocs-deploy-gh-pages@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REQUIREMENTS: docs/requirements.txt

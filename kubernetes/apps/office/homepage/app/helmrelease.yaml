@@ -4,15 +4,11 @@ kind: HelmRelease
 metadata:
   name: &app homepage
 spec:
-  interval: 2h
-  chart:
-    spec:
-      chart: app-template
-      version: 3.2.1
-      sourceRef:
-        kind: HelmRepository
-        name: bjw-s
-        namespace: flux-system
+  interval: 60m
+  chartRef:
+    kind: OCIRepository
+    name: app-template
+    namespace: flux-system
   maxHistory: 2
   install:
     remediation:
@@ -35,7 +31,7 @@ spec:
           app:
             image:
               repository: ghcr.io/gethomepage/homepage
-              tag: v0.9.5@sha256:e23fcd332ecf927fe5c0149142040236b17686916004566c149eef06eb6f8d75
+              tag: v0.9.6@sha256:e5b2616d17db8961a53c0b7d389d812d31c265d35696d475732f53278c9276f7
             probes:
               liveness:
                 enabled: true
@@ -51,7 +47,7 @@ spec:
                 cpu: 15m
                 memory: 200Mi
               limits:
-                memory: 1Gi
+                memory: 2Gi
     service:
       app:
         controller: *app

@@ -9,13 +9,12 @@ spec:
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
-  interval: 360m
+  interval: 6h
   retryInterval: 5m
   prune: true
   wait: true
-  #dependsOn:
-  #  - name: prometheus-operator-crds
-  #    namespace: observability
+  dependsOn:
+    - name: prometheus-operator-crds
   path: ./kubernetes/apps/security/trivy/operator
   sourceRef:
     kind: GitRepository

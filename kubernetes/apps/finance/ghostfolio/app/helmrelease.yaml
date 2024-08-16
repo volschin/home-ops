@@ -4,17 +4,12 @@ apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: &app ghostfolio
-  namespace: default
 spec:
-  interval: 30m
-  chart:
-    spec:
-      chart: app-template
-      version: 3.2.1
-      sourceRef:
-        kind: HelmRepository
-        name: bjw-s
-        namespace: flux-system
+  interval: 60m
+  chartRef:
+    kind: OCIRepository
+    name: app-template
+    namespace: flux-system
   maxHistory: 2
   install:
     createNamespace: true
@@ -45,7 +40,7 @@ spec:
           app:
             image:
               repository: docker.io/ghostfolio/ghostfolio
-              tag: 2.96.0@sha256:d835b2908ca6ad04da4b2d4499ba139920f9183fa2839191596f651797edbcf2
+              tag: 2.103.0@sha256:37d155f903375acba3e4fc739a95bf7dc199bbc86f6f34921b9add4f4c0facf8
             env:
               NODE_ENV: production
               REDIS_HOST: dragonfly.database.svc.cluster.local.

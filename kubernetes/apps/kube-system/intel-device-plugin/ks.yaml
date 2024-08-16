@@ -18,7 +18,7 @@ spec:
   dependsOn:
     - name: node-feature-discovery
   wait: false
-  interval: 30m
+  interval: 6h
   retryInterval: 1m
   timeout: 5m
 ---
@@ -39,7 +39,7 @@ spec:
     kind: GitRepository
     name: home-kubernetes
   wait: false
-  interval: 30m
+  interval: 6h
   retryInterval: 1m
   timeout: 5m
 ---
@@ -60,6 +60,6 @@ spec:
     kind: GitRepository
     name: home-kubernetes
   wait: false
-  interval: 30m
+  interval: 6h
   retryInterval: 1m
   timeout: 5m

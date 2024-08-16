@@ -5,15 +5,11 @@ kind: HelmRelease
 metadata:
   name: jellyfin
 spec:
-  interval: 30m
-  chart:
-    spec:
-      chart: app-template
-      version: 3.2.1
-      sourceRef:
-        kind: HelmRepository
-        name: bjw-s
-        namespace: flux-system
+  interval: 60m
+  chartRef:
+    kind: OCIRepository
+    name: app-template
+    namespace: flux-system
   install:
     remediation:
       retries: 3
@@ -36,7 +32,7 @@ spec:
           app:
             image:
               repository: ghcr.io/jellyfin/jellyfin
-              tag: 10.9.7@sha256:76930362d2c266e8f0b2f51f1c6b039a5207525d0e138a1cdbec870c66c34b0f
+              tag: 10.9.9@sha256:d6f3d4aa59438ce951d85669f3c22426d20edb7a6b97604c509b5f4825bc8294
               pullPolicy: IfNotPresent
             env:
               DOTNET_SYSTEM_IO_DISABLEFILELOCKING: "true"
@@ -86,7 +82,7 @@ spec:
         controller: jellyfin
         type: LoadBalancer
         annotations:
-          io.cilium/lb-ipam-ips: 10.0.42.128
+          lbipam.cilium.io/ips: 10.0.42.128
         ports:
           http:
             port: 8096
@@ -120,9 +116,5 @@ spec:
       transcode:
         type: emptyDir
       media:
-        type: nfs
-        server: osiris.286k.co
-        path: /pluto/media
-        globalMounts:
-          - path: /media
-            readOnly: false
+        enabled: true
+        existingClaim: media-library

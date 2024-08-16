@@ -9,8 +9,8 @@ spec:
   chart:
     spec:
       chart: kube-state-metrics
-      version: 5.21.0
-      interval: 30m
+      version: 5.25.1
+      interval: 24h
       sourceRef:
         kind: HelmRepository
         name: prometheus-community

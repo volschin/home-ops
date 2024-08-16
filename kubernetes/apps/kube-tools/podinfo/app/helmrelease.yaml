@@ -1,0 +1,50 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: podinfo
+  labels:
+    substitution.flux.home.arpa/enabled: "true"
+spec:
+  interval: 6h
+  chartRef:
+    kind: OCIRepository
+    name: podinfo
+    namespace: flux-system
+  maxHistory: 3
+  install:
+    createNamespace: true
+    crds: CreateReplace
+    remediation:
+      retries: 3
+  upgrade:
+    disableWait: true
+    cleanupOnFail: true
+    crds: CreateReplace
+    remediation:
+      retries: 3
+  uninstall:
+    keepHistory: false
+  values:
+    resources:
+      requests:
+        cpu: 1m
+        memory: 16Mi
+      limits:
+        cpu: 200m
+        memory: 100Mi
+
+    ingress:
+      enabled: "true"
+      className: internal
+      annotations:
+        external-dns.alpha.kubernetes.io/target: "internal.${SECRET_DOMAIN}"
+
+      hosts:
+        - host: &host "podinfo.${SECRET_DOMAIN}"
+          paths:
+            - path: /
+              pathType: ImplementationSpecific
+      tls:
+        - hosts:
+            - *host

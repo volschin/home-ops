@@ -5,15 +5,11 @@ kind: HelmRelease
 metadata:
   name: gatus
 spec:
-  interval: 30m
-  chart:
-    spec:
-      chart: app-template
-      version: 3.2.1
-      sourceRef:
-        kind: HelmRepository
-        name: bjw-s
-        namespace: flux-system
+  interval: 60m
+  chartRef:
+    kind: OCIRepository
+    name: app-template
+    namespace: flux-system
   install:
     remediation:
       retries: 3
@@ -112,6 +108,13 @@ spec:
       app:
         annotations:
           external-dns.alpha.kubernetes.io/target: external.${SECRET_DOMAIN}
+          gethomepage.dev/enabled: "true"
+          gethomepage.dev/name: "Gatus"
+          gethomepage.dev/group: "Observability"
+          gethomepage.dev/icon: gatus.svg
+          gethomepage.dev/description: "Uptime Monitoring"
+          gethomepage.dev/widget.type: gatus
+          gethomepage.dev/widget.url: http://gatus.observability.svc.cluster.local
         className: external
         hosts:
           - host: status.${SECRET_DOMAIN}

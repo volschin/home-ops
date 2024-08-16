@@ -1,0 +1,31 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: musik
+  namespace: media
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 20T
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    server: ${NFS_SERVER_ADDR}
+    path: "/Musik"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: musik
+  namespace: media
+  annotations:
+    k8up.io/backup: false
+spec:
+  storageClassName: manual
+  volumeName: musik
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1T

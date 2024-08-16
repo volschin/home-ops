@@ -29,7 +29,7 @@ spec:
       service:
         annotations:
           external-dns.alpha.kubernetes.io/hostname: "external.${SECRET_DOMAIN}"
-          io.cilium/lb-ipam-ips: "192.168.2.12"
+          lbipam.cilium.io/ips: "192.168.2.12"
         externalTrafficPolicy: Cluster
       ingressClassResource:
         name: external
@@ -80,7 +80,7 @@ spec:
       enabled: true
       image:
         repository: ghcr.io/tarampampam/error-pages
-        tag: 3.2.0
+        tag: 3.3.0
       extraEnvs:
         - { name: TEMPLATE_NAME, value: app-down }
         - { name: SHOW_DETAILS, value: "false" }

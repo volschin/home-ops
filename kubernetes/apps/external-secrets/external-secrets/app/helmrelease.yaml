@@ -6,14 +6,10 @@ metadata:
   name: external-secrets
 spec:
   interval: 1h
-  chart:
-    spec:
-      chart: external-secrets
-      version: 0.9.20
-      sourceRef:
-        kind: HelmRepository
-        name: external-secrets
-        namespace: flux-system
+  chartRef:
+    kind: OCIRepository
+    name: external-secrets
+    namespace: flux-system
   install:
     remediation:
       retries: 3
@@ -23,6 +19,9 @@ spec:
       strategy: rollback
       retries: 3
   values:
+    image:
+      repository: ghcr.io/volschin/external-secrets
+      tag: main@sha256:4f3be7f34dbf859ef3e430082bf62277e4679846fdf17f981847b6c184ee20ff
     installCRDs: true
     bitwarden-sdk-server:
       enabled: true

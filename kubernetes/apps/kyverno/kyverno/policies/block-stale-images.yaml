@@ -24,7 +24,7 @@ spec:
             kinds:
             - Pod
       validate:
-        message: "Images built more than 6 months ago are prohibited."
+        message: "Images built more than 12 months ago are prohibited."
         foreach:
         - list: "request.object.spec.containers"
           context:
@@ -36,4 +36,4 @@ spec:
               all:
                 - key: "{{ time_since('', '{{ imageData.configData.created }}', '') }}"
                   operator: GreaterThan
-                  value: 4380h
+                  value: 8760h

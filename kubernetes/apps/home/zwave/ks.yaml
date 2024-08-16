@@ -24,5 +24,5 @@ spec:
       APP: *app
       VOLSYNC_CAPACITY: 100M
       VOLSYNC_ACCESSMODES: ReadWriteMany
-      VOLSYNC_STORAGECLASS: ceph-filesystem
-      VOLSYNC_SNAPSHOTCLASS: csi-ceph-filesystem
+      VOLSYNC_STORAGECLASS: longhorn-filesystem
+      VOLSYNC_SNAPSHOTCLASS: csi-longhorn-filesystem

@@ -6,14 +6,10 @@ metadata:
   name: &app joplin
 spec:
   interval: 60m
-  chart:
-    spec:
-      chart: app-template
-      version: 3.2.1
-      sourceRef:
-        kind: HelmRepository
-        name: bjw-s
-        namespace: flux-system
+  chartRef:
+    kind: OCIRepository
+    name: app-template
+    namespace: flux-system
   maxHistory: 2
   install:
     createNamespace: true
@@ -44,7 +40,7 @@ spec:
           app:
             image:
               repository: joplin/server
-              tag: 2.14.2-beta@sha256:b87564ef34e9ed0513e9b925b617cb8a1371eddfc8476f1fbd3fa85341d51508
+              tag: 3.0.1-beta@sha256:52af57880c0e04a179107807e13ffb8868b31ea2cc86a2b04da42220facb7589
             env:
               APP_BASE_URL: https://joplin.${SECRET_EXTERNAL_DOMAIN}
               APP_PORT: &port 8080
