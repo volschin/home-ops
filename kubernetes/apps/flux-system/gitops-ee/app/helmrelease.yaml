@@ -1,0 +1,80 @@
+---
+# yaml-language-server: $schema=https://lds-schemas.pages.dev/helm.toolkit.fluxcd.io/helmrelease_v2.json
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: gitops-ee
+spec:
+  interval: 6h
+  chart:
+    spec:
+      chart: weave-gitops
+      version: 4.0.36
+      sourceRef:
+        kind: HelmRepository
+        name: weave-gitops
+        namespace: flux-system
+  install:
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      strategy: rollback
+      retries: 3
+  values:
+    image:
+      #repository: ghcr.io/volschin/wego-app
+      repository: docker.io/choclab/weave-gitops-enterprise-ui-server
+      pullPolicy: IfNotPresent
+      tag: "dev-95fd7f87@sha256:ae450a81d70dd9f392f7bf89950b99ad5570d98227fb0da0bfd661a8f2337fa2"
+    resources:
+      requests:
+        cpu: 100m
+        memory: 64Mi
+      limits:
+        cpu: 1
+        memory: 512Mi
+    securityContext:
+      capabilities:
+        drop:
+          - ALL
+      readOnlyRootFilesystem: true
+      runAsNonRoot: true
+      runAsUser: 1000
+    additionalArgs:
+      - --insecure-no-authentication-user=admin
+    envVars:
+      - name: WEAVE_GITOPS_FEATURE_OIDC_BUTTON_LABEL
+        value: "Login with OIDC"
+    adminUser:
+      create: true
+      username: admin
+      # Change password by generating a new hash with:
+      # https://docs.gitops.weave.works/docs/configuration/securing-access-to-the-dashboard/#login-via-a-cluster-user-account
+      # bcrypt hash for password "flux"
+      passwordHash: "$2a$10$P/tHQ1DNFXdvX0zRGA8LPeSOyb0JXq9rP3fZ4W8HGTpLV7qHDlWhe"
+    ingress:
+      enabled: true
+      className: internal
+      annotations:
+        external-dns.alpha.kubernetes.io/target: internal.${SECRET_DOMAIN}
+        gethomepage.dev/enabled: "true"
+        gethomepage.dev/group: Infrastructure
+        gethomepage.dev/name: Weave-gitops
+        gethomepage.dev/icon: https://raw.githubusercontent.com/joryirving/home-ops/main/docs/src/assets/icons/weave.png
+        gethomepage.dev/description: Flux Dashboard
+      hosts:
+        - host: gitops-ee.${SECRET_DOMAIN}
+          paths:
+            - path: /
+              pathType: Prefix
+    networkPolicy:
+      create: true
+    metrics:
+      enabled: true
+    rbac:
+      create: true
+      impersonationResourceNames: ["admin"]
+    #podAnnotations:
+    #  secret.reloader.stakater.com/reload: cluster-user-auth

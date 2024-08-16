@@ -2,12 +2,16 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  # - ./bitnami.yaml
-  # - ./bjw-s.yaml
-  - ./capacitor.yaml
+  - ./app-template.yaml
+  - ./aqua-trivy.yaml
   - ./cloudnative-pg.yaml
-  # - ./external-secrets.yaml
+  - ./external-secrets.yaml
   - ./flux-manifests.yaml
   - ./grafana.yaml
+  - ./kyverno.yaml
+  - ./podinfo.yaml
+  - ./policy-reporter.yaml
   #- ./prometheus-community.yaml
-  #- ./spegel.yaml
+  - ./spegel.yaml
+  #- ./stakater.yaml
+  - ./volschin-gitops.yaml

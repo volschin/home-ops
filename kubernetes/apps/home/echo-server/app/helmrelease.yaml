@@ -2,17 +2,13 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: echo-server
+  name: &app echo-server
 spec:
-  interval: 30m
-  chart:
-    spec:
-      chart: app-template
-      version: 3.2.1
-      sourceRef:
-        kind: HelmRepository
-        name: bjw-s
-        namespace: flux-system
+  interval: 60m
+  chartRef:
+    kind: OCIRepository
+    name: app-template
+    namespace: flux-system
   install:
     remediation:
       retries: 3
@@ -64,13 +60,13 @@ spec:
         seccompProfile: { type: RuntimeDefault }
     service:
       app:
-        controller: echo-server
+        controller: *app
         ports:
           http:
             port: *port
     serviceMonitor:
       app:
-        serviceName: echo-server
+        serviceName: *app
         endpoints:
           - port: http
             scheme: http
@@ -82,6 +78,10 @@ spec:
         className: external
         annotations:
           external-dns.alpha.kubernetes.io/target: "external.${SECRET_DOMAIN}"
+          gethomepage.dev/enabled: "true"
+          gethomepage.dev/group: Services
+          gethomepage.dev/name: Echo-Server
+          gethomepage.dev/icon: nginx.svg
         hosts:
           - host: "{{ .Release.Name }}.${SECRET_DOMAIN}"
             paths:
@@ -89,3 +89,16 @@ spec:
                 service:
                   identifier: app
                   port: http
+    route:
+      main:
+        enabled: true
+        kind: HTTPRoute
+        parentRefs:
+          - name: cilium-internal
+            namespace: network
+        hostnames:
+          - "echo-gateway.${SECRET_DOMAIN}"
+        rules:
+          - backendRefs:
+            - name: *app
+              port: *port

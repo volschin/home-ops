@@ -3,20 +3,18 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - ./namespace.yaml
+  - ./library
   - ./arr/ks.yaml
-  - ./decluttarr/ks.yaml
-  - ./jellyfin/ks.yaml
-  - ./threadfin/ks.yaml
-  - ./epg/ks.yaml
-  #- ./flaresolverr/ks.yaml
+  #- ./decluttarr/ks.yaml
+  #- ./jellyfin/ks.yaml
+  #- ./threadfin/ks.yaml
+  #- ./epg/ks.yaml
   #- ./calibre-web/ks.yaml
-  - ./prowlarr/ks.yaml
-  - ./qbittorrent/ks.yaml
-  - ./radarr/ks.yaml
-  - ./readarr/ks.yaml
-  - ./lidarr/ks.yaml
+  #- ./radarr/ks.yaml
+  #- ./readarr/ks.yaml
+  #- ./lidarr/ks.yaml
   #- ./recyclarr/ks.yaml
-  - ./sonarr/ks.yaml
+  #- ./sonarr/ks.yaml
   - ./theme-park/ks.yaml
-  - ./whisparr/ks.yaml
+  #- ./whisparr/ks.yaml
   #- ./tubearchivist/ks.yaml

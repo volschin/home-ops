@@ -9,13 +9,15 @@ spec:
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
+  dependsOn:
+    - name: gateway-api-crds
   path: ./kubernetes/apps/kube-system/cilium/app
   prune: false # never should be deleted
   sourceRef:
     kind: GitRepository
     name: home-kubernetes
   wait: false
-  interval: 30m
+  interval: 6h
   retryInterval: 1m
   timeout: 5m
 ---
@@ -37,6 +39,6 @@ spec:
     kind: GitRepository
     name: home-kubernetes
   wait: false
-  interval: 30m
+  interval: 6h
   retryInterval: 1m
   timeout: 5m

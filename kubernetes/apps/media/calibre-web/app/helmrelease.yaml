@@ -5,16 +5,11 @@ kind: HelmRelease
 metadata:
   name: calibre-web
 spec:
-  interval: 15m
-  chart:
-    spec:
-      chart: app-template
-      version: 3.2.1
-      sourceRef:
-        kind: HelmRepository
-        name: bjw-s
-        namespace: flux-system
-      interval: 15m
+  interval: 60m
+  chartRef:
+    kind: OCIRepository
+    name: app-template
+    namespace: flux-system
   maxHistory: 3
   install:
     createNamespace: true
@@ -41,8 +36,8 @@ spec:
         containers:
           main:
             image:
-              repository: ghcr.io/bjw-s/calibre-web
-              tag: 0.6.21@sha256:9049b3a3e9afa19f189dfac69db0df944d4638247acfed1f69606e4dd8b7e841
+              repository: ghcr.io/volschin/calibre-web
+              tag: 0.6.23@sha256:bfb483d123ef338eb762c3bb070dd9c6d2f46e44ca0a31049ac07c342f35e6ac
             env:
               TZ: ${TIMEZONE}
               CACHE_DIR: /cache
@@ -65,9 +60,9 @@ spec:
         annotations:
           gethomepage.dev/enabled: "true"
           gethomepage.dev/group: Downloads
-          gethomepage.dev/name: Prowlarr
-          gethomepage.dev/icon: prowlarr.png
-          gethomepage.dev/description: Torrent/NZB Indexer Management
+          gethomepage.dev/name: Calibre-Web
+          gethomepage.dev/icon: calibre-web.png
+          gethomepage.dev/description: e-Book Verwaltung
           external-dns.alpha.kubernetes.io/target: internal.${SECRET_DOMAIN}
           nginx.ingress.kubernetes.io/configuration-snippet: |
             proxy_set_header Accept-Encoding "";

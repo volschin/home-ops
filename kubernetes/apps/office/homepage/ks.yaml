@@ -15,10 +15,10 @@ spec:
     kind: GitRepository
     name: home-kubernetes
   wait: false
-  interval: 2h
+  interval: 6h
   retryInterval: 1m
   timeout: 5m
   postBuild:
     substitute:
       APP: *app
-      GATUS_SUBDOMAIN: www
+      GATUS_SUBDOMAIN: *app

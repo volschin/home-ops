@@ -5,15 +5,11 @@ kind: HelmRelease
 metadata:
   name: &app fstrim
 spec:
-  interval: 30m
-  chart:
-    spec:
-      chart: app-template
-      version: 3.2.1
-      sourceRef:
-        kind: HelmRepository
-        name: bjw-s
-        namespace: flux-system
+  interval: 60m
+  chartRef:
+    kind: OCIRepository
+    name: app-template
+    namespace: flux-system
   install:
     remediation:
       retries: 3
@@ -48,7 +44,7 @@ spec:
           app:
             image:
               repository: ghcr.io/onedr0p/kubanetics
-              tag: 2024.6.2@sha256:9402eb67e5809c46585802383713d1dc152eb15f76d71ad40eacaa00383b3d70
+              tag: 2024.8.1@sha256:45ffec868c477b1ae0e339dffb0bcec4dddb4de5ff3ac2562002401fccb201a8
             env:
               SCRIPT_NAME: fstrim.sh
             resources:

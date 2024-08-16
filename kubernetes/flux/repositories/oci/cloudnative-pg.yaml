@@ -6,8 +6,15 @@ metadata:
   namespace: flux-system
 spec:
   interval: 12h
+  layerSelector:
+    mediaType: application/vnd.cncf.helm.chart.content.v1.tar+gzip
+    operation: copy
+  # renovate: datasource=helm depName=cloudnative-pg
   url: oci://ghcr.io/cloudnative-pg/charts/cloudnative-pg
   ref:
-    semver: ">=0.21.0"
+    tag: "0.21.6"
   verify:
     provider: cosign
+    matchOIDCIdentity:
+      - issuer: "^https://token.actions.githubusercontent.com$"
+        subject: "^https://github.com/cloudnative-pg/charts.*$"
