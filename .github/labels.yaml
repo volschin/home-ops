@@ -8,20 +8,20 @@
 - { name: "area/kubernetes",         color: "0e8a16" }
 - { name: "area/taskfile",           color: "0e8a16" }
 # Namespace
-- { name: "ns/kube-system",          color: "ffc300" }
-- { name: "ns/kube-tools",           color: "ffc300" }
-- { name: "ns/flux-system",          color: "ffc300" }
-- { name: "ns/database",             color: "ffc300" }
-- { name: "ns/storage",              color: "ffc300" }
-- { name: "ns/finance",              color: "ffc300" }
-- { name: "ns/home",                 color: "ffc300" }
-- { name: "ns/network",              color: "ffc300" }
-- { name: "ns/o11y",                 color: "ffc300" }
-- { name: "ns/office",               color: "ffc300" }
-- { name: "ns/security",             color: "ffc300" }
-- { name: "ns/media",                color: "ffc300" }
-- { name: "ns/download",             color: "ffc300" }
-- { name: "ns/health",               color: "ffc300" }
+- { name: "ns/kube-system",          color: "d4c5f9" }
+- { name: "ns/kube-tools",           color: "d4c5f9" }
+- { name: "ns/flux-system",          color: "d4c5f9" }
+- { name: "ns/database",             color: "d4c5f9" }
+- { name: "ns/storage",              color: "d4c5f9" }
+- { name: "ns/finance",              color: "d4c5f9" }
+- { name: "ns/home",                 color: "d4c5f9" }
+- { name: "ns/network",              color: "d4c5f9" }
+- { name: "ns/o11y",                 color: "d4c5f9" }
+- { name: "ns/office",               color: "d4c5f9" }
+- { name: "ns/security",             color: "d4c5f9" }
+- { name: "ns/media",                color: "d4c5f9" }
+- { name: "ns/download",             color: "d4c5f9" }
+- { name: "ns/health",               color: "d4c5f9" }
 # Distro
 - { name: "distro/talos",            color: "ffc300" }
 # Renovate
