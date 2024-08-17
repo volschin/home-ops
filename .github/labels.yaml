@@ -5,8 +5,23 @@
 - { name: "area/bootstrap",          color: "0e8a16" }
 - { name: "area/flux",               color: "0e8a16" }
 - { name: "area/github",             color: "0e8a16" }
-- { name: "area/kubernetes",         color: "0e8a16" }
+- { name: "area/k8s",                color: "0e8a16" }
 - { name: "area/taskfile",           color: "0e8a16" }
+# Namespace
+- { name: "ns/kube-system",          color: "d4c5f9" }
+- { name: "ns/kube-tools",           color: "d4c5f9" }
+- { name: "ns/flux-system",          color: "d4c5f9" }
+- { name: "ns/database",             color: "d4c5f9" }
+- { name: "ns/storage",              color: "d4c5f9" }
+- { name: "ns/finance",              color: "d4c5f9" }
+- { name: "ns/home",                 color: "d4c5f9" }
+- { name: "ns/network",              color: "d4c5f9" }
+- { name: "ns/o11y",                 color: "d4c5f9" }
+- { name: "ns/office",               color: "d4c5f9" }
+- { name: "ns/security",             color: "d4c5f9" }
+- { name: "ns/media",                color: "d4c5f9" }
+- { name: "ns/download",             color: "d4c5f9" }
+- { name: "ns/health",               color: "d4c5f9" }
 # Distro
 - { name: "distro/talos",            color: "ffc300" }
 # Renovate
