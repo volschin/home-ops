@@ -6,6 +6,6 @@ resources:
   #- ./changedetection/ks.yaml
   - ./cups-server/ks.yaml
   - ./homepage/ks.yaml
-  - ./joplin/ks.yaml
+  #- ./joplin/ks.yaml
   - ./linkwarden/ks.yaml
-  - ./stirling-pdf/ks.yaml
+  #- ./stirling-pdf/ks.yaml
