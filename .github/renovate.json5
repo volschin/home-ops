@@ -70,6 +70,7 @@
         '/ghcr.io/onedr0p/',
         '/ghcr.io/volschin/',
       ],
+      prPriority: 5,
     },
     {
       description: [
@@ -105,6 +106,7 @@
         '/siderolabs/talosctl/',
         '/siderolabs/installer/',
       ],
+      prPriority: -5
     },
     {
       description: [
@@ -180,6 +182,7 @@
       ],
       commitMessageTopic: 'chart {{depName}}',
       commitMessageExtra: ' ( {{currentVersion}} → {{newVersion}} )',
+      prPriority: 4
     },
     {
       matchDatasources: [
@@ -197,6 +200,7 @@
       ],
       minimumReleaseAge: '3 days',
       commitMessagePrefix: 'feat(container)!: ',
+      prPriority: -5
     },
     {
       matchDatasources: [
@@ -217,6 +221,7 @@
       ],
       semanticCommitType: 'fix',
       semanticCommitScope: 'container',
+      prPriority: 6
     },
     {
       matchDatasources: [
@@ -257,6 +262,7 @@
       ],
       semanticCommitType: 'fix',
       semanticCommitScope: 'helm',
+      prPriority: 5
     },
     {
       matchDatasources: [
@@ -267,6 +273,7 @@
         'major',
       ],
       commitMessagePrefix: 'feat(github-release)!: ',
+      prPriority: -4
     },
     {
       matchDatasources: [
