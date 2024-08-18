@@ -82,7 +82,8 @@
         'github-tags',
       ],
       versioning: 'semver',
-      minimumReleaseAge: '3 days',
+      minimumReleaseAge: '7 days',
+      internalChecksFilter: 'strict',
       group: {
         commitMessageTopic: '{{{groupName}}} group',
       },
@@ -99,6 +100,7 @@
         'docker',
       ],
       minimumReleaseAge: '3 days',
+      internalChecksFilter: 'strict',
       group: {
         commitMessageTopic: '{{{groupName}}} group',
       },
@@ -199,6 +201,7 @@
         'major',
       ],
       minimumReleaseAge: '3 days',
+      internalChecksFilter: 'strict',
       commitMessagePrefix: 'feat(container)!: ',
       prPriority: -5
     },
