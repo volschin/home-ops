@@ -30,7 +30,7 @@ spec:
           app:
             image:
               repository: ghcr.io/volschin/qbittorrent-beta
-              tag: 4.6.5@sha256:3607d704b05cae83d55290e661467961c83d7fb36cbf8dc3a77a4c5de5f09c25
+              tag: 4.6.6@sha256:5082dc78c8f44f93f6a9fa6c0fa165e7a5783b330723b814e84bace6c0dae516
             env:
               TZ: ${TIMEZONE}
               QBITTORRENT__PORT: &port 80
