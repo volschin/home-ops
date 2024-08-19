@@ -39,7 +39,7 @@ spec:
             image:
               repository: ghcr.io/linkwarden/linkwarden
               pullPolicy: IfNotPresent
-              tag: v2.6.0@sha256:29451d800fc74f4fda6d607736ea0fa8b69798467994d7f76bedd6b2897e6602
+              tag: v2.7.1@sha256:bbd22798ee726184d4571ea4f4d831d57475c86c4965c2bb1c3c2d3de88c728a
             env:
               TIMEZONE: ${TIMEZONE}
               NEXTAUTH_URL: "https://link.${SECRET_DOMAIN}"
