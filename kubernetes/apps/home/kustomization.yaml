@@ -8,4 +8,5 @@ resources:
   - ./echo-server/ks.yaml
   - ./home-assistant/ks.yaml
   - ./mosquitto/ks.yaml
+  - ./nanomq/ks.yaml
   - ./zwave/ks.yaml
