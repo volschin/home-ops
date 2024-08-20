@@ -3,16 +3,16 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   #- baseline-latest.yaml
-  - add-psa-namespace-reporting.yaml
+  #- add-psa-namespace-reporting.yaml
   - add-emptydir-sizelimit-policy.yaml
   # - apply-ingress-auth-annotations.yaml
   # - apply-ingress-external-dns-annotations.yaml
   # - apply-ingress-whitelist-annotations.yaml
-  - remove-cpu-limit.yaml
+  #- remove-cpu-limit.yaml
   # - snapshot-cronjob-controller.yaml
   # - sync-postgres-secrets.yaml
   # - add-external-secret-prefix.yaml
-  - annotate-base-images.yaml
+  #- annotate-base-images.yaml
   - block-large-images.yaml
   - block-stale-images.yaml
   - check-deprecated-apis.yaml
@@ -28,7 +28,7 @@ resources:
   - require-probes.yaml
   - restrict-deprecated-registry.yaml
   - restrict-ingress-defaultbackend.yaml
-  - restrict-node-port.yaml
+  #- restrict-node-port.yaml
   - verify-flux-images.yaml
   - verify-signed-images.yaml
   - check-image-signing.yaml
