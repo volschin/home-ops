@@ -21,7 +21,7 @@ spec:
   values:
     image:
       repository: ghcr.io/external-secrets/external-secrets
-      tag: main@sha256:7bc1b55b95211eab974f6b12eeb7f6c98f2578fa1270b8869862b31b0af04502
+      tag: main@sha256:ec6fc33141f7337630ad54219cf3fc479d7b1e52e6853a0141cda12a7084bea5
     installCRDs: true
     bitwarden-sdk-server:
       enabled: true
