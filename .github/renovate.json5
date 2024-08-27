@@ -70,6 +70,7 @@
         '/ghcr.io/onedr0p/',
         '/ghcr.io/volschin/',
       ],
+      prPriority: 5,
     },
     {
       description: [
@@ -81,7 +82,8 @@
         'github-tags',
       ],
       versioning: 'semver',
-      minimumReleaseAge: '3 days',
+      minimumReleaseAge: '7 days',
+      internalChecksFilter: 'strict',
       group: {
         commitMessageTopic: '{{{groupName}}} group',
       },
@@ -98,6 +100,7 @@
         'docker',
       ],
       minimumReleaseAge: '3 days',
+      internalChecksFilter: 'strict',
       group: {
         commitMessageTopic: '{{{groupName}}} group',
       },
@@ -105,6 +108,7 @@
         '/siderolabs/talosctl/',
         '/siderolabs/installer/',
       ],
+      prPriority: -5
     },
     {
       description: [
@@ -180,6 +184,7 @@
       ],
       commitMessageTopic: 'chart {{depName}}',
       commitMessageExtra: ' ( {{currentVersion}} → {{newVersion}} )',
+      prPriority: 4
     },
     {
       matchDatasources: [
@@ -196,7 +201,9 @@
         'major',
       ],
       minimumReleaseAge: '3 days',
+      internalChecksFilter: 'strict',
       commitMessagePrefix: 'feat(container)!: ',
+      prPriority: -5
     },
     {
       matchDatasources: [
@@ -217,6 +224,7 @@
       ],
       semanticCommitType: 'fix',
       semanticCommitScope: 'container',
+      prPriority: 6
     },
     {
       matchDatasources: [
@@ -257,6 +265,7 @@
       ],
       semanticCommitType: 'fix',
       semanticCommitScope: 'helm',
+      prPriority: 5
     },
     {
       matchDatasources: [
@@ -267,6 +276,7 @@
         'major',
       ],
       commitMessagePrefix: 'feat(github-release)!: ',
+      prPriority: -4
     },
     {
       matchDatasources: [

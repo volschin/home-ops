@@ -8,7 +8,7 @@ distro/talos:
 area/github:
   - changed-files:
       - any-glob-to-any-file: ".github/**/*.yaml"
-area/kubernetes:
+area/k8s:
   - changed-files:
       - any-glob-to-any-file: "kubernetes/apps/**/*.yaml"
 area/flux:
