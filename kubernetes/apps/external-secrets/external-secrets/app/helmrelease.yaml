@@ -19,9 +19,6 @@ spec:
       strategy: rollback
       retries: 3
   values:
-    image:
-      repository: ghcr.io/external-secrets/external-secrets
-      tag: main@sha256:f7b00dfd930287fa8cf1e44b1ecfc6e2bfb8ac35803a2aa80bade39a8481dc0c
     installCRDs: true
     bitwarden-sdk-server:
       enabled: true
