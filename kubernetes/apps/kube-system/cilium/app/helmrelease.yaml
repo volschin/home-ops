@@ -78,9 +78,9 @@ spec:
       enabled: true
       annotations:
         grafana_folder: Cilium
-    authentication:
-      mutual:
-        spire:
-          enabled: true
-          install:
-            enabled: true
+#    authentication:
+#      mutual:
+#        spire:
+#          enabled: true
+#          install:
+#            enabled: true
