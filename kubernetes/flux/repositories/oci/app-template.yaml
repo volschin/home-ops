@@ -15,6 +15,6 @@ spec:
     tag: "3.4.0"
   verify:
     provider: cosign
-#    matchOIDCIdentity:
-#      - issuer: "^https://token.actions.githubusercontent.com$"
-#        subject: "^https://github.com/bjw-s/helm-charts.*$"
+    matchOIDCIdentity:
+      - issuer: "^https://token.actions.githubusercontent.com$"
+        subject: "^https://github.com/bjw-s/helm-charts.*$"
