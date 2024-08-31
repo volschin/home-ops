@@ -13,8 +13,8 @@ spec:
   url: oci://ghcr.io/bjw-s/helm/app-template
   ref:
     tag: "3.4.0"
-#  verify:
-#    provider: cosign
+  verify:
+    provider: cosign
 #    matchOIDCIdentity:
 #      - issuer: "^https://token.actions.githubusercontent.com$"
 #        subject: "^https://github.com/bjw-s/helm-charts.*$"
