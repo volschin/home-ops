@@ -58,4 +58,4 @@ ports:
     port: 89
 endpoints:
   - addresses:
-      - 192.168.2.132
+      - 192.168.2.121
