@@ -5,7 +5,10 @@ resources:
   # Pre Flux-Kustomizations
   - ./namespace.yaml
   # Flux-Kustomizations
-  - ./echo-server/ks.yaml
-  - ./home-assistant/ks.yaml
+  - ./airsensor/ks.yaml
+  - ./fhem/ks.yaml
+  - ./hmcfgusb/ks.yaml
   - ./mosquitto/ks.yaml
+  - ./presence/ks.yaml
+  - ./home-assistant/ks.yaml
   - ./zwave/ks.yaml
