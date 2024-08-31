@@ -13,9 +13,9 @@ metadata:
     gethomepage.dev/name: Prowlarr
     gethomepage.dev/icon: prowlarr.svg
     gethomepage.dev/description: Torrent Indexer Management
-    gethomepage.dev/widget.type: prowlarr
-    gethomepage.dev/widget.url: http://arr.media/prowlarr/
-    gethomepage.dev/widget.key: "{{ `{{HOMEPAGE_VAR_PROWLARR_TOKEN}}` }}"
+  #  gethomepage.dev/widget.type: prowlarr
+  #  gethomepage.dev/widget.url: http://arr.media/prowlarr/
+  #  gethomepage.dev/widget.key: "{{ `{{HOMEPAGE_VAR_PROWLARR_TOKEN}}` }}"
     external-dns.alpha.kubernetes.io/target: internal.${SECRET_DOMAIN}
 spec:
   ingressClassName: internal
@@ -40,7 +40,7 @@ spec:
   ports:
     - port: 80
       protocol: TCP
-      targetPort: 80
+      targetPort: 89
       name: http
 ---
 apiVersion: discovery.k8s.io/v1
