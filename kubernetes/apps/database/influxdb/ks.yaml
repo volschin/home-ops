@@ -2,12 +2,36 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: influxdb
+  name: &app influxdb
   namespace: flux-system
 spec:
+  targetNamespace: database
+  commonMetadata:
+    labels:
+      app.kubernetes.io/name: *app
   path: ./kubernetes/apps/database/influxdb/app
   prune: true
   sourceRef:
     kind: GitRepository
     name: home-kubernetes
-  interval: 360m
+  interval: 6h
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: &app influxdb-proxy
+  namespace: flux-system
+spec:
+  targetNamespace: database
+  commonMetadata:
+    labels:
+      app.kubernetes.io/name: *app
+  path: ./kubernetes/apps/database/influxdb/proxy
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: home-kubernetes
+  wait: true
+  interval: 6h
+  retryInterval: 1m
+  timeout: 5m

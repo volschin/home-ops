@@ -13,6 +13,7 @@ resources:
   - ./kepler/ks.yaml
   - ./kromgo/ks.yaml
   - ./prometheus-operator-crds/ks.yaml
+  - ./uptime-kuma/ks.yaml
   - ./vector/ks.yaml
   - ./victoria-logs/ks.yaml
   - ./victoria-metrics/ks.yaml
