@@ -9,5 +9,6 @@ resources:
   - ./echo-server/ks.yaml
   - ./fhem/ks.yaml
   - ./home-assistant/ks.yaml
+  - ./homebridge/ks.yaml
   - ./mosquitto/ks.yaml
   - ./zwave/ks.yaml
