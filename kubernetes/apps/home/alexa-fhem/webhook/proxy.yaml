@@ -8,6 +8,9 @@ metadata:
     kubernetes.io/service-name: *app
   annotations:
    # nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/auth-type: basic
+    nginx.ingress.kubernetes.io/auth-secret: alexa-basic-auth
+    nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required for access'
     external-dns.alpha.kubernetes.io/target: external.${SECRET_DOMAIN}
 spec:
   ingressClassName: external
