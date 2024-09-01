@@ -41,7 +41,7 @@ spec:
       - --insecure-bind-address=0.0.0.0
     ingress:
       enabled: true
-      className: internal
+      ingressClassName: internal
       annotations:
         external-dns.alpha.kubernetes.io/target: internal.${SECRET_DOMAIN}
         nginx.ingress.kubernetes.io/proxy-body-size: "100m"
