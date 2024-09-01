@@ -17,4 +17,4 @@ resources:
   #- ./sonarr/ks.yaml
   - ./theme-park/ks.yaml
   #- ./whisparr/ks.yaml
-  #- ./tubearchivist/ks.yaml
+  - ./tubearchivist/ks.yaml
