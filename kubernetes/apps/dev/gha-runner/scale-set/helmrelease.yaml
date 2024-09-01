@@ -23,8 +23,7 @@ spec:
       strategy: rollback
       retries: 3
   dependsOn:
-    - name: gha-runner-scale-set-controller
-    #  namespace: actions-runner-system
+    - name: gha-runner-controller
   valuesFrom:
     - targetPath: githubConfigSecret.github_app_id
       kind: Secret
@@ -53,5 +52,5 @@ spec:
             image: ghcr.io/volschin/actions-runner:2.319.1@sha256:1da325130c644ed5226966440c1b427a7d3587d414dca93483b43d8b113df13b
             command: ["/home/runner/run.sh"]
     controllerServiceAccount:
-      name: gha-runner-scale-set-controller
-      namespace: actions-runner-system
+      name: gha-runner-controller
+      namespace: dev
