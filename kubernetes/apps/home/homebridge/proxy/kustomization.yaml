@@ -5,3 +5,4 @@ kind: Kustomization
 resources:
   - ./proxy1.yaml
   - ./proxy2.yaml
+  - ./proxy3.yaml
