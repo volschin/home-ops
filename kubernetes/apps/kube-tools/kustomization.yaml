@@ -5,6 +5,7 @@ resources:
   # Pre Flux-Kustomizations
   - ./namespace.yaml
   # Flux-Kustomizations
+  - ./cyberchef/ks.yaml
   #- ./echo-server/ks.yaml
   - ./it-tools/ks.yaml
   - ./kubernetes-dashboard/ks.yaml
