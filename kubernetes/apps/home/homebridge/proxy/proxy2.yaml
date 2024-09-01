@@ -29,7 +29,7 @@ spec:
   ports:
     - port: 80
       protocol: TCP
-      targetPort: 8081
+      targetPort: 8079
       name: http
 ---
 apiVersion: discovery.k8s.io/v1
@@ -44,7 +44,7 @@ ports:
   - name: http
     appProtocol: http
     protocol: TCP
-    port: 8081
+    port: 8079
 endpoints:
   - addresses:
       - 192.168.2.121
