@@ -39,7 +39,7 @@ metadata:
   name: &app tubearchivist # Must be equal to Service name for automatic mapping
   labels:
     kubernetes.io/service-name: *app
-addressType: IPv4
+addressType: FQDN
 ports:
   - name: http
     appProtocol: http
