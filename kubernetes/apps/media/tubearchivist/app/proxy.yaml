@@ -39,7 +39,7 @@ metadata:
   name: &app tubearchivist # Must be equal to Service name for automatic mapping
   labels:
     kubernetes.io/service-name: *app
-addressType: FQDN
+addressType: IPv4
 ports:
   - name: http
     appProtocol: http
@@ -47,4 +47,4 @@ ports:
     port: 8777
 endpoints:
   - addresses:
-      - ha.fritz.box
+      - 192.168.2.121
