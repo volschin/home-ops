@@ -10,6 +10,8 @@ spec:
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
+  dependsOn:
+    - name: external-secrets-stores
   path: ./kubernetes/apps/dev/gha-runner/scale-set
   prune: true
   sourceRef:
@@ -31,8 +33,6 @@ spec:
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
-  dependsOn:
-    - name: external-secrets-stores
   path: ./kubernetes/apps/dev/gha-runner/controller
   prune: true
   sourceRef:
