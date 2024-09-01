@@ -48,7 +48,7 @@ metadata:
 addressType: IPv4
 ports:
   - name: http
-    appProtocol: https
+    appProtocol: h2
     protocol: TCP
     port: 3000
 endpoints:
