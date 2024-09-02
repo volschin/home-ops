@@ -38,7 +38,7 @@ spec:
           app:
             image:
               repository: ghcr.io/volschin/radarr-develop
-              tag: 5.10.0.9090@sha256:7043dc4d8c2def0f549b605e45d7139eeed0c8b96b43f0ab1efc69c3694a4d59
+              tag: 5.10.1.9125@sha256:43805dba5a8911445ac96b62ec0d830a8a4444551726f81cda7fb570d49a97ad
             env:
               RADARR__APP__INSTANCENAME: Radarr
               RADARR__APP__THEME: dark
