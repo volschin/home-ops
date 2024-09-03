@@ -106,6 +106,15 @@ data:
           cpu: true
           memory: true
           show: true
+    - openweathermap:
+        label: Berlin
+        latitude: ${LATITUDE}
+        longitude: ${LONGITUDE}
+        units: metric
+        provider: openweathermap
+        cache: 30
+        format:
+          maximumFractionDigits: 1
     - datetime:
         text_size: md
         format:
