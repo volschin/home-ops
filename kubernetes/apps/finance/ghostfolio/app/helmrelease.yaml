@@ -68,7 +68,7 @@ spec:
           gethomepage.dev/icon: ghostfolio.png
           gethomepage.dev/description: Portfolio Management
         hosts:
-          - host: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"
+          - host: &host "gfolio.${SECRET_DOMAIN}"
             paths:
               - path: /
                 service:
