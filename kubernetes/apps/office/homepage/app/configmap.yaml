@@ -94,7 +94,6 @@ data:
       Tools:
         style: column
     showStats: false
-    hideVersion: true
     target: _blank
 
   widgets.yaml: |
