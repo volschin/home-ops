@@ -4,7 +4,7 @@ kind: Ingress
 metadata:
   name: &app ghostfolio-proxy
   labels:
-    kubernetes.io/service-name: gfolio
+    kubernetes.io/service-name: *app
   annotations:
    # nginx.ingress.kubernetes.io/rewrite-target: /
     external-dns.alpha.kubernetes.io/target: internal.${SECRET_DOMAIN}
@@ -25,7 +25,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: gfolio
+  name: ghostfolio-proxy
 spec:
   ports:
     - port: 80
@@ -36,7 +36,7 @@ spec:
 apiVersion: discovery.k8s.io/v1
 kind: EndpointSlice
 metadata:
-  name: &app gfolio # Must be equal to Service name for automatic mapping
+  name: &app ghostfolio-proxy # Must be equal to Service name for automatic mapping
   namespace: home
   labels:
     kubernetes.io/service-name: *app
