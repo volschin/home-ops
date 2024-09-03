@@ -11,8 +11,8 @@ spec:
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
-  interval: 10m
-  path: "./kubernetes/main/apps/selfhosted/immich/app"
+  interval: 60m
+  path: "./kubernetes/apps/office/immich/server"
   prune: true
   sourceRef:
     kind: GitRepository
@@ -20,5 +20,5 @@ spec:
   wait: true
   dependsOn:
     - name: postgres-cluster
-    #- name: rook-ceph-cluster
+    - name: dragonfly-cluster
     - name: external-secrets-stores
