@@ -69,9 +69,9 @@ data:
             href: https://minio
             icon: minio.png
     - Tools:
-        - Zot Registry:
-            href: https://registry
-            icon: logo.svg
+        - Forgejo:
+            href: http://192.168.2.115:3000
+            icon: forgejo.svg
 
   settings.yaml: |
     background:
