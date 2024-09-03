@@ -102,10 +102,12 @@ data:
           cpu: true
           memory: true
           show: true
+          showLabel: true
         nodes:
           cpu: true
           memory: true
           show: true
+          showLabel: true
     - openweathermap:
         label: Berlin
         latitude: ${LATITUDE}
