@@ -103,6 +103,7 @@ data:
           memory: true
           show: true
           showLabel: true
+          label: "HomeLab"
         nodes:
           cpu: true
           memory: true
