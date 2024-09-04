@@ -65,6 +65,11 @@ spec:
         className: internal
         annotations:
           external-dns.alpha.kubernetes.io/target: internal.${SECRET_DOMAIN}
+          gethomepage.dev/enabled: "true"
+          gethomepage.dev/description: Cyber Swiss Army Knife
+          gethomepage.dev/group: Tools
+          gethomepage.dev/icon: cyberchef.svg
+          gethomepage.dev/name: Cyberchef
           # nginx.ingress.kubernetes.io/whitelist-source-range: |
           #   10.0.0.0/8,172.16.0.0/12,192.168.0.0/16
         hosts:
