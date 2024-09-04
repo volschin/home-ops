@@ -109,6 +109,10 @@ data:
           memory: true
           show: true
           showLabel: true
+    - resources:
+        cputemp: true
+        disk: [/]
+        uptime: true
     - openweathermap:
         label: Berlin
         latitude: ${LATITUDE}
