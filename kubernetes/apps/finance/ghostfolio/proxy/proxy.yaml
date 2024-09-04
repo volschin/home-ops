@@ -13,8 +13,8 @@ metadata:
     gethomepage.dev/name: Ghostfolio
     gethomepage.dev/weight: "1"
     #gethomepage.dev/widget.type=ghostfolio
-    #gethomepage.dev/widget.url=http://192.168.2.121:3333
-    #gethomepage.dev/widget.key=${BEARER_TOKEN}
+    #gethomepage.dev/widget.url=http://ghostfolio-proxy.finance
+    #gethomepage.dev/widget.key=${GFOLIO_BEARER_TOKEN}
     external-dns.alpha.kubernetes.io/target: internal.${SECRET_DOMAIN}
 spec:
   ingressClassName: internal
