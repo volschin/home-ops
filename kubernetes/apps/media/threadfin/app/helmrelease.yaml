@@ -66,7 +66,7 @@ spec:
           gethomepage.dev/enabled: "true"
           gethomepage.dev/group: Media
           gethomepage.dev/name: Threadfin
-          gethomepage.dev/icon: threadfin.png
+          gethomepage.dev/icon: https://avatars.githubusercontent.com/u/105448329?s=48&v=4
           gethomepage.dev/description: IP-TV Proxy
         hosts:
           - host: &host "threadfin.${SECRET_DOMAIN}"
