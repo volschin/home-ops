@@ -6,7 +6,15 @@ metadata:
   labels:
     kubernetes.io/service-name: *app
   annotations:
-   # nginx.ingress.kubernetes.io/rewrite-target: /
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/group: Player
+    gethomepage.dev/name: TubeArchivist
+    gethomepage.dev/icon: tube-archivist
+    gethomepage.dev/description: YouTube management
+    gethomepage.dev/weight: "2"
+  #  gethomepage.dev/widget.type: tubearchivist
+  #  gethomepage.dev/widget.url: http://tubearchivist.media:80
+  #  gethomepage.dev/widget.key: "{{ `{{HOMEPAGE_VAR_TA_TOKEN}}` }}"
     external-dns.alpha.kubernetes.io/target: internal.${SECRET_DOMAIN}
 spec:
   ingressClassName: internal
