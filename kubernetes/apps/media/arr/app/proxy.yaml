@@ -2,7 +2,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: arr
+  name: prowlarr
   namespace: media
   labels:
     kubernetes.io/service-name: arr
@@ -20,10 +20,10 @@ metadata:
 spec:
   ingressClassName: internal
   rules:
-  - host: "arr.${SECRET_DOMAIN}"
+  - host: "prowlarr.${SECRET_DOMAIN}"
     http:
       paths:
-      - path: /
+      - path: /prowlarr/
         pathType: Prefix
         backend:
           service:
