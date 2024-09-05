@@ -17,9 +17,9 @@ spec:
     kind: GitRepository
     name: home-kubernetes
   wait: true
-  #dependsOn:
+  dependsOn:
     #- name: volsync
-    #- name: external-secrets-stores
+    - name: external-secrets-stores
   postBuild:
     substitute:
       APP: *app
