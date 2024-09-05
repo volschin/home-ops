@@ -3,9 +3,9 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: roon
-  name: roon
-  namespace: home
+    app: roonserver
+  name: roonserver
+  namespace: roon
   annotations:
     external-dns.alpha.kubernetes.io/hostname: roon.lan
 spec:
@@ -14,37 +14,37 @@ spec:
     port: 9330
     targetPort: 9330
   selector:
-    app: roon
+    app: roonserver
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    service: roon
-  name: roon
-  namespace: home
+    service: roonserver
+  name: roonserver
+  namespace: roon
 spec:
   strategy:
     type: Recreate
   replicas: 1
   selector:
     matchLabels:
-      app: roon
+      app: roonserver
   template:
     metadata:
       labels:
-        app: roon
+        app: roonserver
     spec:
       hostNetwork: true
-      hostname: roon
+      hostname: roonserver
       containers:
-        - image: steefdebruijn/docker-roonserver:latest
+        - image: volschin/roon:latest
           securityContext:
             privileged: true
-          name: roon
+          name: roonserver
           env:
           - name: TZ
-            value: "<Insert your TZ here>"
+            value: "${TZ}"
           ports:
             - containerPort: 9101
               protocol: TCP
@@ -76,35 +76,27 @@ spec:
             requests:
               memory: 500Mi
             limits:
-              memory: 2000Mi
+              memory: 4Gi
           volumeMounts:
-
           - mountPath: /app
             name: roon-app
-
           - mountPath: /music
             name: roon-music
-
           - mountPath: /data
             name: roon-data
-
           - mountPath: /backup
             name: roon-backup
 
       volumes:
-
       - name: roon-app
         persistentVolumeClaim:
           claimName: roon-app
-
       - name: roon-music
         persistentVolumeClaim:
           claimName: roon-music
-
       - name: roon-data
         persistentVolumeClaim:
           claimName: roon-data
-
       - name: roon-backup
         persistentVolumeClaim:
           claimName: roon-backup
@@ -201,7 +193,6 @@ spec:
   resources:
     requests:
       storage: 10Gi
-
 
 # Backup volumes
 ---
