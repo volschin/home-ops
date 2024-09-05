@@ -10,15 +10,15 @@ spec:
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
-  # dependsOn:
-  #   - name: external-secrets-stores
+  dependsOn:
+    - name: external-secrets-stores
   path: ./kubernetes/apps/storage/longhorn/app
   prune: true
   sourceRef:
     kind: GitRepository
     name: home-kubernetes
   wait: false # no flux ks dependents
-  interval: 360m
+  interval: 6h
   retryInterval: 1m
   timeout: 5m
 ---
@@ -41,6 +41,6 @@ spec:
     kind: GitRepository
     name: home-kubernetes
   wait: false # no flux ks dependents
-  interval: 360m
+  interval: 6h
   retryInterval: 1m
   timeout: 5m
