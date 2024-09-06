@@ -5,7 +5,7 @@
 #language: de
 title: My HomeLab
 #favicon: https://www.google.com/favicon.ico
-background: 
+background:
   image: https://images.unsplash.com/photo-1633259584604-afdc243122ea
   opacity: 20
 
