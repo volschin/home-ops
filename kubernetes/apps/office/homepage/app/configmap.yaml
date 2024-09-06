@@ -111,7 +111,8 @@ data:
           showLabel: true
     - resources:
         cputemp: true
-        disk: [/]
+        disk: [/, /docker]
+        expanded: true
         uptime: true
     - openweathermap:
         label: Berlin
