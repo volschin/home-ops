@@ -95,6 +95,11 @@ data:
         style: column
     showStats: false
     target: _blank
+    providers:
+      longhorn:
+        #username: "longhorn-username" # optional
+        #password: "very-secret-longhorn-password" # optional
+        url: https://longhorn.${SECURE_DOMAIN}
 
   widgets.yaml: |
     - kubernetes:
@@ -114,6 +119,11 @@ data:
         disk: [/]
         expanded: true
         uptime: true
+    - longhorn:
+        expanded: true
+        total: true
+        labels: true
+        nodes: true
     - openweathermap:
         label: Berlin
         latitude: ${LATITUDE}
