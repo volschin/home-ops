@@ -117,6 +117,7 @@ data:
           show: true
           showLabel: true
     - resources:
+        label: k8s-0
         cputemp: true
         disk: [/]
         expanded: true
