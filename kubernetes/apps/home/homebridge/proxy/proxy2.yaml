@@ -7,6 +7,17 @@ metadata:
     kubernetes.io/service-name: *app
   annotations:
     external-dns.alpha.kubernetes.io/target: internal.${SECRET_DOMAIN}
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/description: Diverses für iPhone
+    gethomepage.dev/group: Apple HomeKit
+    gethomepage.dev/icon: homebridge.svg
+    gethomepage.dev/name: Homebridge Test
+    gethomepage.dev/widget.type: homebridge
+    gethomepage.dev/widget.url: http://homebridge-test.home/
+    gethomepage.dev/widget.fields: '["updates", "child_bridges"]'
+    gethomepage.dev/widget.username: fake
+    gethomepage.dev/widget.password: fake
+    gethomepage.dev/weight: "2"
 spec:
   ingressClassName: internal
   rules:
