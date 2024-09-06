@@ -129,25 +129,25 @@
 
 - Finanzen:
     - comdirect:
-        - icon:
+        - icon: https://upload.wikimedia.org/wikipedia/commons/a/a7/Comdirect_Logo_10.2019.svg
           href: https://kunde.comdirect.de
     - Meine Deutsche Bank:
-        - icon:
+        - icon: https://upload.wikimedia.org/wikipedia/commons/7/7b/Deutsche_Bank_logo_without_wordmark.svg
           href: https://meine.deutsche-bank.de
     - Scalable Capital:
-        - icon:
+        - icon: https://avatars.githubusercontent.com/u/6443795?s=200&v=4
           href: https://de.scalable.capital/broker
     - Mitarbeiter-Aktien:
-        - icon:
+        - icon: https://raw.githubusercontent.com/volschin/home-ops/main/docs/assets/icons/sop.svg
           href: https://www.amundi-ee.com/account/#login
     - DWS:
-        - icon:
+        - icon: https://upload.wikimedia.org/wikipedia/de/e/ef/DWS_%28Unternehmen%29_logo.svg
           href: https://www.dws.de/service/serviceformulare/
     - AMEX:
         - icon:
           href: https://global.americanexpress.com/myca/intl/acctsumm/emea/accountSummary.do?request_type=&Face=de_DE&inav=de_menu_myacct_myacctcm_acctsummary
     - Gothaer Versicherung:
-        - icon:
+        - icon: gothaer
           href: https://www.gothaer.de/meine-gothaer/portal.html
     - Elster:
         - icon:
