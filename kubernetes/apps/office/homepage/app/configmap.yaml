@@ -111,7 +111,7 @@ data:
           showLabel: true
     - resources:
         cputemp: true
-        disk: [/, /docker]
+        disk: [/,/docker]
         expanded: true
         uptime: true
     - openweathermap:
