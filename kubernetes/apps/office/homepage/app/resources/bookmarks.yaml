@@ -96,21 +96,10 @@
     - MembersArea - All-Inkl:
         - icon: https://raw.githubusercontent.com/volschin/home-ops/main/docs/assets/icons/all-inkl.png
           href: https://all-inkl.com/members/index.php
-    - KAS w018659b (olschinski.de):
+    - KAS - All-Inkl:
         - icon: https://raw.githubusercontent.com/volschin/home-ops/main/docs/assets/icons/all-inkl.png
-          href: https://kas.all-inkl.com/index.php?a=50ba1e06dc4b1a047dcef190e7eafe4f7e9ebecf976aae82a66bd45068426248&s=d2be581abd571dd753ca84cef9d01541&id=511-CMS-Joomla_38-bertragung_von_Joomla
-    - Matomo Webanalytik-Berichte:
-        - icon: matomo.svg
-          href: https://stat.olschi.de/
-    - Olschinski-Familie:
-        - icon: https://raw.githubusercontent.com/volschin/home-ops/main/docs/assets/icons/joomla.png
-          href: https://www.olschinski.de
-    - Olschinski - WebTrees:
-        - icon: webtrees
-          href: https://www.olschinski.de/webtrees/index.php?ctype=gedcom&ged=olschin.ged
-    - Galizien - WebTrees:
-        - icon: webtrees
-          href: https://www.galizien.org/webtrees/index.php?route=%2Fwebtrees%2Ftree%2Fwgal.ged
+          href: https://kas.all-inkl.com/
+    # xxx redacted
     - Berlin Weather (weewx):
         - icon: https://raw.githubusercontent.com/volschin/home-ops/main/docs/assets/icons/berlin-wappen.png
           href: https://tolxdorff.com/wetter/
@@ -136,7 +125,7 @@
           href: https://mail.proton.me
     - WEB.DE Freemail:
         - icon: https://raw.githubusercontent.com/volschin/home-ops/main/docs/assets/icons/web-de.svg
-          href: https://bap.navigator.web.de/ooeditor?sid=4b2a3334ff8323f359e7c0a096ff308c35b0469542a95fac9b7bbd90a093ce8945d4e8e6e82986cc664a85c7044482>
+          href: https://bap.navigator.web.de
 
 - Finanzen:
     - comdirect:
@@ -148,7 +137,7 @@
     - Scalable Capital:
         - icon:
           href: https://de.scalable.capital/broker
-    - Steria-Aktien:
+    - Mitarbeiter-Aktien:
         - icon:
           href: https://www.amundi-ee.com/account/#login
     - DWS:
