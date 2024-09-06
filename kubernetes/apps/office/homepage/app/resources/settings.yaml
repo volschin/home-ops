@@ -10,7 +10,7 @@ background:
   opacity: 20
 
 providers:
-  openweathermap: db0ccf7975dc8ae64719a68d187b0338
+  openweathermap: ${owm_api-key}
 logpath: /logs
 
 layout:
