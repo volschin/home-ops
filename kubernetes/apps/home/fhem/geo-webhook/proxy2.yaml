@@ -13,6 +13,13 @@ metadata:
     nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
     nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
     external-dns.alpha.kubernetes.io/target: internal.${SECRET_DOMAIN}
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/description: Freundliche Hausautomatisierung in Perl
+    gethomepage.dev/group: Home Automation
+    gethomepage.dev/icon: https://raw.githubusercontent.com/volschin/home-ops/main/docs/assets/icons/fhem.png
+    gethomepage.dev/name: FHEM
+    gethomepage.dev/siteMonitor: http://fhem.home/fhem
+    gethomepage.dev/weight: "1"
 spec:
   ingressClassName: internal
   rules:
