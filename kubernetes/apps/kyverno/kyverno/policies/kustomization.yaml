@@ -4,7 +4,7 @@ kind: Kustomization
 resources:
   #- baseline-latest.yaml
   #- add-psa-namespace-reporting.yaml
-  - add-emptydir-sizelimit-policy.yaml
+#  - add-emptydir-sizelimit-policy.yaml
   # - apply-ingress-auth-annotations.yaml
   # - apply-ingress-external-dns-annotations.yaml
   # - apply-ingress-whitelist-annotations.yaml
@@ -18,21 +18,21 @@ resources:
   - check-deprecated-apis.yaml
   - unique-ingress-host-and-path-policy.yaml
   # - cleanup-empty-replicasets.yaml
-  - deny-ingress-implentationspecific.yaml
+#  - deny-ingress-implentationspecific.yaml
   - disallow-default-namespace.yaml
-  - disallow-empty-ingress-host.yaml
-  - disallow-localhost-services.yaml
+#  - disallow-empty-ingress-host.yaml
+#  - disallow-localhost-services.yaml
   # - ingress-prom-probes.yaml
   - inject-timezone.yaml
   - require-unique-external-dns.yaml
   - require-probes.yaml
   - restrict-deprecated-registry.yaml
-  - restrict-ingress-defaultbackend.yaml
+#  - restrict-ingress-defaultbackend.yaml
   #- restrict-node-port.yaml
   - verify-flux-images.yaml
   - verify-signed-images.yaml
   - check-image-signing.yaml
-  - verify-git-repositories.yaml
-  - add-ndots.yaml
-  - add-ttl-jobs.yaml
-  - prevent-naked-pods.yaml
+#  - verify-git-repositories.yaml
+#  - add-ndots.yaml
+#  - add-ttl-jobs.yaml
+#  - prevent-naked-pods.yaml
