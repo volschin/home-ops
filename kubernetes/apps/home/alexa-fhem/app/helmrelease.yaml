@@ -60,7 +60,7 @@ spec:
           nginx.ingress.kubernetes.io/auth-secret: alexa-basic-auth
           nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required for access'
         hosts:
-          - host: &host "fhem.${SECRET_DOMAIN}"
+          - host: &host "alexa.${SECRET_DOMAIN}"
             paths:
               - path: /alexa/
                 service:
