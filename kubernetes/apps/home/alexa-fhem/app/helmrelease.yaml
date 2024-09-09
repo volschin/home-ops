@@ -34,9 +34,7 @@ spec:
               repository: ghcr.io/volschin/alexa-fhem
               tag: edge
             env:
-              NODE_ENV: production
               TZ: ${TIMEZONE}
-            envFrom: *envFrom
             resources:
               requests:
                 cpu: 100m
@@ -58,7 +56,7 @@ spec:
           # nginx.ingress.kubernetes.io/rewrite-target: /
           nginx.ingress.kubernetes.io/auth-type: basic
           nginx.ingress.kubernetes.io/auth-secret: alexa-basic-auth
-          nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required for access'
+          nginx.ingress.kubernetes.io/auth-realm: 'Restricted'
         hosts:
           - host: &host "alexa.${SECRET_DOMAIN}"
             paths:
