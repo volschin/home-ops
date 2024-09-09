@@ -13,7 +13,7 @@
             "server": "fhem",
             "port": "8083",
             "ssl": false,
- 	          "webname": "fhem",
+              "webname": "fhem",
             "filter": "room=alexa"
         }
     ]
