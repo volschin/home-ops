@@ -5,7 +5,7 @@ resources:
   # Pre-Flux
   - ./namespace.yaml
   # Flux
-  #- ./alertmanager/ks.yaml
+  - ./alertmanager/ks.yaml
   - ./gatus/ks.yaml
   - ./goldilocks/ks.yaml
   - ./grafana/ks.yaml
