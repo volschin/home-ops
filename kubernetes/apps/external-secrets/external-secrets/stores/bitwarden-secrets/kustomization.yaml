@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
 - ./clustersecretstore.yaml
 - ./secret.sops.yaml
+- ./secret-eu.sops.yaml
