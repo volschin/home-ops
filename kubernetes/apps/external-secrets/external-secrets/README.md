@@ -12,6 +12,8 @@ operator reads information from external APIs and automatically injects the
 values into a [Kubernetes
 Secret](https://kubernetes.io/docs/concepts/configuration/secret/).
 
+![External-Secrets components](/docs/assets/diagrams-component-overview.png){ loading=lazy }
+
 ## Created Resources
 
 | Kind                                | Name               |
