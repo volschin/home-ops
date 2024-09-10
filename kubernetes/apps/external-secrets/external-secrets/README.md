@@ -16,8 +16,8 @@ Secret](https://kubernetes.io/docs/concepts/configuration/secret/).
 
 | Kind                                | Name               |
 | ----------------------------------- | ------------------ |
-| [`Namespace`][ref-namespace]        | `vaultwarden`      |
-| [`HelmRelease`][ref-helm-release]   | `vaultwarden`      |
+| [`Namespace`][ref-namespace]        | `external-secrets` |
+| [`HelmRelease`][ref-helm-release]   | `external-secrets` |
 | [`Certificate`][ref-certificate]    | `vault.${DOMAIN_INTERNAL}`  |
 | [`IngressRoute`][ref-ingress-route] | `dashboard`        |
 
@@ -28,6 +28,6 @@ Secret](https://kubernetes.io/docs/concepts/configuration/secret/).
 
 ## Links
 
-- [Documentation](https://github.com/dani-garcia/vaultwarden/wiki)
-- [Helm Chart](https://github.com/k8s-at-home/charts/tree/master/charts/stable/vaultwarden)
-- [GitHub Repository](https://github.com/dani-garcia/vaultwarden)
+- [Documentation](https://external-secrets.io/latest/)
+- [Helm Chart](https://github.com/external-secrets/external-secrets/tree/main/deploy/charts/external-secrets)
+- [GitHub Repository](https://github.com/external-secrets/external-secrets/)
