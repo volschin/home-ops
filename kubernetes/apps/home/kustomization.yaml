@@ -5,7 +5,7 @@ resources:
   # Pre Flux-Kustomizations
   - ./namespace.yaml
   # Flux-Kustomizations
-  #- ./alexa-fhem/ks.yaml
+  - ./alexa-fhem/ks.yaml
   - ./echo-server/ks.yaml
   - ./fhem/ks.yaml
   - ./home-assistant/ks.yaml
