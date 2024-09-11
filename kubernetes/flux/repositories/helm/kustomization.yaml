@@ -5,7 +5,7 @@ resources:
   - ./actions-runner-controller.yaml
   - ./angelnu.yaml
   - ./backube.yaml
-  - ./bjw-s.yaml
+  #- ./bjw-s.yaml
   - ./cilium.yaml
   - ./cloudflare-exporter.yaml
   - ./coredns.yaml
