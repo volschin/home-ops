@@ -51,6 +51,7 @@ spec:
         gethomepage.dev/group: Storage
         gethomepage.dev/name: Longhorn
         gethomepage.dev/icon: longhorn.svg
+        gethomepage.dev/id: "{{ .Release.Name }}"
         gethomepage.dev/description: Verwaltung des Speichers
       host: longhorn.${SECRET_DOMAIN}
       tls: true
