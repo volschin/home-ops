@@ -73,6 +73,7 @@ spec:
           gethomepage.dev/group: Projekte
           gethomepage.dev/name: Linkwarden
           gethomepage.dev/icon: linkwarden.svg
+          gethomepage.dev/id: "{{ .Release.Name }}"
           gethomepage.dev/description: collaborative bookmark manager
         hosts:
           - host: &host "link.${SECRET_DOMAIN}"

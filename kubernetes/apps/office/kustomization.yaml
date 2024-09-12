@@ -4,7 +4,7 @@ kind: Kustomization
 resources:
   - ./namespace.yaml
   #- ./changedetection/ks.yaml
-  - ./cups-server/ks.yaml
+  #- ./cups-server/ks.yaml
   - ./homepage/ks.yaml
   - ./immich/ks.yaml
   #- ./joplin/ks.yaml

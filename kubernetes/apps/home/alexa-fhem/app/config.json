@@ -1,0 +1,20 @@
+{
+    "alexa": {
+        "port": 3000,
+        "name": "Alexa",
+        "ssl": false,
+        "applicationId": ["amzn1.ask.skill.fake","amzn1.ask.skill.fake"],
+        "oauthClientID": "amzn1.application-oa2-client.fake"
+    },
+
+    "connections": [
+        {
+            "name": "FHEM",
+            "server": "fhem",
+            "port": "8083",
+            "ssl": false,
+            "webname": "fhem",
+            "filter": "room=alexa"
+        }
+    ]
+}

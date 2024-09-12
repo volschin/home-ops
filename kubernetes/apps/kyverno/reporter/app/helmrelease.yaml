@@ -35,6 +35,7 @@ spec:
           gethomepage.dev/description: Policy Reporting
           gethomepage.dev/group: Security
           gethomepage.dev/icon: https://raw.githubusercontent.com/cncf/artwork/main/projects/kyverno/icon/color/kyverno-icon-color.svg
+          gethomepage.dev/id: "{{ .Release.Name }}"
           gethomepage.dev/name: Kyverno Policy Reporter
         hosts:
           - host: "policy-report.${SECRET_DOMAIN}"

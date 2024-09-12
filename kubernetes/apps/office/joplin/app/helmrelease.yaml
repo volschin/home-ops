@@ -74,6 +74,7 @@ spec:
           gethomepage.dev/group: Tools
           gethomepage.dev/name: Joplin
           gethomepage.dev/icon: joplin.svg
+          gethomepage.dev/id: "{{ .Release.Name }}"
           gethomepage.dev/description: Notizverwaltung
         hosts:
           - host: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"

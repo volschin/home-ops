@@ -8,7 +8,7 @@ resources:
 configMapGenerator:
   - name: alertmanager-configmap
     files:
-      - config/alertmanager.yml
+      - ./config/alertmanager.yml
 generatorOptions:
   disableNameSuffixHash: true
   annotations:

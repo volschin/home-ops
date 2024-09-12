@@ -115,6 +115,7 @@ spec:
           gethomepage.dev/group: Downloads
           gethomepage.dev/name: qBittorrent
           gethomepage.dev/icon: qbittorrent.svg
+          gethomepage.dev/id: "{{ .Release.Name }}"
           gethomepage.dev/description: Bittorrent client
           gethomepage.dev/widget.type: qbittorrent
           gethomepage.dev/widget.url: "http://qbittorrent.download.svc.cluster.local:8080"

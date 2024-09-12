@@ -37,7 +37,7 @@ spec:
           app:
             image:
               repository: ghcr.io/volschin/prowlarr-develop
-              tag: 1.23.1.4708@sha256:b6768c6712ee3692de22f5c75c62813cb77e982afff15fd0cbfc70546dea0260
+              tag: 1.24.0.4721@sha256:40d96d709e890000f03dbd80145ba5e511494770356a5572bf9bed8bfe607701
             env:
               TZ: ${TIMEZONE}
               PROWLARR__APP__INSTANCENAME: Prowlarr
@@ -75,6 +75,7 @@ spec:
           gethomepage.dev/group: Downloads
           gethomepage.dev/name: Prowlarr
           gethomepage.dev/icon: prowlarr.svg
+          gethomepage.dev/id: "{{ .Release.Name }}"
           gethomepage.dev/description: Torrent Indexer Management
           gethomepage.dev/widget.type: prowlarr
           gethomepage.dev/widget.url: http://prowlarr.download

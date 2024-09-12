@@ -76,6 +76,7 @@ spec:
           gethomepage.dev/group: Tools
           gethomepage.dev/name: Change Detection
           gethomepage.dev/icon: changedetection.svg
+          gethomepage.dev/id: "{{ .Release.Name }}"
           gethomepage.dev/description: Aktualisierungen an Webseiten
           gethomepage.dev/widget.type: changedetectionio
           gethomepage.dev/widget.url: http://changedetection.office.svc.cluster.local:5000

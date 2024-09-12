@@ -6,4 +6,5 @@ resources:
   # Pre Flux-Kustomizations
   - ./namespace.yaml
   # Flux-Kustomizations
+  - ./forgejo-runner/ks.yaml
   - ./gha-runner/ks.yaml

@@ -12,7 +12,7 @@ spec:
   chart:
     spec:
       chart: portainer
-      version: 1.0.52
+      version: 1.0.53
       sourceRef:
         kind: HelmRepository
         name: portainer
@@ -30,6 +30,7 @@ spec:
         gethomepage.dev/description: Container-Management
         gethomepage.dev/group: Tools
         gethomepage.dev/icon: portainer.svg
+        gethomepage.dev/id: "{{ .Release.Name }}"
         gethomepage.dev/name: Portainer
       hosts:
         - host: &host "portainer.${SECRET_DOMAIN}"

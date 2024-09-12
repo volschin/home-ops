@@ -54,6 +54,7 @@ spec:
           gethomepage.dev/description: Sammlung von IT-Tools
           gethomepage.dev/group: Tools
           gethomepage.dev/icon: it-tools.svg
+          gethomepage.dev/id: "{{ .Release.Name }}"
           gethomepage.dev/name: IT-Tools
         hosts:
           - host: "{{ .Release.Name }}.${SECRET_DOMAIN}"

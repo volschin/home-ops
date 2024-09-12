@@ -74,6 +74,7 @@ data:
             icon: forgejo.svg
 
   settings.yaml: |
+    favicon: https://kubernetes.io/images/favicon.png
     background:
       image: https://images.unsplash.com/photo-1633259584604-afdc243122ea
       opacity: 20
@@ -95,6 +96,12 @@ data:
         style: column
     showStats: false
     target: _blank
+    providers:
+      longhorn:
+        #username: "longhorn-username" # optional
+        #password: "very-secret-longhorn-password" # optional
+        url: https://longhorn.${SECURE_DOMAIN}
+      openweathermap: ${OWM_API_KEY}
 
   widgets.yaml: |
     - kubernetes:
@@ -110,9 +117,16 @@ data:
           show: true
           showLabel: true
     - resources:
+        label: k8s-0
         cputemp: true
         disk: [/]
+        expanded: true
         uptime: true
+    - longhorn:
+        expanded: true
+        total: true
+        labels: true
+        nodes: true
     - openweathermap:
         label: Berlin
         latitude: ${LATITUDE}

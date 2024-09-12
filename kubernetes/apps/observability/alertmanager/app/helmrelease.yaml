@@ -58,10 +58,12 @@ spec:
       app:
         className: internal
         annotations:
+          external-dns.alpha.kubernetes.io/target: internal.${SECRET_DOMAIN}
           gethomepage.dev/enabled: "true"
           gethomepage.dev/group: Infrastructure
           gethomepage.dev/name: Alert Manager
           gethomepage.dev/icon: alertmanager.svg
+          gethomepage.dev/id: "{{ .Release.Name }}"
           gethomepage.dev/description: Benachrichtigung über Störungen
         hosts:
           - host: &host alertmanager.${SECRET_DOMAIN}
