@@ -63,6 +63,7 @@ spec:
         gethomepage.dev/group: Infrastructure
         gethomepage.dev/name: Weave-gitops
         gethomepage.dev/icon: https://raw.githubusercontent.com/joryirving/home-ops/main/docs/src/assets/icons/weave.png
+        gethomepage.dev/id: "{{ .Release.Name }}"
         gethomepage.dev/description: Flux Dashboard
       hosts:
         - host: gitops-ee.${SECRET_DOMAIN}
