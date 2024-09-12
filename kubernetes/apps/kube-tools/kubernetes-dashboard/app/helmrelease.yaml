@@ -53,6 +53,7 @@ spec:
         gethomepage.dev/group: Services
         gethomepage.dev/name: Kubernetes Dashboard
         gethomepage.dev/icon: mdi-kubernetes
+        gethomepage.dev/id: "{{ .Release.Name }}"
       hosts:
         - &host "k8s-dashboard.${SECRET_DOMAIN}"
       tls:
