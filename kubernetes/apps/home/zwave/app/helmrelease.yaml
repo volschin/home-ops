@@ -93,6 +93,7 @@ spec:
           gethomepage.dev/group: Home Automation
           gethomepage.dev/name: Z-Wave UI
           gethomepage.dev/icon: zwavejs2mqtt.png
+          gethomepage.dev/id: "{{ .Release.Name }}"
           gethomepage.dev/description: Z-Wave Schloss
           gethomepage.dev/weight: "2"
         className: internal
