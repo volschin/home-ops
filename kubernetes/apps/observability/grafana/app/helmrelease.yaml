@@ -216,6 +216,7 @@ spec:
         gethomepage.dev/group: Observability
         gethomepage.dev/name: Grafana
         gethomepage.dev/icon: grafana.svg
+        gethomepage.dev/id: "{{ .Release.Name }}"
         gethomepage.dev/description: Grafische Darstellung der Kennzahlen
         gethomepage.dev/widget.type: grafana
         gethomepage.dev/widget.url: http://grafana.observability

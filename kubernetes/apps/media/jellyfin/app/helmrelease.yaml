@@ -97,6 +97,7 @@ spec:
           gethomepage.dev/group: Media
           gethomepage.dev/name: Jellyfin
           gethomepage.dev/icon: jellyfin.svg
+          gethomepage.dev/id: "{{ .Release.Name }}"
           gethomepage.dev/description: Medienverwaltung
         hosts:
           - host: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"

@@ -78,6 +78,7 @@ spec:
           gethomepage.dev/group: Tools
           gethomepage.dev/name: Easy EPG
           gethomepage.dev/icon: /icons/magentatv.png
+          gethomepage.dev/id: "{{ .Release.Name }}"
           gethomepage.dev/description: EPG-Erstellung aus MagentaTV
           gethomepage.dev/weight: "5"
           external-dns.alpha.kubernetes.io/target: internal.${SECRET_DOMAIN}

@@ -94,6 +94,7 @@ spec:
           gethomepage.dev/group: Media
           gethomepage.dev/name: Radarr
           gethomepage.dev/icon: radarr.svg
+          gethomepage.dev/id: "{{ .Release.Name }}"
           gethomepage.dev/description: Movies management
           gethomepage.dev/widget.type: radarr
           gethomepage.dev/widget.url: http://radarr.media

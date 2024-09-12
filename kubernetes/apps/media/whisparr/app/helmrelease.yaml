@@ -94,6 +94,7 @@ spec:
           gethomepage.dev/group: Media
           gethomepage.dev/name: Whisparr
           gethomepage.dev/icon: whisparr.svg
+          gethomepage.dev/id: "{{ .Release.Name }}"
           gethomepage.dev/description: Adult Management
           gethomepage.dev/widget.type: whisparr
           gethomepage.dev/widget.url: http://whisparr.media

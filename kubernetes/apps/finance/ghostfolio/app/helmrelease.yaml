@@ -66,6 +66,7 @@ spec:
           gethomepage.dev/group: Finanzen
           gethomepage.dev/name: Ghostfolio
           gethomepage.dev/icon: ghostfolio.png
+          gethomepage.dev/id: "{{ .Release.Name }}"
           gethomepage.dev/description: Portfolio Management
         hosts:
           - host: &host "gfolio.${SECRET_DOMAIN}"

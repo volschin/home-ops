@@ -42,6 +42,7 @@ spec:
         gethomepage.dev/group: Services
         gethomepage.dev/name: PodInfo
         gethomepage.dev/icon: https://raw.githubusercontent.com/stefanprodan/podinfo/gh-pages/cuddle_clap.gif
+        gethomepage.dev/id: "{{ .Release.Name }}"
         gethomepage.dev/description: Go Microservice for end-to-end testing.
         gethomepage.dev/weight: "2"
         external-dns.alpha.kubernetes.io/target: "internal.${SECRET_DOMAIN}"

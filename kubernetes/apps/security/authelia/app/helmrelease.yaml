@@ -117,6 +117,7 @@ spec:
           gethomepage.dev/group: Infrastructure
           gethomepage.dev/name: Authelia
           gethomepage.dev/icon: authelia.png
+          gethomepage.dev/id: "{{ .Release.Name }}"
         hosts:
           - host: auth.${SECRET_DOMAIN}
             paths:

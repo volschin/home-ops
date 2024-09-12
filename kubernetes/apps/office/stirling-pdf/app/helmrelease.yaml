@@ -52,6 +52,7 @@ spec:
           gethomepage.dev/group: Tools
           gethomepage.dev/name: Stirling-PDF
           gethomepage.dev/icon: stirling-pdf.svg
+          gethomepage.dev/id: "{{ .Release.Name }}"
           gethomepage.dev/description: Bearbeitungstools für PDF
         hosts:
           - host: &host "pdf.${SECRET_DOMAIN}"

@@ -42,6 +42,7 @@ spec:
           gethomepage.dev/group: Observability
           gethomepage.dev/name: VictoriaLogs
           gethomepage.dev/icon: si-victoriametrics
+          gethomepage.dev/id: "{{ .Release.Name }}"
           external-dns.alpha.kubernetes.io/target: internal.${SECRET_DOMAIN}
         hosts:
           - name: &host "logs.${SECRET_DOMAIN}"

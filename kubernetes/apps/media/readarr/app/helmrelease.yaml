@@ -93,6 +93,7 @@ spec:
           gethomepage.dev/group: Media
           gethomepage.dev/name: Readarr
           gethomepage.dev/icon: readarr.svg
+          gethomepage.dev/id: "{{ .Release.Name }}"
           gethomepage.dev/description: eBook management
           gethomepage.dev/widget.type: readarr
           gethomepage.dev/widget.url: http://readarr.media
