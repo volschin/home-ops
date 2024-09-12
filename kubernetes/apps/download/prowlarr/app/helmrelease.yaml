@@ -75,6 +75,7 @@ spec:
           gethomepage.dev/group: Downloads
           gethomepage.dev/name: Prowlarr
           gethomepage.dev/icon: prowlarr.svg
+          gethomepage.dev/id: "{{ .Release.Name }}"
           gethomepage.dev/description: Torrent Indexer Management
           gethomepage.dev/widget.type: prowlarr
           gethomepage.dev/widget.url: http://prowlarr.download
