@@ -82,6 +82,7 @@ spec:
           gethomepage.dev/group: Services
           gethomepage.dev/name: Echo-Server
           gethomepage.dev/icon: nginx.svg
+          gethomepage.dev/id: "{{ .Release.Name }}"
         hosts:
           - host: "{{ .Release.Name }}.${SECRET_DOMAIN}"
             paths:
