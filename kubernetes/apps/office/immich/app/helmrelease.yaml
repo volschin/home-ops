@@ -120,6 +120,7 @@ spec:
           gethomepage.dev/description: Photo and video management solution
           gethomepage.dev/group: Services
           gethomepage.dev/icon: immich.svg
+          gethomepage.dev/id: "{{ .Release.Name }}"
           gethomepage.dev/name: Immich
         hosts:
           - host: &host photos.${SECRET_DOMAIN}
