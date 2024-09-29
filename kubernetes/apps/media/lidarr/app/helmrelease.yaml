@@ -38,7 +38,7 @@ spec:
           app:
             image:
               repository: ghcr.io/volschin/lidarr-develop
-              tag: 2.6.1.4370@sha256:4fa9a24537efe971603a9947a809f2838da9a9a485087d19e5bff7e373b69303
+              tag: 2.6.2.4379@sha256:9ebfc918d84a917a27fce7c4b39a21d6b38bf9f67ed6b1867e6099a5b4282e72
             env:
               RADARR__APP__INSTANCENAME: Lidarr
               RADARR__APP__THEME: dark
