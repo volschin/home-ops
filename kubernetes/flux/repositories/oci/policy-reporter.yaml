@@ -12,7 +12,7 @@ spec:
   # renovate: datasource=helm depName=policy-reporter
   url: oci://ghcr.io/kyverno/charts/policy-reporter
   ref:
-    tag: 2.24.1
+    tag: 2.24.2
   verify:
     provider: cosign
     matchOIDCIdentity:
