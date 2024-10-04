@@ -10,7 +10,6 @@ spec:
     labels:
       app.kubernetes.io/name: *app
   interval: 6h
-  retryInterval: 5m
   prune: true
   wait: true
   dependsOn:
