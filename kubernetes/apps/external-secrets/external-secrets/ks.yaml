@@ -18,7 +18,6 @@ spec:
   dependsOn:
     - name: cert-manager-issuers
   interval: 120m
-  retryInterval: 1m
   timeout: 5m
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
@@ -40,7 +39,6 @@ spec:
   dependsOn:
     - name: external-secrets-certificates
   interval: 120m
-  retryInterval: 1m
   timeout: 5m
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
@@ -62,5 +60,4 @@ spec:
     name: home-kubernetes
   wait: true
   interval: 120m
-  retryInterval: 1m
   timeout: 5m
