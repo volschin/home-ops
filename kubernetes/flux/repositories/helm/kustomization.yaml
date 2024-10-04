@@ -22,6 +22,7 @@ resources:
   - ./metrics-server.yaml
   - ./node-feature-discovery.yaml
   - ./openebs.yaml
+  - ./ohif-viewer.yaml
   - ./piraeus.yaml
   - ./portainer.yaml
   - ./postfinance.yaml
