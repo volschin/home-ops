@@ -19,6 +19,5 @@ spec:
       kind: HelmRelease
       name: goldilocks
       namespace: observability
-  interval: 360m
-  retryInterval: 1m
+  interval: 6h
   timeout: 3m
