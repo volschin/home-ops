@@ -13,8 +13,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: home-kubernetes
-  interval: 360m
-  retryInterval: 1m
+  interval: 6h
   timeout: 3m
   healthChecks:
     - apiVersion: helm.toolkit.fluxcd.io/v2beta1
@@ -38,6 +37,5 @@ spec:
   sourceRef:
     kind: GitRepository
     name: home-kubernetes
-  interval: 360m
-  retryInterval: 1m
+  interval: 6h
   timeout: 3m
