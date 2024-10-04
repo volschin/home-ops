@@ -19,7 +19,6 @@ spec:
     - name: node-feature-discovery
   wait: false
   interval: 6h
-  retryInterval: 1m
   timeout: 5m
 ---
 # yaml-language-server: $schema=https://kubernetes-schemas.pages.dev/kustomize.toolkit.fluxcd.io/kustomization_v1.json
@@ -40,7 +39,6 @@ spec:
     name: home-kubernetes
   wait: false
   interval: 6h
-  retryInterval: 1m
   timeout: 5m
 ---
 # yaml-language-server: $schema=https://github.com/fluxcd-community/flux2-schemas/raw/main/kustomization-kustomize-v1.json
@@ -61,5 +59,4 @@ spec:
     name: home-kubernetes
   wait: false
   interval: 6h
-  retryInterval: 1m
   timeout: 5m

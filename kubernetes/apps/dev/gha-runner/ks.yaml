@@ -18,8 +18,7 @@ spec:
     kind: GitRepository
     name: home-kubernetes
   wait: false
-  interval: 120m
-  retryInterval: 1m
+  interval: 6h
   timeout: 5m
 ---
 # yaml-language-server: $schema=https://kubernetes-schemas.pages.dev/kustomize.toolkit.fluxcd.io/kustomization_v1.json
@@ -39,6 +38,5 @@ spec:
     kind: GitRepository
     name: home-kubernetes
   wait: false
-  interval: 360m
-  retryInterval: 1m
+  interval: 6h
   timeout: 5m

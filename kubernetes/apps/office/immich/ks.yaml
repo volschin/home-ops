@@ -11,7 +11,7 @@ spec:
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
-  interval: 60m
+  interval: 6h
   path: "./kubernetes/apps/office/immich/app"
   prune: true
   sourceRef:
