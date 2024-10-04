@@ -5,8 +5,7 @@ metadata:
   name: &app kyverno-reporter
   namespace: flux-system
 spec:
-  interval: 360m
-  retryInterval: 5m
+  interval: 6h
   prune: true
   targetNamespace: kyverno
   commonMetadata:
