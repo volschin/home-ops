@@ -27,7 +27,7 @@ spec:
           app:
             image:
               repository: ghcr.io/manimatter/decluttarr
-              tag: v1.47.1@sha256:bc3e62038ce9654a6a0db4b484cb054d762d909390c5bcf6d850c77a0aa432a9
+              tag: v1.48.0@sha256:0ead8ec32913159629ab6fc6cf85506b20815d99e5c7fd64a6477c1fcf15c287
             env:
               - name: LOG_LEVEL
                 value: "INFO"
