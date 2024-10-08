@@ -12,7 +12,7 @@ spec:
   # renovate: datasource=helm depName=podinfo
   url: oci://ghcr.io/stefanprodan/charts/podinfo
   ref:
-    tag: 6.7.0
+    tag: 6.7.1
   verify:
     provider: cosign
     matchOIDCIdentity:
