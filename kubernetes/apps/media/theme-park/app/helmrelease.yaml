@@ -27,7 +27,7 @@ spec:
           app:
             image:
               repository: ghcr.io/volschin/theme-park
-              tag: 1.18.0@sha256:572974fa515ce3c17e0b57fcf32749c9a2d45e4e7c42caa7c6c7d7cffe092706
+              tag: 1.19.0@sha256:77758e7938dafcdf1ef85a5aee2a00947a1e7f34a1856d98b7d683e10b1d6e9f
             resources:
               requests:
                 cpu: 15m
