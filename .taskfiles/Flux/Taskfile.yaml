@@ -46,4 +46,3 @@ tasks:
         sh: test -f {{.SOPS_AGE_KEY_FILE}}
       - msg: Missing Github deploy key file
         sh: test -f {{.GITHUB_DEPLOY_KEY_FILE}}
-  
