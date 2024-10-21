@@ -59,6 +59,10 @@ spec:
         className: internal
         annotations:
           external-dns.alpha.kubernetes.io/target: internal.${SECRET_DOMAIN}
+          gethomepage.dev/name: "HomeLab"
+          gethomepage.dev/description: "A modern, secure, highly customizable application dashboard."
+       #   gethomepage.dev/group: "A New Group"
+       #   gethomepage.dev/icon: "homepage.png"
         hosts:
           - host: "home.${SECRET_DOMAIN}"
             paths:
