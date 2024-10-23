@@ -1,0 +1,29 @@
+    - Infrastructure:
+        - Cloudflared:
+            href: https://dash.cloudflare.com/
+            icon: cloudflare-zero-trust.png
+            description: Cloudflared Tunnel Status
+        - Fritz!Box:
+            href: https://fritz.box
+            icon: avmfritzbox.png
+        - OPNsense:
+            href: https://opnsense
+            icon: opnsense.png
+    - Observability:
+        - Prometheus (storage):
+            href: https://prometheus
+            icon: prometheus.png
+    - Storage:
+        - Filebrowser:
+            href: https://filebrowser
+            icon: filebrowser.png
+        - Kopia:
+            href: https://kopia
+            icon: kopia.png
+        - Minio:
+            href: https://minio
+            icon: minio.png
+    - Tools:
+        - Forgejo:
+            href: http://192.168.2.115:3000
+            icon: forgejo.svg
