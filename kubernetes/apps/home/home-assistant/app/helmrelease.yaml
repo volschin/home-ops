@@ -38,7 +38,7 @@ spec:
           app:
             image:
               repository: ghcr.io/volschin/home-assistant
-              tag: 2024.11.1@sha256:d24b5ebfbcf4f09a040bf64542d6fdc417d610306463be987511db65babd8054
+              tag: 2024.11.2@sha256:fec2f97ce458ab23954483c93eec3607a731e5cd76df62d8be7e3e7ed0316d1c
             env:
               TZ: ${TIMEZONE}
               HASS_PURGE_KEEP_DAYS: 30
