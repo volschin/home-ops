@@ -1,0 +1,30 @@
+    - kubernetes:
+        cluster:
+          cpu: true
+          memory: true
+          show: true
+          showLabel: true
+          label: "HomeLab"
+        nodes:
+          cpu: true
+          memory: true
+          show: true
+          showLabel: true
+    - resources:
+        cputemp: true
+        disk: [/]
+        uptime: true
+    - openweathermap:
+        label: Berlin
+        latitude: ${LATITUDE}
+        longitude: ${LONGITUDE}
+        units: metric
+        provider: openweathermap
+        cache: 30
+        format:
+          maximumFractionDigits: 1
+    - datetime:
+        text_size: md
+        format:
+          timeStyle: short
+          hourCycle: h23

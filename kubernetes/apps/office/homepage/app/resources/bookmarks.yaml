@@ -1,0 +1,174 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/en/configs/bookmarks
+
+- Developer:
+    - Github:
+        - icon: github-light.png
+          href: https://github.com/
+    - Terraform:
+        - icon: terraform.svg
+          href: https://volschin.app.spacelift.io/
+    - Homepage Documentation:
+        - icon: homepage.png
+          href: https://gethomepage.dev/
+    - ArtifactHUB:
+        - icon: https://avatars.githubusercontent.com/u/62354979?s=200&v=4
+          href: https://artifacthub.io/
+    - Flux documentation:
+        - icon: flux-cd.svg
+          href: https://fluxcd.io/flux/guides/
+    - K9S Cheatsheet:
+        - icon: https://www.hackingnote.com/images/square.png
+          href: https://www.hackingnote.com/en/cheatsheets/k9s/
+    - Docker Hub:
+        - icon: docker-moby.svg
+          href: https://hub.docker.com/
+    - StepSecurity:
+        - icon: stepsecurity
+          href: https://app.stepsecurity.io/github/volschin/actions/dashboard
+    - FireHOL IP Blacklists:
+        - icon: https://raw.githubusercontent.com/volschin/home-ops/main/docs/assets/icons/firehol.png
+          href: https://iplists.firehol.org/
+    - PTB Uhr:
+        - icon: https://raw.githubusercontent.com/volschin/home-ops/main/docs/assets/icons/ptbuhr.png
+          href: https://uhr.ptb.de/
+    - NewReleases.io:
+        - icon: https://avatars.githubusercontent.com/u/40075515?s=200&v=4
+          href: https://newreleases.io/projects?sort=added
+    - Withings API:
+        - icon: https://raw.githubusercontent.com/volschin/home-ops/main/docs/assets/icons/withings.png
+          href: https://developer.withings.com/oauth2/
+
+- Cloud:
+    - Digital Ocean:
+        - icon: digital-ocean.svg
+          href: https://cloud.olschinski.net
+    - Hetzner:
+        - icon: hetzner.svg
+          href: https://console.hetzner.cloud/
+    - OneDrive:
+        - icon: https://raw.githubusercontent.com/volschin/home-ops/main/docs/assets/icons/onedrive.svg
+          href: https://www.microsoft.com
+    - Pushover:
+        - icon: pushover.svg
+          href: https://pushover.net
+    - Bitwarden Secrets Manager:
+        - icon: bitwarden.svg
+          href: https://vault.bitwarden.com/#/sm/c88b6319-29d6-409c-be53-b19000c78980
+
+- Social:
+    - Stromproduktion:
+        - icon: https://raw.githubusercontent.com/volschin/home-ops/main/docs/assets/icons/energy-charts.jpg
+          href: https://www.energy-charts.info/charts/power/chart.htm?l=de&c=DE&stacking=stacked_absolute_area&legendItems=001111111111111111111111111111111000001
+    - Reddit:
+        - icon: reddit.svg
+          href: https://reddit.com/
+    - YouTube:
+        - icon: youtube.svg
+          href: https://youtube.com/
+    - Trakt:
+        - icon: trakt.svg
+          href: https://trakt.tv
+    - XING:
+        - icon: https://w7.pngwing.com/pngs/895/622/png-transparent-logo-xing-logos-and-brands-icon.png
+          href: https://www.xing.com/
+    - LinkedIn:
+        - icon: linkedin.svg
+          href: https://www.linkedin.com/feed/
+    - Mastodon Grüne:
+        - icon: mastodon.svg
+          href: https://gruene.social/
+    - Telegram:
+        - icon: telegram.svg
+          href: https://web.telegram.org/a/
+    - Heimkino-Forum:
+        - abbr: HK
+          href: https://www.heimkinoverein.de/
+    - HiFi-Forum:
+        - icon: https://raw.githubusercontent.com/volschin/home-ops/main/docs/assets/icons/hifi-forum.png
+          href: http://www.hifi-forum.de/index.php?action=ownposts
+    - FHEM Forum:
+        - icon: https://raw.githubusercontent.com/volschin/home-ops/main/docs/assets/icons/fhem.png
+          href: https://forum.fhem.de/index.php?action=unreadreplies
+
+- Webhosting:
+    - MembersArea - All-Inkl:
+        - icon: https://raw.githubusercontent.com/volschin/home-ops/main/docs/assets/icons/all-inkl.png
+          href: https://all-inkl.com/members/index.php
+    - KAS - All-Inkl:
+        - icon: https://raw.githubusercontent.com/volschin/home-ops/main/docs/assets/icons/all-inkl.png
+          href: https://kas.all-inkl.com/
+    # xxx redacted
+    - Berlin Weather (weewx):
+        - icon: https://raw.githubusercontent.com/volschin/home-ops/main/docs/assets/icons/berlin-wappen.png
+          href: https://tolxdorff.com/wetter/
+    - Feinstaub-Karte:
+        - icon: https://raw.githubusercontent.com/volschin/home-ops/main/docs/assets/icons/luftdaten.png
+          href: https://berlin.maps.luftdaten.info/
+    - WebTrees:
+        - icon: webtrees
+          href: https://www.webtrees.net/index.php/en
+
+- Post & Mail:
+    - PIN eBrief:
+        - icon: https://raw.githubusercontent.com/volschin/home-ops/main/docs/assets/icons/ebrief1.png
+          href: https://www.ebrief.de/
+    - DHL:
+        - icon: https://raw.githubusercontent.com/volschin/home-ops/main/docs/assets/icons/dhl.svg
+          href: https://dhl.de
+    - all-inkl Webmail:
+        - icon: https://raw.githubusercontent.com/volschin/home-ops/main/docs/assets/icons/all-inkl.png
+          href: https://webmail.all-inkl.com/index.php
+    - Proton Mail:
+        - icon: proton-mail.svg
+          href: https://mail.proton.me
+    - WEB.DE Freemail:
+        - icon: https://raw.githubusercontent.com/volschin/home-ops/main/docs/assets/icons/web-de.svg
+          href: https://bap.navigator.web.de
+
+- Finanzen:
+    - comdirect:
+        - icon: https://upload.wikimedia.org/wikipedia/commons/a/a7/Comdirect_Logo_10.2019.svg
+          href: https://kunde.comdirect.de
+    - Meine Deutsche Bank:
+        - icon: https://upload.wikimedia.org/wikipedia/commons/7/7b/Deutsche_Bank_logo_without_wordmark.svg
+          href: https://meine.deutsche-bank.de
+    - Scalable Capital:
+        - icon: https://avatars.githubusercontent.com/u/6443795?s=200&v=4
+          href: https://de.scalable.capital/broker
+    - Mitarbeiter-Aktien:
+        - icon: https://raw.githubusercontent.com/volschin/home-ops/main/docs/assets/icons/sop.svg
+          href: https://www.amundi-ee.com/account/#login
+    - DWS:
+        - icon: https://upload.wikimedia.org/wikipedia/de/e/ef/DWS_%28Unternehmen%29_logo.svg
+          href: https://www.dws.de/service/serviceformulare/
+    - AMEX:
+        - icon:
+          href: https://global.americanexpress.com/myca/intl/acctsumm/emea/accountSummary.do?request_type=&Face=de_DE&inav=de_menu_myacct_myacctcm_acctsummary
+    - Gothaer Versicherung:
+        - icon: gothaer
+          href: https://www.gothaer.de/meine-gothaer/portal.html
+    - Elster:
+        - icon:
+          href: https://www.elster.de/index.php
+
+- Crypto:
+    - Poloniex:
+        - icon:
+          href: https://poloniex.com/login
+    - Bitcoin.de:
+        - icon:
+          href: https://bitcoin.de
+    - CoinGecko:
+        - href: https://www.coingecko.com/de
+    - CoinMarketCap:
+        - icon:
+          href: https://coinmarketcap.com/de
+    - CoinTracker:
+        - icon:
+          href: https://cointracker.io
+    - TronScan:
+        - href: https://tronscan.org/#/
+    - Cardano Explorer:
+        - href: https://adapools.org/
