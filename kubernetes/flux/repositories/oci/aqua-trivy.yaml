@@ -12,7 +12,7 @@ spec:
   # renovate: datasource=helm depName=trivy-operator
   url: oci://ghcr.io/aquasecurity/helm-charts/trivy-operator
   ref:
-    tag: "0.24.1"
+    tag: "0.25.0"
 #  verify:
 #    provider: cosign
 #    matchOIDCIdentity:
