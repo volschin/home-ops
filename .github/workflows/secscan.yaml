@@ -17,7 +17,7 @@ jobs:
       with:
         egress-policy: audit
     - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-    - uses: kubescape/github-action@c91feb3b8dd145ff8a094f91d6836bba4abc4293 # v3.0.5
+    - uses: kubescape/github-action@c9749b84d138c0cbbb702b258774954f5463b82e # v3.0.21
       continue-on-error: true
       with:
         format: sarif
