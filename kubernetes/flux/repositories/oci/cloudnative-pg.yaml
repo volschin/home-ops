@@ -12,7 +12,7 @@ spec:
   # renovate: datasource=helm depName=cloudnative-pg
   url: oci://ghcr.io/cloudnative-pg/charts/cloudnative-pg
   ref:
-    tag: "0.22.1"
+    tag: "0.23.0"
   verify:
     provider: cosign
     matchOIDCIdentity:
