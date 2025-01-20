@@ -25,7 +25,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
       - name: Run trivy with reviewdog output on the PR
-        uses: reviewdog/action-trivy@c505a00063ad7b23b609181d240ff3bbe0c45113 # v1.13.4
+        uses: reviewdog/action-trivy@e6cd771ecf02450ec6cd1a3226f5f2b65597ad05 # v1.13.5
         with:
           github_token: ${{ secrets.github_token }}
           trivy_command: config # Change trivy command
