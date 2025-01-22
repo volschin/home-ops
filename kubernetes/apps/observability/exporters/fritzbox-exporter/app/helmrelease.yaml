@@ -26,7 +26,7 @@ spec:
           app:
             image:
               repository: ghcr.io/sberk42/fritzbox_exporter
-              tag: latest@sha256:2665d5de1c3b851c276b10f84b967fa37b14fc1a663c140b98b4c7b2e4548489
+              tag: latest@sha256:cde0a3f6b9ae5e6a366e783957cae77709729e75ec0dd43fe7e8f0cb86101cce
             env:
               GATEWAY_URL: http://192.168.2.1:49000
               LISTEN_ADDRESS: 0.0.0.0:9133
