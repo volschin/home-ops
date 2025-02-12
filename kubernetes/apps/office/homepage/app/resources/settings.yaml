@@ -1,0 +1,112 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/en/configs/settings
+
+#language: de
+title: My HomeLab
+#favicon: https://www.google.com/favicon.ico
+background:
+  image: https://images.unsplash.com/photo-1633259584604-afdc243122ea
+  opacity: 20
+
+providers:
+  openweathermap: ${owm_api-key}
+logpath: /logs
+
+layout:
+  Player:
+    tab: Media
+    useEqualHeights: true
+    style: row
+    columns: 3
+    header: false
+  Media:
+    tab: Media
+    useEqualHeights: true
+    style: row
+    columns: 3
+  Calender:
+    tab: Media
+    header: false
+    useEqualHeights: true
+    style: row
+    columns: 3
+  Download:
+    tab: Media
+    style: row
+    columns: 3
+  Sound:
+    tab: Media
+    style: row
+    columns: 3
+  Documents & Info:
+    tab: Office
+  Projekte:
+    tab: Office
+  Vermögen:
+    tab: Office
+  Druck:
+    tab: Office
+  Home Automation:
+    tab: Automation
+    icon: home-assistant.png
+  Apple HomeKit:
+    tab: Automation
+    icon: https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Apple_HomeKit_logo.svg/240px-Apple_HomeKit_logo.svg.png
+  Sensoren:
+    tab: Automation
+  Server Tools:
+    tab: Automation
+    icon: https://cdn-icons-png.flaticon.com/512/252/252035.png
+  Container Management:
+    tab: DevOps
+  Source Code:
+    tab: DevOps
+  Storage & Backup:
+    tab: DevOps
+  Separator1:
+    tab: DevOps
+    style: row
+    header: false
+  Monitoring:
+    tab: Monitoring
+    style: row
+    columns: 3
+    header: false
+  Network:
+    tab: Network
+    style: row
+    columns: 4
+    header: false
+  Hardware:
+    tab: Network
+  Diverse:
+    tab: Network
+
+# Bookmarks
+  Developer:
+    tab: DevOps
+  Cloud:
+    tab: DevOps
+  Social:
+    tab: Bookmarks
+  Webhosting:
+    tab: Bookmarks
+  Post & Mail:
+    tab: Office
+  Finanzen:
+    tab: Office
+  Crypto:
+    tab: Office
+  Gesundheit:
+    tab: Office
+
+hideVersion: true
+#showStats: true
+headerStyle: clean
+#hideErrors: true
+
+quicklaunch:
+  searchDescriptions: true
+  hideInternetSearch: true
+  hideVisitURL: true

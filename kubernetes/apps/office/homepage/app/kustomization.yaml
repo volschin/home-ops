@@ -3,7 +3,25 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - ./rbac.yaml
-  - ./configmap.yaml
+  #- ./configmap.yaml
   - ./helmrelease.yaml
-  #- ./externalsecret.yaml
+  - ./externalsecret.yaml
   # - ../../../../templates/gatus/internal
+commonLabels:
+  app.kubernetes.io/name: homepage
+  app.kubernetes.io/instance: homepage
+configMapGenerator:
+  - name: homepage
+    files:
+      - custom.js=./resources/custom.js
+      - custom.css=./resources/custom.css
+      - settings.yaml=./resources/settings.yaml
+      - kubernetes.yaml=./resources/kubernetes.yaml
+      - docker.yaml=./resources/docker.yaml
+      - widgets.yaml=./resources/widgets.yaml
+      - services.yaml=./resources/services.yaml
+      - bookmarks.yaml=./resources/bookmarks.yaml
+generatorOptions:
+  disableNameSuffixHash: true
+  annotations:
+    kustomize.toolkit.fluxcd.io/substitute: disabled
